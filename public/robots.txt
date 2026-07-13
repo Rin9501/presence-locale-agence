@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://presence-locale-agence.netlify.app/sitemap.xml

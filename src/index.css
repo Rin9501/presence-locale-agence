@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+/* Bascule manuelle du mode sombre via la classe .dark sur <html> (cf. useTheme.js) */
+@custom-variant dark (&:where(.dark, .dark *));
+
+:root {
+  --color-navy: #1c2b33;
+  --color-orange: #c1652f;
+  --color-orange-text: #a8551f; /* variante lisible de --color-orange pour du texte (contraste AA sur fond blanc/crème) */
+  --color-orange-button: #b35b29; /* variante légèrement foncée de --color-orange pour les CTA pleins (texte blanc, contraste AA 4.72:1) */
+  --color-grey: #a9b8c2;
+  --color-grey-text: #5c6b75; /* variante lisible de --color-grey pour du texte (contraste AA sur fond crème/blanc) */
+  --color-cream: #fdf6ec;
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Rôles sémantiques — seuls ces jetons changent de valeur en mode sombre (cf. .dark ci-dessous),
+     les couleurs de marque (navy, orange) restent identiques dans les deux thèmes. */
+  --surface: var(--color-cream);
+  --surface-card: #ffffff;
+  --ink: var(--color-navy);
+  --ink-body: #374151;
+  --ink-muted: #4b5563;
+  --ink-soft: var(--color-grey-text);
+  --border-soft: rgb(28 43 51 / 0.1);
+  --tile-line: rgb(28 43 51 / 0.06);
+}
+
+.dark {
+  color-scheme: dark;
+  --surface: #10181d;
+  --surface-card: #1c2b33;
+  --ink: #f5f2ea;
+  --ink-body: #d7dee3;
+  --ink-muted: #a9b8c2;
+  --ink-soft: #8b99a3;
+  --border-soft: rgb(255 255 255 / 0.1);
+  --tile-line: rgb(255 255 255 / 0.05);
+}
+
+body {
+  margin: 0;
+  background-color: var(--surface);
+  color: var(--ink-body);
+  font-family: var(--font-body);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--font-heading);
+}
+
+.bg-tile-texture {
+  background-image:
+    repeating-linear-gradient(to right, var(--tile-line) 0 1px, transparent 1px 56px),
+    repeating-linear-gradient(to bottom, var(--tile-line) 0 1px, transparent 1px 56px);
+}
