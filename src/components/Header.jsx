@@ -2,11 +2,14 @@ import { useState } from 'react'
 import MagneticButton from './MagneticButton'
 import ThemeToggle from './ThemeToggle'
 
+// Ancres préfixées par "/" pour fonctionner aussi depuis /mentions-legales
+// (sur la page d'accueil, "/#offres" se comporte comme "#offres", sans rechargement)
 const links = [
-  { href: '#offres', label: 'Offres' },
-  { href: '#stack', label: 'Stack & méthode' },
-  { href: '#realisations', label: 'Réalisations' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/#offres', label: 'Offres' },
+  { href: '/#stack', label: 'Stack & méthode' },
+  { href: '/#realisations', label: 'Réalisations' },
+  { href: '/#faq', label: 'FAQ' },
+  { href: '/#contact', label: 'Contact' },
 ]
 
 export default function Header() {
@@ -15,8 +18,22 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-10 border-b border-[var(--border-soft)] bg-[var(--surface)]/95 backdrop-blur">
       <div className="flex items-center justify-between px-6 py-3">
-        <a href="#accueil" className="flex items-center">
-          <img src="/logo.png" alt="Présence Locale" width={169} height={40} className="h-9 w-auto" />
+        <a href="/#accueil" className="flex items-center gap-2">
+          <img src="/luora-pin.svg" alt="" width={100} height={130} className="pin-glow h-9 w-auto" />
+          <img
+            src="/luora-wordmark.svg"
+            alt="Luora"
+            width={294}
+            height={103}
+            className="h-5 w-auto dark:hidden"
+          />
+          <img
+            src="/luora-wordmark-light.svg"
+            alt="Luora"
+            width={294}
+            height={103}
+            className="hidden h-5 w-auto dark:block"
+          />
         </a>
 
         <nav className="hidden items-center gap-6 text-sm font-medium text-[var(--ink)] sm:flex">
@@ -30,10 +47,10 @@ export default function Header() {
         <div className="flex items-center gap-2">
           <ThemeToggle />
           <MagneticButton
-            href="#contact"
-            className="hidden rounded-md bg-[var(--color-orange-button)] px-4 py-2 text-sm font-medium text-white hover:opacity-90 sm:inline-block"
+            href="/#contact"
+            className="cta-glow hidden rounded-md bg-[var(--color-orange-button)] px-4 py-2 text-sm font-medium text-white hover:opacity-90 sm:inline-block"
           >
-            Me contacter
+            Nous contacter
           </MagneticButton>
           <button
             type="button"
@@ -72,11 +89,11 @@ export default function Header() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="/#contact"
             onClick={() => setOpen(false)}
-            className="mt-1 rounded-md bg-[var(--color-orange-button)] px-4 py-2 text-center text-sm font-medium text-white transition hover:opacity-90"
+            className="cta-glow mt-1 rounded-md bg-[var(--color-orange-button)] px-4 py-2 text-center text-sm font-medium text-white transition hover:opacity-90"
           >
-            Me contacter
+            Nous contacter
           </a>
         </div>
       </nav>

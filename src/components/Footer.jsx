@@ -14,6 +14,10 @@ export default function Footer() {
           <a href={`mailto:${site.business.email}`} className="transition hover:text-[var(--color-orange)]">
             {site.business.email}
           </a>
+          {' · '}
+          <a href="/mentions-legales" className="transition hover:text-[var(--color-orange)]">
+            Mentions légales
+          </a>
         </p>
         <p className="mt-2 text-xs text-[var(--ink-soft)]">
           Dernière mise à jour du site :{' '}

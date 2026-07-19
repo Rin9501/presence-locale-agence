@@ -16,7 +16,7 @@ export default function StackSection() {
             <Reveal key={item.name} delay={index * 80} className="rounded-lg border border-white/10 bg-white/5 p-5">
               <div className="flex items-baseline gap-2">
                 <h3 className="font-semibold text-white">{item.name}</h3>
-                <span className="text-xs uppercase tracking-wide text-[var(--color-orange)]">{item.role}</span>
+                <span className="[font-family:var(--font-utility)] text-xs uppercase tracking-wide text-[var(--color-orange)]">{item.role}</span>
               </div>
               <p className="mt-2 text-sm text-white/70">{item.benefit}</p>
             </Reveal>

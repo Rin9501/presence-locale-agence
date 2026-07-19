@@ -46,7 +46,7 @@ function SiteRealisationCard({ item }) {
       )}
       <div className="p-4">
         {item.badge && (
-          <span className="text-xs font-semibold uppercase tracking-wide text-[var(--color-orange-text)]">
+          <span className="[font-family:var(--font-utility)] text-xs font-semibold uppercase tracking-wide text-[var(--color-orange-text)]">
             {item.badge}
           </span>
         )}

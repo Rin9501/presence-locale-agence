@@ -11,8 +11,10 @@
   --color-grey: #a9b8c2;
   --color-grey-text: #5c6b75; /* variante lisible de --color-grey pour du texte (contraste AA sur fond crème/blanc) */
   --color-cream: #fdf6ec;
+  --color-lueur: #e9a34c; /* accent Luora — halos/éclat uniquement, jamais en texte (pas de variante -text) */
   --font-heading: 'Poppins', sans-serif;
   --font-body: 'Inter', sans-serif;
+  --font-utility: 'Manrope', sans-serif; /* labels, badges, numéros — cf. charte Luora */
 
   /* Rôles sémantiques — seuls ces jetons changent de valeur en mode sombre (cf. .dark ci-dessous),
      les couleurs de marque (navy, orange) restent identiques dans les deux thèmes. */
@@ -62,4 +64,40 @@ h3 {
   background-image:
     repeating-linear-gradient(to right, var(--tile-line) 0 1px, transparent 1px 56px),
     repeating-linear-gradient(to bottom, var(--tile-line) 0 1px, transparent 1px 56px);
+}
+
+/* Halo "Lueur" au survol/focus des CTA principaux — remplace le simple hover:opacity,
+   relie visuellement le bouton à l'idée de marque ("on éclaire votre activité"). */
+.cta-glow {
+  transition: box-shadow 0.2s ease-out, opacity 0.2s ease-out;
+}
+.cta-glow:hover,
+.cta-glow:focus-visible {
+  box-shadow: 0 0 0 4px rgb(233 163 76 / 0.35), 0 4px 18px rgb(233 163 76 / 0.35);
+}
+
+/* Pulsation douce et unique du pin logo (clin d'œil au nom "lueur" — le pin est un <img>
+   externe, donc on anime un drop-shadow ambré autour plutôt que son anneau interne),
+   jouée deux fois au chargement puis arrêtée — pas un effet permanent pour rester discret. */
+@keyframes pin-glow-pulse {
+  0%, 100% { filter: drop-shadow(0 0 0 transparent); }
+  50% { filter: drop-shadow(0 0 5px rgb(233 163 76 / 0.8)); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .pin-glow {
+    animation: pin-glow-pulse 1.8s ease-in-out 0.3s 2;
+  }
+}
+
+/* Accordéon FAQ — transition de hauteur cohérente avec les autres transitions du site */
+.faq-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.3s ease-out;
+}
+.faq-panel[data-open='true'] {
+  grid-template-rows: 1fr;
+}
+.faq-panel > div {
+  overflow: hidden;
 }

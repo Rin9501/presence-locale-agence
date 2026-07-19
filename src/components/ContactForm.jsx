@@ -29,6 +29,7 @@ export default function ContactForm() {
       name: form.name,
       contact: form.contact,
       message: form.message,
+      site: 'agence', // table mutualisée entre le site agence et les sites clients
     })
 
     if (error) {
@@ -43,7 +44,10 @@ export default function ContactForm() {
   return (
     <section id="contact" className="px-6 py-16">
       <Reveal className="mx-auto max-w-xl">
-        <h2 className="text-center text-2xl font-semibold text-[var(--ink)]">Contact</h2>
+        <p className="text-center text-sm font-semibold uppercase tracking-wide text-[var(--color-orange-text)] [font-family:var(--font-utility)]">
+          Prêt à être trouvé sur Google ?
+        </p>
+        <h2 className="mt-2 text-center text-2xl font-semibold text-[var(--ink)]">Contact</h2>
         <p className="mt-2 text-center text-sm text-[var(--ink-muted)]">
           {site.business.contactZone} — réponse rapide par téléphone ou email.
         </p>
@@ -116,7 +120,7 @@ export default function ContactForm() {
 
           {status === 'success' && (
             <p className="text-center text-sm font-medium text-green-700">
-              Message envoyé, je reviens vers vous rapidement.
+              Message envoyé, nous revenons vers vous rapidement.
             </p>
           )}
           {status === 'error' && (
@@ -124,6 +128,14 @@ export default function ContactForm() {
               Une erreur est survenue, réessayez ou appelez directement au {site.business.phone}.
             </p>
           )}
+
+          <p className="text-center text-xs text-[var(--ink-soft)]">
+            Vos coordonnées servent uniquement à vous répondre — jamais partagées, jamais utilisées pour de la
+            publicité.{' '}
+            <a href="/mentions-legales" className="underline transition hover:text-[var(--color-orange-text)]">
+              Mentions légales
+            </a>
+          </p>
         </form>
       </Reveal>
     </section>

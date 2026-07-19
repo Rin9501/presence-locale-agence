@@ -19,13 +19,21 @@ export default function Hero() {
           <h1 className="text-4xl font-bold text-[var(--ink)] sm:text-5xl">
             {site.business.tagline}
           </h1>
-          <p className="mt-4 text-sm font-medium text-[var(--ink-soft)]">{site.business.zone}</p>
-          <MagneticButton
-            href="#contact"
-            className="mt-8 inline-block rounded-md bg-[var(--color-orange-button)] px-6 py-3 font-medium text-white hover:opacity-90"
-          >
-            Demander un devis
-          </MagneticButton>
+          <p className="mt-4 text-base text-[var(--ink-body)]">{site.business.subtitle}</p>
+          <div className="mt-8 flex flex-wrap items-center gap-3">
+            <MagneticButton
+              href="#contact"
+              className="cta-glow inline-block rounded-md bg-[var(--color-orange-button)] px-6 py-3 font-medium text-white hover:opacity-90"
+            >
+              Je demande mon devis
+            </MagneticButton>
+            <MagneticButton
+              href={`tel:${site.business.phone.replace(/\s/g, '')}`}
+              className="cta-glow inline-block rounded-md border border-[var(--border-soft)] px-6 py-3 font-medium text-[var(--ink)] transition hover:border-[var(--color-orange)]"
+            >
+              Appeler maintenant
+            </MagneticButton>
+          </div>
         </div>
 
         <div
