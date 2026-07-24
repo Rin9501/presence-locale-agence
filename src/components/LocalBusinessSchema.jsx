@@ -10,7 +10,7 @@ export default function LocalBusinessSchema() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: business.name,
-    alternateName: 'Présence Locale', // ancien nom — conservé le temps de la transition de marque vers Luora
+    alternateName: 'Présence Locale', // ancien nom — conservé le temps de la transition de marque vers La Dalle
     url: 'https://presence-locale-agence.netlify.app',
     telephone: `+33${business.phone.replace(/\s/g, '').slice(1)}`,
     email: business.email,

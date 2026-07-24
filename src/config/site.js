@@ -1,14 +1,14 @@
 // Contenu du site — seul fichier à modifier pour ajuster les textes, prix ou réalisations
 const site = {
   business: {
-    name: 'Luora',
+    name: 'La Dalle',
     // H1 orienté résultat client ; le descriptif de l'activité vit dans subtitle
     tagline: 'Vos clients vous cherchent sur Google. Faites-vous trouver.',
-    // Reprend la "ligne site — hero" de la charte Luora : dit quoi/où/pour qui + plante le moat (ex-artisan, joignable)
+    // Reprend la "ligne site — hero" de la charte La Dalle : dit quoi/où/pour qui + plante le moat (ex-artisan, joignable)
     subtitle:
       'Sites internet et fiches Google pour les artisans de l’Ariège. Par un ancien du métier, qui répond quand vous appelez.',
-    zone: 'Mirepoix, Pamiers, Lavelanet et alentours',
-    contactZone: 'Basé à Mirepoix, interventions dans tout le bassin Mirepoix–Pamiers–Lavelanet',
+    zone: 'Toute l’Ariège (09)',
+    contactZone: 'Basé à Mirepoix, interventions dans toute l’Ariège',
     phone: '06 33 24 69 70',
     email: 'presencelocale.contact@gmail.com',
     gmbUrl: 'https://share.google/pNxdyBOAaUnvbGklo',
@@ -31,7 +31,7 @@ const site = {
   // siret et registeredAddress avec les infos officielles.
   legal: {
     legalName: 'Mehdi Courtinat', // confirmé par courrier URSSAF du 10/07/2026
-    tradeName: 'Luora',
+    tradeName: 'La Dalle',
     legalForm: 'Entreprise individuelle en cours d’immatriculation',
     siret: '',
     registeredAddress: 'Mirepoix (09500)',
@@ -53,12 +53,12 @@ const site = {
 
   // Voix éditoriale du site : "nous" partout (duo), jamais "je" — cohérence Header/Offres/Contact.
   pitch: {
-    title: 'Pourquoi Luora',
+    title: 'Pourquoi La Dalle',
     paragraphs: [
       "Le bouche-à-oreille fait vivre un commerce ou un artisan — mais aujourd’hui, il commence sur Google. Avant d’appeler, vos futurs clients tapent votre métier et votre ville : ceux qu’ils trouvent décrochent le chantier ou le rendez-vous.",
-      "Luora, c’est un duo basé à Mirepoix, avec un pied dans le bâtiment — carreleur de métier côté technique. Nous savons comment vos clients choisissent un artisan ou un commerce, et ce qu’ils regardent avant de se décider.",
-      "Nous optimisons votre fiche Google Business et construisons votre site vitrine sur-mesure : des textes écrits pour votre métier et votre zone, vos vraies photos et vos vrais avis — pas un modèle générique rempli à la chaîne.",
-      "Et après la livraison, vous n’êtes pas lâché dans la nature : hébergement, nom de domaine et petites modifications sont couverts par un forfait annuel clair. Un seul interlocuteur, du premier échange à la maintenance.",
+      "La Dalle, c’est un duo basé à Mirepoix, avec un pied dans le bâtiment — carreleur de métier côté technique. Nous savons comment vos clients choisissent un artisan ou un commerce, et ce qu’ils regardent avant de se décider.",
+      "Chaque site est construit depuis zéro pour votre activité : pas de thème de commerce, pas de maquette recyclée d’un client à l’autre. Nous optimisons votre fiche Google Business et écrivons vos textes pour votre métier et votre zone, avec vos vraies photos et vos vrais avis.",
+      "Le site vous appartient — aucun abonnement mensuel, aucun engagement sur plusieurs années. Le seul coût récurrent est un forfait annuel clair, inclus dans chaque site dès la livraison : hébergement, nom de domaine et petites modifications. Un seul interlocuteur, du premier échange à la maintenance.",
     ],
     whyNotWordpress: {
       title: 'Pourquoi pas WordPress ou Wix',
@@ -113,7 +113,7 @@ const site = {
       titre: 'Fiche Google Business',
       cible: 'Professions de santé réglementées',
       description: 'Optimisation de votre fiche Google My Business, ton factuel, sans pitch commercial.',
-      prix: '80–150 €',
+      prix: 'Sur devis',
       recurrent: 'Suivi mensuel optionnel : 15–20 €/mois',
     },
     {
@@ -121,21 +121,21 @@ const site = {
       titre: 'Site vitrine + Fiche Google',
       cible: 'Commerces, beauté, restauration',
       description: 'Site vitrine sur-mesure et optimisation de votre fiche Google Business.',
-      prix: '300–400 €',
-      recurrent: 'Puis 240 €/an tout compris : hébergement, nom de domaine et 2 modifications par mois',
+      prix: 'Sur devis',
+      recurrent: 'Puis 240 €/an tout compris, inclus dès la livraison : hébergement, nom de domaine et 2 modifications par mois',
     },
     {
       niveau: 3,
       titre: 'Site + Galerie chantiers + Fiche Google',
       cible: 'Artisans du BTP',
       description: 'Site vitrine, galerie de chantiers avant/après, et optimisation de votre fiche Google Business.',
-      prix: '400–600 €',
-      recurrent: 'Puis 240 €/an tout compris : hébergement, nom de domaine et 2 modifications par mois',
+      prix: 'Sur devis',
+      recurrent: 'Puis 240 €/an tout compris, inclus dès la livraison : hébergement, nom de domaine et 2 modifications par mois',
     },
   ],
 
   // Sous-titre de la section offres — jamais de formulation qui avoue un manque de références
-  offresIntro: 'Tarifs de lancement — devis gratuit, sans engagement.',
+  offresIntro: 'Chaque site est chiffré sur mesure, selon votre activité et l’ampleur du projet — premier échange et devis gratuits, sans engagement.',
 
   // Parcours client en 4 étapes — répond aux objections pratiques (durée, engagement, après-vente)
   process: {
@@ -144,17 +144,17 @@ const site = {
       {
         titre: 'On échange',
         description:
-          'Par SMS, téléphone ou autour d’un café : votre activité, ce que vous avez déjà (photos, logo, avis) et ce qu’il vous manque.',
+          'Par SMS, téléphone ou autour d’un café : votre activité, vos objectifs, ce que vous avez déjà (photos, logo, avis) et ce qu’il vous manque.',
       },
       {
-        titre: 'Vous voyez une maquette',
+        titre: 'On réunit la matière, puis une vraie maquette',
         description:
-          'Nous construisons une première version de votre site et vous envoyons le lien. Vous validez — ou on ajuste — avant tout engagement.',
+          'S’il manque des photos, un logo ou des avis, on vous aide à les rassembler — rien n’est laissé au hasard. Vous voyez ensuite une première version en ligne avec vos vrais contenus, pas un exemple générique : vous validez, ou on ajuste, avant tout engagement.',
       },
       {
-        titre: 'Livraison en quelques jours',
+        titre: 'Livraison + fiche Google optimisée',
         description:
-          'Site en ligne, fiche Google optimisée, mentions légales en règle. Rien n’est publié sans votre accord.',
+          'Site en ligne, fiche Google Business optimisée en parallèle, mentions légales en règle. Rien n’est publié sans votre accord.',
       },
       {
         titre: 'On s’en occupe ensuite',
@@ -169,9 +169,9 @@ const site = {
   // FaqSection.jsx qui génère aussi le JSON-LD FAQPage à partir de ce même tableau (pas de duplication).
   faq: [
     {
-      question: 'Combien coûte un site vitrine avec Luora ?',
+      question: 'Combien coûte un site vitrine avec La Dalle ?',
       reponse:
-        'Entre 300 et 600 € selon votre activité (commerce, beauté, artisan du BTP), en tarif de lancement. Ensuite, un forfait annuel unique de 240 € couvre l’hébergement, le nom de domaine et 2 petites modifications par mois — pas d’abonnement mensuel.',
+        'Ça dépend de votre activité et de l’ampleur du projet (commerce, beauté, artisan du BTP avec galerie chantiers...) — nous vous donnons un chiffrage précis après un premier échange, pas un tarif générique en ligne. Ensuite, un forfait annuel unique de 240 € est inclus dans chaque site dès la livraison : hébergement, nom de domaine et 2 petites modifications par mois, sans abonnement mensuel caché.',
     },
     {
       question: 'Faut-il payer un abonnement mensuel ?',
@@ -184,9 +184,9 @@ const site = {
         'Quelques jours après validation de la maquette. Vous voyez d’abord une version en ligne du site avant tout engagement, puis la livraison suit rapidement une fois vos retours pris en compte.',
     },
     {
-      question: 'Intervenez-vous en dehors de Mirepoix ?',
+      question: 'Intervenez-vous dans tout le département ?',
       reponse:
-        'Oui, dans tout le bassin Mirepoix–Pamiers–Lavelanet et les alentours. Le premier échange se fait par SMS, téléphone ou autour d’un café, où que vous soyez dans cette zone.',
+        'Oui, dans toute l’Ariège (09). Le premier échange se fait par SMS, téléphone ou autour d’un café, où que vous soyez dans le département.',
     },
     {
       question: 'Que se passe-t-il après la livraison du site ?',
@@ -210,7 +210,7 @@ const site = {
       type: 'site',
       title: 'Chape Liquide Occitanie',
       badge: 'Site vitrine — Artisan BTP',
-      description: 'Site vitrine développé par Mehdi (Luora) pour l’EURL Chape Liquide Occitanie, en ligne.',
+      description: 'Site vitrine développé par Mehdi (La Dalle) pour l’EURL Chape Liquide Occitanie, en ligne.',
       image: 'chape-liquide-occitanie/screenshot.jpg',
       url: 'https://chapeliquide-occitanie.fr',
     },
