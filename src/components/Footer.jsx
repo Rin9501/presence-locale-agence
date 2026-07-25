@@ -19,6 +19,21 @@ export default function Footer() {
             Mentions légales
           </a>
         </p>
+        {site.business.instagram && (
+          <a
+            href={site.business.instagram}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="La Dalle sur Instagram"
+            className="mt-3 inline-flex h-9 w-9 items-center justify-center rounded-full border border-[var(--border-soft)] text-[var(--ink-muted)] transition hover:border-[var(--color-orange)] hover:text-[var(--color-orange-text)]"
+          >
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} className="h-[18px] w-[18px]">
+              <rect x="3" y="3" width="18" height="18" rx="5" />
+              <circle cx="12" cy="12" r="4" />
+              <circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" stroke="none" />
+            </svg>
+          </a>
+        )}
         <p className="mt-2 text-xs text-[var(--ink-soft)]">
           Dernière mise à jour du site :{' '}
           {new Intl.DateTimeFormat('fr-FR', { dateStyle: 'long' }).format(new Date(__BUILD_DATE__))} — déployé via

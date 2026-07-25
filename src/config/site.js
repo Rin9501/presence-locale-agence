@@ -12,6 +12,7 @@ const site = {
     phone: '06 33 24 69 70',
     email: 'presencelocale.contact@gmail.com',
     gmbUrl: 'https://share.google/pNxdyBOAaUnvbGklo',
+    instagram: 'https://www.instagram.com/ladalle_agence/',
   },
 
   // Utilisé par LocalBusinessSchema.jsx (JSON-LD) — adresse ville seule (pas de rue,
