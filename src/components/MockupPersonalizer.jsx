@@ -7,7 +7,7 @@ export default function MockupPersonalizer() {
   const [business, setBusiness] = useState('')
 
   return (
-    <div className="mt-4 rounded-lg border border-[var(--border-soft)] bg-[var(--surface-card)] p-4">
+    <div className="chamfer mt-4 border border-[var(--border-soft)] bg-[var(--surface-card)] p-4">
       <label htmlFor="mockup-business" className="block text-xs font-medium text-[var(--ink-soft)]">
         Curieux du rendu pour votre activité ?
       </label>

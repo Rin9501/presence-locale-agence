@@ -16,20 +16,20 @@ export default function Hero() {
     <section id="accueil" className="px-6 py-20 sm:py-28">
       <div className="mx-auto flex max-w-5xl flex-col items-center gap-12 md:flex-row md:items-center">
         <div className="w-full text-left md:w-1/2">
-          <h1 className="text-4xl font-bold text-[var(--ink)] sm:text-5xl">
+          <h1 className="text-4xl leading-tight text-[var(--ink)] sm:text-5xl">
             {site.business.tagline}
           </h1>
           <p className="mt-4 text-base text-[var(--ink-body)]">{site.business.subtitle}</p>
           <div className="mt-8 flex flex-wrap items-center gap-3">
             <MagneticButton
               href="#contact"
-              className="cta-glow inline-block rounded-md bg-[var(--color-orange-button)] px-6 py-3 font-medium text-white hover:opacity-90"
+              className="cta-glow inline-block rounded-sm bg-[var(--color-orange-button)] px-6 py-3 font-medium text-white hover:opacity-90"
             >
               Je demande mon devis
             </MagneticButton>
             <MagneticButton
               href={`tel:${site.business.phone.replace(/\s/g, '')}`}
-              className="cta-glow inline-block rounded-md border border-[var(--border-soft)] px-6 py-3 font-medium text-[var(--ink)] transition hover:border-[var(--color-orange)]"
+              className="cta-glow inline-block rounded-sm border border-[var(--border-soft)] px-6 py-3 font-medium text-[var(--ink)] transition hover:border-[var(--color-orange)]"
             >
               Appeler maintenant
             </MagneticButton>
@@ -46,7 +46,7 @@ export default function Hero() {
           <MockupPersonalizer />
 
           {testimonial && (
-            <figure className="mt-4 rounded-lg border border-[var(--border-soft)] bg-[var(--surface-card)] p-4">
+            <figure className="chamfer mt-4 border border-[var(--border-soft)] bg-[var(--surface-card)] p-4">
               <blockquote className="text-sm italic text-[var(--ink-body)]">« {testimonial.quote} »</blockquote>
               <figcaption className="mt-2 text-xs text-[var(--ink-soft)]">
                 <span className="font-medium text-[var(--ink)]">{testimonial.author}</span>

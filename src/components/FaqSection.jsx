@@ -30,7 +30,7 @@ function FaqSchema() {
 
 function FaqItem({ item, isOpen, onToggle }) {
   return (
-    <div className="rounded-lg border border-[var(--border-soft)] bg-[var(--surface-card)]">
+    <div className="chamfer border border-[var(--border-soft)] bg-[var(--surface-card)]">
       <button
         type="button"
         onClick={onToggle}
@@ -61,7 +61,7 @@ export default function FaqSection() {
     <section id="faq" className="px-6 py-16">
       <FaqSchema />
       <Reveal className="mx-auto max-w-3xl">
-        <h2 className="text-center text-2xl font-semibold text-[var(--ink)]">Questions fréquentes</h2>
+        <h2 className="text-center text-2xl text-[var(--ink)]">Questions fréquentes</h2>
         <div className="mt-8 space-y-3">
           {site.faq.map((item, index) => (
             <FaqItem

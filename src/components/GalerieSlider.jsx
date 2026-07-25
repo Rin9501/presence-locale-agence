@@ -33,7 +33,7 @@ export default function GalerieSlider({ before, after, altBefore = 'Avant', altA
         <span className="pointer-events-none absolute bottom-2 left-2 rounded bg-[var(--color-navy)]/80 px-2 py-0.5 text-xs font-medium text-white">
           {altBefore}
         </span>
-        <span className="pointer-events-none absolute bottom-2 right-2 rounded bg-[var(--color-orange)]/90 px-2 py-0.5 text-xs font-medium text-white">
+        <span className="pointer-events-none absolute bottom-2 right-2 rounded bg-[var(--color-orange-button)] px-2 py-0.5 text-xs font-medium text-white">
           {altAfter}
         </span>
 

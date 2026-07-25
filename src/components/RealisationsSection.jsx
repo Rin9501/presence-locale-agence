@@ -25,7 +25,7 @@ function SiteRealisationCard({ item }) {
       href={item.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="flex flex-col overflow-hidden rounded-lg border border-[var(--border-soft)] bg-[var(--surface-card)] transition hover:-translate-y-0.5 hover:shadow-md"
+      className="chamfer flex flex-col overflow-hidden border border-[var(--border-soft)] bg-[var(--surface-card)] transition hover:-translate-y-0.5 hover:shadow-md"
     >
       {jpg ? (
         <picture>
@@ -50,7 +50,7 @@ function SiteRealisationCard({ item }) {
             {item.badge}
           </span>
         )}
-        <h3 className="mt-1 font-semibold text-[var(--ink)]">{item.title}</h3>
+        <h3 className="mt-1 text-lg text-[var(--ink)]">{item.title}</h3>
         <p className="mt-1 text-sm text-[var(--ink-muted)]">{item.description}</p>
         <span className="mt-3 inline-block text-sm font-medium text-[var(--color-orange-text)]">
           Voir le site en ligne →
@@ -66,10 +66,10 @@ export default function RealisationsSection() {
   return (
     <section id="realisations" className="bg-[var(--surface-card)] px-6 py-16">
       <Reveal>
-        <h2 className="text-center text-2xl font-semibold text-[var(--ink)]">Réalisations</h2>
+        <h2 className="text-center text-2xl text-[var(--ink)]">Réalisations</h2>
 
         {realisations.length === 0 ? (
-          <div className="mx-auto mt-10 max-w-xl rounded-lg border border-dashed border-[var(--border-soft)] bg-[var(--surface)] px-6 py-10 text-center">
+          <div className="chamfer mx-auto mt-10 max-w-xl border border-dashed border-[var(--border-soft)] bg-[var(--surface)] px-6 py-10 text-center">
             <p className="font-medium text-[var(--ink)]">Projets en cours de livraison</p>
             <p className="mt-2 text-sm text-[var(--ink-muted)]">
               Les premières réalisations clients seront visibles ici dès qu'elles seront livrées.

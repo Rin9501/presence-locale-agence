@@ -4,40 +4,41 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 :root {
-  --color-navy: #1c2b33;
-  --color-orange: #c1652f;
-  --color-orange-text: #a8551f; /* variante lisible de --color-orange pour du texte (contraste AA sur fond blanc/crème) */
-  --color-orange-button: #b35b29; /* variante légèrement foncée de --color-orange pour les CTA pleins (texte blanc, contraste AA 4.72:1) */
-  --color-grey: #a9b8c2;
-  --color-grey-text: #5c6b75; /* variante lisible de --color-grey pour du texte (contraste AA sur fond crème/blanc) */
-  --color-cream: #fdf6ec;
-  --color-lueur: #e9a34c; /* accent Luora — halos/éclat uniquement, jamais en texte (pas de variante -text) */
-  --font-heading: 'Poppins', sans-serif;
-  --font-body: 'Inter', sans-serif;
-  --font-utility: 'Manrope', sans-serif; /* labels, badges, numéros — cf. charte Luora */
+  /* Palette La Dalle — béton brut + un seul accent chaud (braise). Voir brand-kit/la-dalle-charte-marque.md */
+  --color-navy: #100e0b; /* Encre */
+  --color-orange: #e64a19; /* Braise vive — décoratif/non-texte, et texte sur fond sombre (contraste vérifié) */
+  --color-orange-text: #b23815; /* Braise profonde — texte sur fond clair (contraste AA) ; réécrit en mode sombre plus bas */
+  --color-orange-button: #c13d14; /* Braise bouton — AA avec texte blanc */
+  --color-grey: #8b8478; /* Béton */
+  --color-grey-text: #6b6459; /* Béton foncé — texte muet sur fond clair (mockup/badges non thémés) */
+  --color-cream: #f7f4ec; /* Papier ciment, carte */
+  --color-lueur: #ff7a45; /* Braise vive — halos, glow, texte accent sur fond sombre */
+  --font-heading: 'Big Shoulders Stencil', sans-serif;
+  --font-body: 'Archivo', sans-serif;
+  --font-utility: 'JetBrains Mono', monospace;
 
-  /* Rôles sémantiques — seuls ces jetons changent de valeur en mode sombre (cf. .dark ci-dessous),
-     les couleurs de marque (navy, orange) restent identiques dans les deux thèmes. */
-  --surface: var(--color-cream);
-  --surface-card: #ffffff;
+  /* Rôles sémantiques — changent de valeur en mode sombre (cf. .dark ci-dessous) */
+  --surface: #ede8dc;
+  --surface-card: var(--color-cream);
   --ink: var(--color-navy);
-  --ink-body: #374151;
-  --ink-muted: #4b5563;
+  --ink-body: #34302a;
+  --ink-muted: #524c42;
   --ink-soft: var(--color-grey-text);
-  --border-soft: rgb(28 43 51 / 0.1);
-  --tile-line: rgb(28 43 51 / 0.06);
+  --border-soft: rgb(16 14 11 / 0.14);
+  --tile-line: rgb(16 14 11 / 0.07);
 }
 
 .dark {
   color-scheme: dark;
-  --surface: #10181d;
-  --surface-card: #1c2b33;
-  --ink: #f5f2ea;
-  --ink-body: #d7dee3;
-  --ink-muted: #a9b8c2;
-  --ink-soft: #8b99a3;
-  --border-soft: rgb(255 255 255 / 0.1);
-  --tile-line: rgb(255 255 255 / 0.05);
+  --surface: #17130f;
+  --surface-card: #211a14;
+  --ink: #ede8dc;
+  --ink-body: #dcd5c6;
+  --ink-muted: #c7c0b0;
+  --ink-soft: #9a9384;
+  --border-soft: rgb(237 232 220 / 0.14);
+  --tile-line: rgb(237 232 220 / 0.07);
+  --color-orange-text: #ff7a45; /* braise vive — reste lisible (AA) sur les fonds sombres */
 }
 
 body {
@@ -58,34 +59,75 @@ h1,
 h2,
 h3 {
   font-family: var(--font-heading);
+  font-weight: 800; /* seul poids existant de Big Shoulders Stencil */
+  letter-spacing: 0.01em;
+  font-synthesis: none; /* évite un faux-gras si une classe utilitaire (font-semibold...) reste posée dessus */
 }
 
-.bg-tile-texture {
-  background-image:
-    repeating-linear-gradient(to right, var(--tile-line) 0 1px, transparent 1px 56px),
-    repeating-linear-gradient(to bottom, var(--tile-line) 0 1px, transparent 1px 56px);
+/* Grain béton — bruit fin en superposition, remplace l'ancienne grille de points générique.
+   Deux couches de feTurbulence indépendantes (fréquences différentes) pour éviter l'effet
+   "un seul motif répété" ; opacité très faible, jamais au-dessus du texte. */
+.bg-concrete-texture {
+  position: relative;
+  isolation: isolate;
+}
+.bg-concrete-texture::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  opacity: 0.05;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+}
+.dark .bg-concrete-texture::before {
+  opacity: 0.08;
+  mix-blend-mode: screen;
+}
+.bg-concrete-texture > * {
+  position: relative;
+  z-index: 1;
 }
 
-/* Halo "Lueur" au survol/focus des CTA principaux — remplace le simple hover:opacity,
-   relie visuellement le bouton à l'idée de marque ("on éclaire votre activité"). */
+/* Coin cassé — chanfrein en haut à droite, signature de marque sur les blocs de contenu.
+   Remplace le rounded-lg générique : un seul détail structurel répété, pas décoratif partout. */
+.chamfer {
+  clip-path: polygon(0 0, calc(100% - 16px) 0, 100% 16px, 100% 100%, 0 100%);
+}
+.chamfer-lg {
+  clip-path: polygon(0 0, calc(100% - 28px) 0, 100% 28px, 100% 100%, 0 100%);
+}
+
+/* Halo "Braise" au survol/focus des CTA principaux */
 .cta-glow {
   transition: box-shadow 0.2s ease-out, opacity 0.2s ease-out;
 }
 .cta-glow:hover,
 .cta-glow:focus-visible {
-  box-shadow: 0 0 0 4px rgb(233 163 76 / 0.35), 0 4px 18px rgb(233 163 76 / 0.35);
+  box-shadow: 0 0 0 4px rgb(230 74 25 / 0.3), 0 4px 20px rgb(230 74 25 / 0.4);
 }
 
-/* Pulsation douce et unique du pin logo (clin d'œil au nom "lueur" — le pin est un <img>
-   externe, donc on anime un drop-shadow ambré autour plutôt que son anneau interne),
-   jouée deux fois au chargement puis arrêtée — pas un effet permanent pour rester discret. */
-@keyframes pin-glow-pulse {
+/* Pulsation douce et unique du mark logo au chargement, jouée deux fois puis arrêtée. */
+@keyframes mark-glow-pulse {
   0%, 100% { filter: drop-shadow(0 0 0 transparent); }
-  50% { filter: drop-shadow(0 0 5px rgb(233 163 76 / 0.8)); }
+  50% { filter: drop-shadow(0 0 6px rgb(255 122 69 / 0.75)); }
 }
 @media (prefers-reduced-motion: no-preference) {
-  .pin-glow {
-    animation: pin-glow-pulse 1.8s ease-in-out 0.3s 2;
+  .mark-glow {
+    animation: mark-glow-pulse 1.8s ease-in-out 0.3s 2;
+  }
+}
+
+/* Fissure signature — grand accent décoratif dans le panneau Stack (toujours sombre).
+   Respiration lente, jamais clignotante ; coupée si l'utilisateur préfère moins de mouvement. */
+@keyframes crack-breathe {
+  0%, 100% { opacity: 0.55; }
+  50% { opacity: 0.85; }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .crack-accent {
+    animation: crack-breathe 5s ease-in-out infinite;
   }
 }
 

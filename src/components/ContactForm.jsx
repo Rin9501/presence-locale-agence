@@ -47,7 +47,7 @@ export default function ContactForm() {
         <p className="text-center text-sm font-semibold uppercase tracking-wide text-[var(--color-orange-text)] [font-family:var(--font-utility)]">
           Prêt à être trouvé sur Google ?
         </p>
-        <h2 className="mt-2 text-center text-2xl font-semibold text-[var(--ink)]">Contact</h2>
+        <h2 className="mt-2 text-center text-2xl text-[var(--ink)]">Contact</h2>
         <p className="mt-2 text-center text-sm text-[var(--ink-muted)]">
           {site.business.contactZone} — réponse rapide par téléphone ou email.
         </p>
@@ -113,7 +113,7 @@ export default function ContactForm() {
           <button
             type="submit"
             disabled={status === 'submitting'}
-            className="w-full rounded-md bg-[var(--color-orange-button)] px-6 py-3 font-medium text-white transition hover:opacity-90 disabled:opacity-60"
+            className="w-full rounded-sm bg-[var(--color-orange-button)] px-6 py-3 font-medium text-white transition hover:opacity-90 disabled:opacity-60"
           >
             {status === 'submitting' ? 'Envoi...' : 'Envoyer'}
           </button>

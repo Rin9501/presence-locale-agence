@@ -18,27 +18,34 @@ export default function Header() {
   return (
     <header className="sticky top-0 z-10 border-b border-[var(--border-soft)] bg-[var(--surface)]/95 backdrop-blur">
       <div className="flex items-center justify-between px-6 py-3">
-        <a href="/#accueil" className="flex items-center gap-2">
-          <img src="/luora-pin.svg" alt="" width={100} height={130} className="pin-glow h-9 w-auto" />
+        <a href="/#accueil" className="flex items-center gap-2.5">
+          <img src="/la-dalle-mark.svg" alt="" width={64} height={64} className="mark-glow h-8 w-auto dark:hidden" />
           <img
-            src="/luora-wordmark.svg"
-            alt="Luora"
-            width={294}
-            height={103}
-            className="h-5 w-auto dark:hidden"
+            src="/la-dalle-mark-light.svg"
+            alt=""
+            width={64}
+            height={64}
+            className="mark-glow hidden h-8 w-auto dark:block"
           />
           <img
-            src="/luora-wordmark-light.svg"
-            alt="Luora"
+            src="/la-dalle-wordmark.svg"
+            alt="La Dalle"
             width={294}
             height={103}
-            className="hidden h-5 w-auto dark:block"
+            className="h-6 w-auto dark:hidden"
+          />
+          <img
+            src="/la-dalle-wordmark-light.svg"
+            alt="La Dalle"
+            width={294}
+            height={103}
+            className="hidden h-6 w-auto dark:block"
           />
         </a>
 
         <nav className="hidden items-center gap-6 text-sm font-medium text-[var(--ink)] sm:flex">
           {links.map((link) => (
-            <a key={link.href} href={link.href} className="transition hover:text-[var(--color-orange)]">
+            <a key={link.href} href={link.href} className="transition hover:text-[var(--color-orange-text)]">
               {link.label}
             </a>
           ))}
@@ -48,7 +55,7 @@ export default function Header() {
           <ThemeToggle />
           <MagneticButton
             href="/#contact"
-            className="cta-glow hidden rounded-md bg-[var(--color-orange-button)] px-4 py-2 text-sm font-medium text-white hover:opacity-90 sm:inline-block"
+            className="cta-glow hidden rounded-sm bg-[var(--color-orange-button)] px-4 py-2 text-sm font-medium text-white hover:opacity-90 sm:inline-block"
           >
             Nous contacter
           </MagneticButton>
@@ -91,7 +98,7 @@ export default function Header() {
           <a
             href="/#contact"
             onClick={() => setOpen(false)}
-            className="cta-glow mt-1 rounded-md bg-[var(--color-orange-button)] px-4 py-2 text-center text-sm font-medium text-white transition hover:opacity-90"
+            className="cta-glow mt-1 rounded-sm bg-[var(--color-orange-button)] px-4 py-2 text-center text-sm font-medium text-white transition hover:opacity-90"
           >
             Nous contacter
           </a>
