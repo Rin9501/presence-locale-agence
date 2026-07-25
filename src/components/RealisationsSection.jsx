@@ -52,7 +52,12 @@ function SiteRealisationCard({ item }) {
         )}
         <h3 className="mt-1 text-lg text-[var(--ink)]">{item.title}</h3>
         <p className="mt-1 text-sm text-[var(--ink-muted)]">{item.description}</p>
-        <span className="mt-3 inline-block text-sm font-medium text-[var(--color-orange-text)]">
+        {item.stat && (
+          <p className="chamfer mt-3 inline-block border border-[var(--border-soft)] bg-[var(--surface)] px-2.5 py-1 [font-family:var(--font-utility)] text-xs font-semibold text-[var(--ink)]">
+            {item.stat}
+          </p>
+        )}
+        <span className="mt-3 block text-sm font-medium text-[var(--color-orange-text)]">
           Voir le site en ligne →
         </span>
       </div>

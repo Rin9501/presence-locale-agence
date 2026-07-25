@@ -214,6 +214,7 @@ const site = {
       description: 'Site vitrine développé par Mehdi (La Dalle) pour l’EURL Chape Liquide Occitanie, en ligne.',
       image: 'chape-liquide-occitanie/screenshot.jpg',
       url: 'https://chapeliquide-occitanie.fr',
+      stat: '+1 000 vues Google en moins de 2 mois',
     },
     {
       type: 'site',
@@ -230,6 +231,7 @@ const site = {
       description: 'Site vitrine avec réservation en ligne, pour l’institut de beauté VH Beauty Studio.',
       image: 'vh-beauty-studio/screenshot.jpg',
       url: 'https://vh-beauty-studio.fr',
+      stat: '158 avis 5★ (Planity)',
     },
   ],
 }
