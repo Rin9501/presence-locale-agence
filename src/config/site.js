@@ -214,6 +214,22 @@ const site = {
       image: 'chape-liquide-occitanie/screenshot.jpg',
       url: 'https://chapeliquide-occitanie.fr',
     },
+    {
+      type: 'site',
+      title: 'Mirepoix Toiture',
+      badge: 'Site + galerie chantiers — Artisan BTP',
+      description: 'Site vitrine avec galerie de chantiers avant/après et optimisation de la fiche Google Business, pour la charpente-couverture-maçonnerie.',
+      image: 'mirepoix-toiture/screenshot.jpg',
+      url: 'https://mirepoix-toiture.fr',
+    },
+    {
+      type: 'site',
+      title: 'VH Beauty Studio',
+      badge: 'Site vitrine — Institut de beauté',
+      description: 'Site vitrine avec réservation en ligne, pour l’institut de beauté VH Beauty Studio.',
+      image: 'vh-beauty-studio/screenshot.jpg',
+      url: 'https://vh-beauty-studio.fr',
+    },
   ],
 }
 
