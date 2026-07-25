@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://presence-locale-agence.netlify.app/sitemap.xml
+Sitemap: https://ladalle-agence.fr/sitemap.xml
