@@ -23,6 +23,15 @@ export default function ContactForm() {
     }
 
     setStatus('submitting')
+
+    // Notification email au propriétaire du site, gérée par Netlify Forms (aucun serveur à maintenir).
+    // Best-effort : une erreur ici ne doit jamais empêcher l'enregistrement Supabase ci-dessous.
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams({ 'form-name': 'contact', name: form.name, contact: form.contact, message: form.message }).toString(),
+    }).catch(() => {})
+
     // Import différé : le SDK Supabase ne pèse sur le chargement que si le formulaire est utilisé
     const { supabase } = await import('../lib/supabaseClient')
     const { error } = await supabase.from('contacts').insert({
