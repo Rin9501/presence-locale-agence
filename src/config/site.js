@@ -11,7 +11,7 @@ const site = {
     contactZone: 'Basé à Mirepoix, interventions dans toute l’Ariège',
     phone: '06 33 24 69 70',
     email: 'presencelocale.contact@gmail.com',
-    gmbUrl: 'https://share.google/pNxdyBOAaUnvbGklo',
+    gmbUrl: 'https://share.google/80OCTHfwtmZeeYobB', // fiche confirmée par Mehdi le 26/07/2026
     instagram: 'https://www.instagram.com/ladalle_agence/',
   },
 
