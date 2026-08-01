@@ -1,69 +1,65 @@
-import { useEffect, useState } from 'react'
+import gmbApresJpg from '../assets/proof/gmb-chape-liquide-apres.jpg'
+import gmbApresWebp from '../assets/proof/gmb-chape-liquide-apres.webp'
 import site from '../config/site'
-import BrowserFrame from './BrowserFrame'
 import MagneticButton from './MagneticButton'
-import MockupPersonalizer from './MockupPersonalizer'
 
 export default function Hero() {
-  const [mounted, setMounted] = useState(false)
-  const { testimonial } = site
-
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  const { hero } = site
 
   return (
-    <section id="accueil" className="px-6 py-20 sm:py-28">
-      <div className="mx-auto flex max-w-5xl flex-col items-center gap-12 md:flex-row md:items-center">
-        <div className="w-full text-left md:w-1/2">
-          <h1 className="text-4xl leading-tight text-[var(--ink)] sm:text-5xl">
-            {site.business.tagline}
+    <section id="accueil" className="bg-[var(--color-navy)] px-6 py-20 text-white sm:py-28">
+      <div className="mx-auto grid max-w-5xl items-center gap-14 md:grid-cols-2">
+        <div>
+          <h1 className="text-4xl leading-[1.05] text-white sm:text-5xl">
+            Introuvable sur
+            <br />
+            Google. <span className="text-[var(--color-orange)]">Trouvé</span>
+            <br />
+            en 60 jours.
           </h1>
-          <p className="mt-4 text-base text-[var(--ink-body)]">{site.business.subtitle}</p>
-          <div className="mt-8 flex flex-wrap items-center gap-3">
+          <p className="mt-5 max-w-md text-base text-white/70">{site.business.subtitle}</p>
+          <div className="mt-8 flex flex-wrap items-center gap-4">
             <MagneticButton
               href="#contact"
               className="cta-glow inline-block rounded-sm bg-[var(--color-orange-button)] px-6 py-3 font-medium text-white hover:opacity-90"
             >
-              Je demande mon devis
+              {hero.ctaAudit}
             </MagneticButton>
-            <MagneticButton
-              href={`tel:${site.business.phone.replace(/\s/g, '')}`}
-              className="cta-glow inline-block rounded-sm border border-[var(--border-soft)] px-6 py-3 font-medium text-[var(--ink)] transition hover:border-[var(--color-orange)]"
-            >
-              Appeler maintenant
-            </MagneticButton>
+            <span className="[font-family:var(--font-utility)] rounded-sm border border-white/25 px-3 py-1.5 text-[11px] uppercase tracking-wide text-white/60">
+              {hero.repere}
+            </span>
           </div>
         </div>
 
-        <div
-          className={`w-full md:w-1/2 transition-all duration-700 ease-out motion-reduce:transition-none motion-reduce:transform-none ${
-            mounted ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
-          }`}
-        >
-          <BrowserFrame url="chapeliquide-occitanie.fr" imageAlt="Aperçu du site Chape Liquide Occitanie" />
-
-          <MockupPersonalizer />
-
-          {testimonial && (
-            <figure className="chamfer mt-4 border border-[var(--border-soft)] bg-[var(--surface-card)] p-4">
-              <blockquote className="text-sm italic text-[var(--ink-body)]">« {testimonial.quote} »</blockquote>
-              <figcaption className="mt-2 text-xs text-[var(--ink-soft)]">
-                <span className="font-medium text-[var(--ink)]">{testimonial.author}</span>
-                {' — '}
-                {testimonial.role}
-                {' · '}
-                <a
-                  href={site.business.gmbUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="underline transition hover:text-[var(--color-orange-text)]"
-                >
-                  {testimonial.source}
-                </a>
-              </figcaption>
-            </figure>
-          )}
+        <div className="flex flex-col gap-3.5">
+          <div className="chamfer flex flex-col gap-2.5 border border-white/15 p-4">
+            <span className="[font-family:var(--font-utility)] text-[10px] uppercase tracking-wide text-white/50">
+              {hero.avantApres.avantLabel}
+            </span>
+            <div className="stripe-diag-dark flex h-[90px] items-center justify-center px-4 text-center">
+              <span className="[font-family:var(--font-utility)] text-[10px] uppercase tracking-wide text-white/60">
+                {hero.avantApres.avantTexte}
+              </span>
+            </div>
+          </div>
+          <div className="chamfer flex flex-col gap-2.5 border border-[var(--color-orange)] bg-black/20 p-4">
+            <span className="[font-family:var(--font-utility)] text-[10px] uppercase tracking-wide text-[var(--color-orange)]">
+              {hero.avantApres.apresLabel}
+            </span>
+            {/* Vraie capture de la fiche Google Chape Liquide Occitanie (fournie par Mehdi le 02/08/2026) —
+                seule la vignette "après" a un équivalent réel disponible, "avant" reste illustratif. */}
+            <picture>
+              <source srcSet={gmbApresWebp} type="image/webp" />
+              <img
+                src={gmbApresJpg}
+                alt="Fiche Google Chape Liquide Occitanie : 5,0 étoiles, services et coordonnées à jour"
+                width={665}
+                height={100}
+                loading="lazy"
+                className="w-full rounded-[2px]"
+              />
+            </picture>
+          </div>
         </div>
       </div>
     </section>

@@ -1,16 +1,17 @@
-# Luora
+# La Dalle
 
-> La lumière sur votre savoir-faire — création de sites internet et optimisation de fiches Google Business pour les artisans et commerces d'Ariège.
+> Introuvable sur Google, trouvé en 60 jours — création de sites internet et optimisation de fiches Google Business pour les artisans et commerces d'Ariège.
 
 ## Qui
 
-Luora est un duo basé à Mirepoix (Ariège, France), fondé par un ancien carreleur. L'un des deux fondateurs a exercé le métier d'artisan avant de développer des sites internet — l'idée de départ : les artisans et commerçants font du bon travail mais restent souvent invisibles sur Google, alors que c'est là que leurs futurs clients les cherchent en premier.
+La Dalle est porté par Mehdi, basé à Mirepoix (Ariège, France), carreleur de métier et développeur par passion. L'idée de départ : les artisans et commerçants font du bon travail mais restent souvent invisibles sur Google, alors que c'est là que leurs futurs clients les cherchent en premier.
 
 ## Quoi
 
 - Sites internet vitrines sur-mesure (React/Vite, sans CMS générique), rapides et pensés pour le mobile.
 - Optimisation de fiches Google Business Profile.
 - Pour artisans du BTP : galerie de chantiers avant/après en plus du site.
+- Bilan gratuit à 60 jours après livraison : ce que le site et la fiche Google ont réellement généré.
 
 ## Où
 
@@ -18,22 +19,23 @@ Zone d'intervention : Mirepoix, Pamiers, Lavelanet et les alentours, en Ariège 
 
 ## Tarifs
 
-- Fiche Google Business seule (professions de santé réglementées) : 80–150 €, suivi mensuel optionnel 15–20 €/mois.
-- Site vitrine + fiche Google (commerces, beauté, restauration) : 300–400 € en tarif de lancement.
-- Site + galerie chantiers + fiche Google (artisans du BTP) : 400–600 € en tarif de lancement.
-- Aucun abonnement mensuel obligatoire : un forfait annuel unique de 240 € couvre l'hébergement, le nom de domaine et 2 petites modifications par mois.
+- Fiche Google Business seule (professions de santé réglementées) : sur devis, suivi mensuel optionnel 15–20 €/mois.
+- Site vitrine + fiche Google (commerces, beauté, restauration) : à partir de 500–700 €.
+- Site + galerie chantiers + fiche Google (artisans du BTP) : à partir de 600–800 €.
+- Aucun abonnement mensuel obligatoire de type CMS : un forfait annuel unique de 240 € (inclus, non optionnel dès qu'il y a un site) couvre l'hébergement, le nom de domaine et 2 petites modifications par mois.
 
-## Ce qui différencie Luora
+## Ce qui différencie La Dalle
 
-- Zéro engagement, zéro abonnement forcé — contrairement aux plateformes comme Solocal/PagesJaunes ou aux CMS génériques (WordPress, Wix).
+- Preuve, pas promesse : résultats chiffrés (ex. 2 chantiers signés en 60 jours pour Chape Liquide Occitanie).
+- Suivi dans la durée — bilan gratuit à 60 jours puis maintenance incluse, un interlocuteur unique qui ne disparaît pas une fois payé.
 - Vécu artisan réel du fondateur, pas seulement un discours d'agence.
-- Un seul interlocuteur, du premier échange à la maintenance.
+- Zéro engagement, zéro abonnement forcé — contrairement aux plateformes comme Solocal/PagesJaunes ou aux CMS génériques (WordPress, Wix).
 
 ## Pages
 
-- [Accueil](https://presence-locale-agence.netlify.app/): Présentation de l'offre, tarifs, réalisations, questions fréquentes et formulaire de contact.
-- [Mentions légales](https://presence-locale-agence.netlify.app/mentions-legales): Éditeur du site, hébergement, données personnelles.
-- [Fiche Google Business](https://share.google/pNxdyBOAaUnvbGklo): Avis clients et informations pratiques.
+- [Accueil](https://ladalle-agence.fr/): Présentation, preuve sociale, suivi post-livraison, fondateur et formulaire d'audit gratuit.
+- [Mentions légales](https://ladalle-agence.fr/mentions-legales): Éditeur du site, hébergement, données personnelles.
+- [Fiche Google Business](https://share.google/80OCTHfwtmZeeYobB): Avis clients et informations pratiques.
 
 ## Contact
 

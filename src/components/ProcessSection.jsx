@@ -13,7 +13,7 @@ export default function ProcessSection() {
             <Reveal
               key={step.titre}
               delay={index * 100}
-              className="chamfer relative border border-[var(--border-soft)] bg-[var(--surface-card)] p-6"
+              className="chamfer grout-glow relative border border-[var(--border-soft)] bg-[var(--surface-card)] p-6"
             >
               <span className="[font-family:var(--font-utility)] text-2xl font-bold text-[var(--color-orange-text)]">
                 {String(index + 1).padStart(2, '0')}

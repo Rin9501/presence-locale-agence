@@ -1,6 +1,9 @@
 import { useId, useState } from 'react'
 
 // Composant isolé, réutilisable tel quel dans template/ pour les clients BTP (galerie chantiers avant/après)
+// Pas de tilt 3D ici (contrairement à SiteRealisationCard) : c'est un outil de comparaison
+// avant/après piloté à la souris/au doigt, un tilt qui suit le pointeur pendant le drag du
+// curseur rendrait la comparaison bancale — décision prise en écartant le brief sur ce point précis.
 export default function GalerieSlider({ before, after, altBefore = 'Avant', altAfter = 'Après', title }) {
   const [position, setPosition] = useState(50)
   const sliderId = useId()

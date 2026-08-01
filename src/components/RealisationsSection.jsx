@@ -1,4 +1,5 @@
 import site from '../config/site'
+import useTilt from '../hooks/useTilt'
 import GalerieSlider from './GalerieSlider'
 import Reveal from './Reveal'
 
@@ -17,15 +18,17 @@ function resolveScreenshot(relativePath) {
   }
 }
 
-function SiteRealisationCard({ item }) {
+function PreuveCard({ item }) {
   const { jpg, webp } = resolveScreenshot(item.image)
+  const tiltRef = useTilt(4)
 
   return (
     <a
+      ref={tiltRef}
       href={item.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="chamfer flex flex-col overflow-hidden border border-[var(--border-soft)] bg-[var(--surface-card)] transition hover:-translate-y-0.5 hover:shadow-md"
+      className="chamfer flex flex-col overflow-hidden border border-white/10 bg-white/5 transition duration-200 ease-out will-change-transform hover:-translate-y-0.5 hover:border-white/20"
     >
       {jpg ? (
         <picture>
@@ -40,24 +43,24 @@ function SiteRealisationCard({ item }) {
           />
         </picture>
       ) : (
-        <div className="flex aspect-[4/3] w-full items-center justify-center border-b border-dashed border-[var(--border-soft)] bg-[var(--surface)] text-sm font-medium text-[var(--ink-soft)]">
+        <div className="stripe-diag-dark flex aspect-[4/3] w-full items-center justify-center text-sm font-medium text-white/50">
           Capture à venir
         </div>
       )}
-      <div className="p-4">
+      <div className="flex flex-1 flex-col p-5">
         {item.badge && (
-          <span className="[font-family:var(--font-utility)] text-xs font-semibold uppercase tracking-wide text-[var(--color-orange-text)]">
+          <span className="[font-family:var(--font-utility)] text-[10px] font-semibold uppercase tracking-wide text-white/45">
             {item.badge}
           </span>
         )}
-        <h3 className="mt-1 text-lg text-[var(--ink)]">{item.title}</h3>
-        <p className="mt-1 text-sm text-[var(--ink-muted)]">{item.description}</p>
+        <h3 className="mt-1.5 text-lg text-white">{item.title}</h3>
+        <p className="mt-1.5 flex-1 text-sm text-white/60">{item.description}</p>
         {item.stat && (
-          <p className="chamfer mt-3 inline-block border border-[var(--border-soft)] bg-[var(--surface)] px-2.5 py-1 [font-family:var(--font-utility)] text-xs font-semibold text-[var(--ink)]">
+          <p className="mt-4 border-t border-white/15 pt-3 text-[15px] font-extrabold text-[var(--color-orange)]">
             {item.stat}
           </p>
         )}
-        <span className="mt-3 block text-sm font-medium text-[var(--color-orange-text)]">
+        <span className="mt-3 block text-sm font-medium text-[var(--color-orange)]">
           Voir le site en ligne →
         </span>
       </div>
@@ -66,28 +69,31 @@ function SiteRealisationCard({ item }) {
 }
 
 export default function RealisationsSection() {
-  const { realisations } = site
+  const { realisations, preuveSociale } = site
 
   return (
-    <section id="realisations" className="bg-[var(--surface-card)] px-6 py-16">
-      <Reveal>
-        <h2 className="text-center text-2xl text-[var(--ink)]">Réalisations</h2>
+    <section id="realisations" className="bg-[var(--color-navy)] px-6 py-16">
+      <Reveal className="mx-auto max-w-5xl">
+        <p className="[font-family:var(--font-utility)] text-xs font-semibold uppercase tracking-wide text-[var(--color-orange)]">
+          {preuveSociale.kicker}
+        </p>
+        <h2 className="mt-3 max-w-lg text-3xl text-white sm:text-4xl">{preuveSociale.titre}</h2>
 
         {realisations.length === 0 ? (
-          <div className="chamfer mx-auto mt-10 max-w-xl border border-dashed border-[var(--border-soft)] bg-[var(--surface)] px-6 py-10 text-center">
-            <p className="font-medium text-[var(--ink)]">Projets en cours de livraison</p>
-            <p className="mt-2 text-sm text-[var(--ink-muted)]">
+          <div className="chamfer mx-auto mt-10 max-w-xl border border-dashed border-white/20 px-6 py-10 text-center">
+            <p className="font-medium text-white">Projets en cours de livraison</p>
+            <p className="mt-2 text-sm text-white/60">
               Les premières réalisations clients seront visibles ici dès qu'elles seront livrées.
             </p>
           </div>
         ) : (
-          <div className="mx-auto mt-10 grid max-w-5xl gap-8 sm:grid-cols-2">
+          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {realisations.map((item, index) => (
               <Reveal key={item.title} delay={index * 100}>
                 {item.type === 'before-after' ? (
                   <GalerieSlider before={item.before} after={item.after} title={item.title} />
                 ) : (
-                  <SiteRealisationCard item={item} />
+                  <PreuveCard item={item} />
                 )}
               </Reveal>
             ))}

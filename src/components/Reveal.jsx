@@ -10,6 +10,7 @@ export default function Reveal({ children, className = '', delay = 0 }) {
   return (
     <div
       ref={ref}
+      data-visible={visible}
       style={delay ? { transitionDelay: `${delay}ms` } : undefined}
       className={`${className} transition-all duration-700 ease-out motion-reduce:transition-none motion-reduce:transform-none ${
         visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'

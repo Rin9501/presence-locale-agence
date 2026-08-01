@@ -131,6 +131,106 @@ h3 {
   }
 }
 
+/* Hero "fissure → battants → logo" — cf. CrackDoorsReveal.jsx + useCrackReveal.js. Piloté par
+   le scroll (pas par un minuteur) : useCrackReveal écrit --door-progress directement sur le
+   conteneur à chaque frame de scroll, ces règles ne font que traduire cette valeur en visuel. */
+.crack-door {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 50%;
+  transform: translateX(calc(var(--door-progress, 0) * var(--door-dir) * 55vw));
+}
+.crack-door--left {
+  left: 0;
+  --door-dir: -1;
+}
+.crack-door--right {
+  right: 0;
+  --door-dir: 1;
+}
+
+.crack-halo {
+  background: radial-gradient(circle, rgb(255 122 69 / 0.9) 0%, rgb(230 74 25 / 0.35) 35%, transparent 70%);
+  opacity: var(--door-progress, 0);
+}
+
+.crack-seam {
+  opacity: calc(1 - var(--door-progress, 0));
+}
+@keyframes crack-respire {
+  0%, 100% { opacity: 0.55; filter: drop-shadow(0 0 6px rgb(255 122 69 / 0.4)); }
+  50% { opacity: 1; filter: drop-shadow(0 0 26px rgb(255 122 69 / 0.9)); }
+}
+@media (prefers-reduced-motion: no-preference) {
+  .crack-seam {
+    animation: crack-respire 4s ease-in-out infinite;
+  }
+}
+
+.crack-logo {
+  /* Opacité + transform pilotés en JS (useCrackReveal) une fois le scroll démarré : le voyage
+     FLIP vers le mark du header dépend de deux rects DOM distincts, pas exprimable en CSS pur. */
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+/* Ripple "impact carrelage" au clic des CTA — cf. useRipple.js, branché dans MagneticButton */
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes ripple-impact {
+    from { transform: scale(0); opacity: 0.55; }
+    to { transform: scale(2.6); opacity: 0; }
+  }
+  .ripple-impact {
+    animation: ripple-impact 550ms ease-out forwards;
+  }
+}
+
+/* Jointoiement lumineux — sweep unique au moment où une étape du Process entre dans le
+   viewport (data-visible posé par useReveal). Scopé via la classe grout-glow, pas globalisé
+   à tous les .chamfer pour ne pas rejouer sur les autres sections qui réutilisent Reveal. */
+.grout-glow {
+  position: relative;
+  overflow: hidden;
+}
+.grout-glow::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(120deg, transparent 0%, rgb(255 122 69 / 0.35) 50%, transparent 100%);
+  transform: translateX(-120%);
+}
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes grout-sweep {
+    to { transform: translateX(120%); }
+  }
+  .grout-glow[data-visible='true']::after {
+    animation: grout-sweep 900ms ease-out 1 forwards;
+  }
+}
+
+/* Curseur = source de lumière (cf. useCursorLight.js + CursorLight.jsx) — 2 couches fixes,
+   transform/CSS vars uniquement, jamais au-dessus du contenu. */
+.cursor-light-glow {
+  background: radial-gradient(circle at var(--cursor-x, 50%) var(--cursor-y, 50%), rgb(255 122 69 / 0.08), transparent 40%);
+}
+.cursor-light-parallax {
+  opacity: 0.04;
+  transform: translate(calc((var(--cursor-x, 50%) - 50%) * -0.2), calc((var(--cursor-y, 50%) - 50%) * -0.2));
+  transition: transform 0.2s ease-out;
+}
+
+/* Vignette avant/après du Hero (direction 1b) — même principe que .bg-concrete-texture (motif
+   décoratif, CSS pur, aucune image) mais en rayures diagonales pour signifier "aperçu à venir"
+   plutôt que "matière brute". Deux variantes clair/sombre pour les deux cartes avant/après. */
+.stripe-diag {
+  background-image: repeating-linear-gradient(115deg, rgb(16 14 11 / 0.07), rgb(16 14 11 / 0.07) 7px, transparent 7px, transparent 14px);
+}
+.stripe-diag-dark {
+  background-image: repeating-linear-gradient(115deg, rgb(237 232 220 / 0.08), rgb(237 232 220 / 0.08) 7px, transparent 7px, transparent 14px);
+}
+
 /* Accordéon FAQ — transition de hauteur cohérente avec les autres transitions du site */
 .faq-panel {
   display: grid;

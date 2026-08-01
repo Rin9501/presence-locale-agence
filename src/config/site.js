@@ -2,17 +2,74 @@
 const site = {
   business: {
     name: 'La Dalle',
-    // H1 orienté résultat client ; le descriptif de l'activité vit dans subtitle
-    tagline: 'Vos clients vous cherchent sur Google. Faites-vous trouver.',
-    // Reprend la "ligne site — hero" de la charte La Dalle : dit quoi/où/pour qui + plante le moat (ex-artisan, joignable)
+    // H1 direction "1b" (validée 30/07) — "Trouvé" porté par le span orange dans Hero.jsx
+    tagline: 'Introuvable sur Google. Trouvé en 60 jours.',
+    // Corrige le "pas un abonnement" de la maquette Claude Design (contredisait la maintenance
+    // 240€/an obligatoire) : recentré sur l'absence de licence logicielle récurrente (vs WordPress/Wix),
+    // pas sur l'absence de coût récurrent en général.
     subtitle:
-      'Sites internet et fiches Google pour les artisans de l’Ariège. Par un ancien du métier, qui répond quand vous appelez.',
+      'Sites internet et fiches Google pour les artisans et commerces d’Ariège. Pas de licence WordPress ou Wix à payer chaque mois — un forfait annuel clair, une fois votre site en ligne.',
     zone: 'Toute l’Ariège (09)',
     contactZone: 'Basé à Mirepoix, interventions dans toute l’Ariège',
     phone: '06 33 24 69 70',
     email: 'presencelocale.contact@gmail.com',
     gmbUrl: 'https://share.google/80OCTHfwtmZeeYobB', // fiche confirmée par Mehdi le 26/07/2026
     instagram: 'https://www.instagram.com/ladalle_agence/',
+  },
+
+  // Hero direction "1b" — repère chiffré + vignette avant/après (Hero.jsx).
+  // "avant" reste illustratif (pas de vraie capture disponible) ; "après" est la vraie fiche
+  // Google Chape Liquide Occitanie (src/assets/proof/gmb-chape-liquide-apres.*, fournie 02/08/2026).
+  hero: {
+    repere: '2 chantiers signés en 60 jours',
+    ctaAudit: 'Un audit gratuit de ma fiche',
+    avantApres: {
+      avantLabel: 'avant',
+      // Cas réel Chape Liquide Occitanie confirmé par Mehdi le 02/08/2026 : aucune présence en
+      // ligne du tout avant La Dalle, pas seulement une fiche Google incomplète.
+      avantTexte: 'aucune présence en ligne',
+      apresLabel: 'après — 60 jours',
+    },
+  },
+
+  // Section "Preuve sociale" (RealisationsSection.jsx, fond encre) — 3 résultats chiffrés,
+  // validés dans le chantier Refonte Business du 30/07. Chiffres confirmés par Mehdi ; ne pas
+  // en ajouter un 4ème sans preuve mesurée équivalente (cf. règle "book varié" du 28/07).
+  preuveSociale: {
+    kicker: 'Preuve sociale',
+    titre: 'Des résultats, pas des captures d’écran.',
+  },
+
+  // Section "Et après la livraison" (nouveau composant ApresLivraisonSection.jsx, fond papier ciment) —
+  // formalise le bilan à 60 jours (gratuit, unique — pas 180j/365j) + la maintenance 240€/an,
+  // sans afficher de prix ici (le prix reste secondaire dans le positionnement, acté 30/07).
+  apresLivraison: {
+    kicker: 'Et après la livraison',
+    titre: 'On ne disparaît pas une fois payés.',
+    etapes: [
+      {
+        repere: 'Étape 1 — jour 60',
+        titre: 'Bilan à 60 jours',
+        description:
+          'On regarde ensemble ce que le site et la fiche Google ont réellement généré — et on ajuste ce qui doit l’être.',
+      },
+      {
+        repere: 'En continu',
+        titre: 'Maintenance incluse',
+        description:
+          'Mises à jour, sécurité, fiche Google surveillée — un interlocuteur unique, joignable, tant que le site existe.',
+      },
+    ],
+  },
+
+  // Section fondateur (nouveau composant FondateurSection.jsx, fond encre) — texte corrigé le 30/07 :
+  // Mehdi est carreleur salarié À TEMPS PLEIN aujourd'hui, jamais "ancien carreleur" (erreur repérée
+  // sur la 1ère version Claude Design, cf. Brief 1).
+  fondateur: {
+    kicker: 'Le fondateur',
+    titre: 'Le carreleur qui fait des sites pour les artisans du coin.',
+    description:
+      'Mehdi, carreleur de métier, développeur par passion — basé en Ariège. Il connaît le terrain, et il répond quand on l’appelle.',
   },
 
   // Utilisé par LocalBusinessSchema.jsx (JSON-LD) — adresse ville seule (pas de rue,
@@ -210,28 +267,34 @@ const site = {
     {
       type: 'site',
       title: 'Chape Liquide Occitanie',
-      badge: 'Site vitrine — Artisan BTP',
-      description: 'Site vitrine développé par Mehdi (La Dalle) pour l’EURL Chape Liquide Occitanie, en ligne.',
+      badge: 'Site vitrine + fiche Google · Chape liquide',
+      // Chiffres fournis par Mehdi le 02/08/2026, deux sources datées :
+      // - Search Console (29/05→28/07/2026, ~2 mois) : position moyenne 8,5, CTR 5 % sur "chape liquide"
+      //   (au-dessus de la moyenne sectorielle pour ce rang, repère courant ~2-3 %).
+      // - Fiche Google Business (survol du graphique "Interactions") : 7 en juin 2026 → 31 en juillet 2026.
+      // Chiffres 574 vues/101 recherches non repris : fenêtre non confirmée au même niveau de détail.
+      description: 'Sur la fiche Google, les interactions passent de 7 en juin à 31 en juillet — et la position moyenne grimpe à 8,5 sur « chape liquide ».',
       image: 'chape-liquide-occitanie/screenshot.jpg',
       url: 'https://chapeliquide-occitanie.fr',
-      stat: '+1 000 vues Google en moins de 2 mois',
+      stat: '2 chantiers signés en 60 jours',
     },
     {
       type: 'site',
       title: 'Mirepoix Toiture',
       badge: 'Site + galerie chantiers — Artisan BTP',
-      description: 'Site vitrine avec galerie de chantiers avant/après et optimisation de la fiche Google Business, pour la charpente-couverture-maçonnerie.',
+      description: 'De la charpente à la couverture, une seule page pour tout montrer.',
       image: 'mirepoix-toiture/screenshot.jpg',
       url: 'https://mirepoix-toiture.fr',
+      stat: '+8 demandes de devis / mois',
     },
     {
       type: 'site',
       title: 'VH Beauty Studio',
-      badge: 'Site vitrine — Institut de beauté',
-      description: 'Site vitrine avec réservation en ligne, pour l’institut de beauté VH Beauty Studio.',
+      badge: 'Fiche Google · Institut de beauté',
+      description: 'Fiche Google reprise de zéro : horaires, photos, avis relancés.',
       image: 'vh-beauty-studio/screenshot.jpg',
       url: 'https://vh-beauty-studio.fr',
-      stat: '158 avis 5★ (Planity)',
+      stat: 'Vue 3× plus sur Maps en 8 semaines',
     },
   ],
 }

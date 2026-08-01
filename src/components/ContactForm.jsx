@@ -2,7 +2,7 @@ import { useState } from 'react'
 import site from '../config/site'
 import Reveal from './Reveal'
 
-const initialForm = { name: '', contact: '', message: '', website: '' }
+const initialForm = { name: '', company: '', contact: '', message: '', website: '' }
 
 export default function ContactForm() {
   const [form, setForm] = useState(initialForm)
@@ -29,16 +29,24 @@ export default function ContactForm() {
     fetch('/', {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: new URLSearchParams({ 'form-name': 'contact', name: form.name, contact: form.contact, message: form.message }).toString(),
+      body: new URLSearchParams({
+        'form-name': 'contact',
+        name: form.name,
+        company: form.company,
+        contact: form.contact,
+        message: form.message,
+      }).toString(),
     }).catch(() => {})
 
     // Import différé : le SDK Supabase ne pèse sur le chargement que si le formulaire est utilisé
     const { supabase } = await import('../lib/supabaseClient')
     const { error } = await supabase.from('contacts').insert({
       name: form.name,
+      company: form.company,
       contact: form.contact,
       message: form.message,
       site: 'agence', // table mutualisée entre le site agence et les sites clients
+      source: 'audit', // distingue les demandes d'audit gratuit du CTA final des contacts génériques
     })
 
     if (error) {
@@ -53,12 +61,13 @@ export default function ContactForm() {
   return (
     <section id="contact" className="px-6 py-16">
       <Reveal className="mx-auto max-w-xl">
-        <p className="text-center text-sm font-semibold uppercase tracking-wide text-[var(--color-orange-text)] [font-family:var(--font-utility)]">
-          Prêt à être trouvé sur Google ?
+        <p className="text-center [font-family:var(--font-utility)] text-xs font-semibold uppercase tracking-wide text-[var(--color-orange-text)]">
+          Un audit gratuit, sans engagement
         </p>
-        <h2 className="mt-2 text-center text-2xl text-[var(--ink)]">Contact</h2>
-        <p className="mt-2 text-center text-sm text-[var(--ink-muted)]">
-          {site.business.contactZone} — réponse rapide par téléphone ou email.
+        <h2 className="mt-2 text-center text-3xl text-[var(--ink)]">Prêt à être trouvé sur Google ?</h2>
+        <p className="mt-3 text-center text-sm text-[var(--ink-muted)]">
+          On regarde votre fiche Google et on vous dit franchement ce qui bloque — réponse sous 48h.{' '}
+          {site.business.contactZone}.
         </p>
 
         <form onSubmit={handleSubmit} className="mt-8 space-y-4">
@@ -72,6 +81,21 @@ export default function ContactForm() {
               type="text"
               required
               value={form.name}
+              onChange={handleChange}
+              className="mt-1 w-full rounded-md border border-[var(--border-soft)] bg-[var(--surface-card)] px-3 py-2 text-sm text-[var(--ink)] transition-colors focus:border-[var(--color-orange)] focus:outline-none"
+            />
+          </div>
+
+          <div>
+            <label htmlFor="company" className="block text-sm font-medium text-[var(--ink)]">
+              Entreprise
+            </label>
+            <input
+              id="company"
+              name="company"
+              type="text"
+              required
+              value={form.company}
               onChange={handleChange}
               className="mt-1 w-full rounded-md border border-[var(--border-soft)] bg-[var(--surface-card)] px-3 py-2 text-sm text-[var(--ink)] transition-colors focus:border-[var(--color-orange)] focus:outline-none"
             />
@@ -94,13 +118,12 @@ export default function ContactForm() {
 
           <div>
             <label htmlFor="message" className="block text-sm font-medium text-[var(--ink)]">
-              Message
+              Message <span className="font-normal text-[var(--ink-soft)]">(facultatif)</span>
             </label>
             <textarea
               id="message"
               name="message"
               rows={4}
-              required
               value={form.message}
               onChange={handleChange}
               className="mt-1 w-full rounded-md border border-[var(--border-soft)] bg-[var(--surface-card)] px-3 py-2 text-sm text-[var(--ink)] transition-colors focus:border-[var(--color-orange)] focus:outline-none"
@@ -124,12 +147,12 @@ export default function ContactForm() {
             disabled={status === 'submitting'}
             className="w-full rounded-sm bg-[var(--color-orange-button)] px-6 py-3 font-medium text-white transition hover:opacity-90 disabled:opacity-60"
           >
-            {status === 'submitting' ? 'Envoi...' : 'Envoyer'}
+            {status === 'submitting' ? 'Envoi...' : site.hero.ctaAudit}
           </button>
 
           {status === 'success' && (
             <p className="text-center text-sm font-medium text-green-700">
-              Message envoyé, nous revenons vers vous rapidement.
+              Demande envoyée, nous revenons vers vous sous 48h.
             </p>
           )}
           {status === 'error' && (

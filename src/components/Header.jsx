@@ -3,13 +3,10 @@ import MagneticButton from './MagneticButton'
 import ThemeToggle from './ThemeToggle'
 
 // Ancres préfixées par "/" pour fonctionner aussi depuis /mentions-legales
-// (sur la page d'accueil, "/#offres" se comporte comme "#offres", sans rechargement)
+// (sur la page d'accueil, "/#realisations" se comporte comme "#realisations", sans rechargement)
 const links = [
-  { href: '/#offres', label: 'Offres' },
-  { href: '/#stack', label: 'Stack & méthode' },
   { href: '/#realisations', label: 'Réalisations' },
-  { href: '/#faq', label: 'FAQ' },
-  { href: '/#contact', label: 'Contact' },
+  { href: '/#fondateur', label: 'À propos' },
 ]
 
 export default function Header() {
@@ -19,12 +16,20 @@ export default function Header() {
     <header className="sticky top-0 z-10 border-b border-[var(--border-soft)] bg-[var(--surface)]/95 backdrop-blur">
       <div className="flex items-center justify-between px-6 py-3">
         <a href="/#accueil" className="flex items-center gap-2.5">
-          <img src="/la-dalle-mark.svg" alt="" width={64} height={64} className="mark-glow h-8 w-auto dark:hidden" />
+          <img
+            src="/la-dalle-mark.svg"
+            alt=""
+            width={64}
+            height={64}
+            data-header-logo="light"
+            className="mark-glow h-8 w-auto dark:hidden"
+          />
           <img
             src="/la-dalle-mark-light.svg"
             alt=""
             width={64}
             height={64}
+            data-header-logo="dark"
             className="mark-glow hidden h-8 w-auto dark:block"
           />
           <img
@@ -57,7 +62,7 @@ export default function Header() {
             href="/#contact"
             className="cta-glow hidden rounded-sm bg-[var(--color-orange-button)] px-4 py-2 text-sm font-medium text-white hover:opacity-90 sm:inline-block"
           >
-            Nous contacter
+            Un audit gratuit
           </MagneticButton>
           <button
             type="button"
@@ -100,7 +105,7 @@ export default function Header() {
             onClick={() => setOpen(false)}
             className="cta-glow mt-1 rounded-sm bg-[var(--color-orange-button)] px-4 py-2 text-center text-sm font-medium text-white transition hover:opacity-90"
           >
-            Nous contacter
+            Un audit gratuit
           </a>
         </div>
       </nav>
