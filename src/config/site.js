@@ -21,7 +21,11 @@ const site = {
   // "avant" reste illustratif (pas de vraie capture disponible) ; "après" est la vraie fiche
   // Google Chape Liquide Occitanie (src/assets/proof/gmb-chape-liquide-apres.*, fournie 02/08/2026).
   hero: {
-    repere: '2 chantiers signés en 60 jours',
+    // Remplace "2 chantiers signés en 60 jours" (03/08/2026, sur demande de Mehdi) : chiffre basé
+    // sur les interactions Google Business datées de Chape Liquide Occitanie (7 en juin → 31 en
+    // juillet 2026, cf. commentaire sur la carte Preuve sociale ci-dessous) plutôt qu'une conversion
+    // ponctuelle non reconductible tel quel.
+    repere: 'Interactions fiche Google ×4 en 1 mois',
     ctaAudit: 'Un audit gratuit de ma fiche',
     avantApres: {
       avantLabel: 'avant',
@@ -271,12 +275,14 @@ const site = {
       // Chiffres fournis par Mehdi le 02/08/2026, deux sources datées :
       // - Search Console (29/05→28/07/2026, ~2 mois) : position moyenne 8,5, CTR 5 % sur "chape liquide"
       //   (au-dessus de la moyenne sectorielle pour ce rang, repère courant ~2-3 %).
-      // - Fiche Google Business (survol du graphique "Interactions") : 7 en juin 2026 → 31 en juillet 2026.
+      // - Fiche Google Business (survol du graphique "Interactions") : 7 en juin 2026 → 31 en juillet 2026
+      //   — repris dans "stat" ci-dessous (remplace "2 chantiers signés en 60 jours", sur demande du
+      //   03/08/2026 : preuve reconductible plutôt que conversion ponctuelle).
       // Chiffres 574 vues/101 recherches non repris : fenêtre non confirmée au même niveau de détail.
-      description: 'Sur la fiche Google, les interactions passent de 7 en juin à 31 en juillet — et la position moyenne grimpe à 8,5 sur « chape liquide ».',
+      description: 'Position moyenne 8,5 sur « chape liquide », avec un CTR de 5 % — au-dessus de la moyenne du secteur à ce rang.',
       image: 'chape-liquide-occitanie/screenshot.jpg',
       url: 'https://chapeliquide-occitanie.fr',
-      stat: '2 chantiers signés en 60 jours',
+      stat: 'Interactions fiche Google ×4 en 1 mois',
     },
     {
       type: 'site',
