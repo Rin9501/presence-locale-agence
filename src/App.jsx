@@ -1,5 +1,6 @@
 import ApresLivraisonSection from './components/ApresLivraisonSection'
 import ContactForm from './components/ContactForm'
+import CookieConsent from './components/CookieConsent'
 import CursorLight from './components/CursorLight'
 import FondateurSection from './components/FondateurSection'
 import Footer from './components/Footer'
@@ -32,6 +33,7 @@ function App() {
         <Header />
         <Page />
         <Footer />
+        <CookieConsent />
       </div>
     )
   }
@@ -50,6 +52,7 @@ function App() {
       </main>
       <ContactForm />
       <Footer />
+      <CookieConsent />
     </div>
   )
 }

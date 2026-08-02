@@ -1,7 +1,9 @@
 import site from '../config/site'
+import useCookieConsent from '../hooks/useCookieConsent'
 
 export default function MentionsLegales() {
   const legal = site.legal
+  const { consent, resetConsent } = useCookieConsent()
 
   return (
     <main className="mx-auto max-w-3xl flex-1 px-6 py-16 sm:py-20">
@@ -61,6 +63,22 @@ export default function MentionsLegales() {
               {site.business.email}
             </a>
             .
+          </p>
+        </section>
+
+        <section id="cookies">
+          <h2 className="text-xl font-semibold text-[var(--ink)]">Cookies et mesure d’audience</h2>
+          <p className="mt-3">
+            Ce site utilise Google Analytics pour mesurer sa fréquentation (pages visitées, provenance), uniquement
+            si vous l’acceptez via le bandeau proposé lors de votre première visite. Sans votre accord, aucun script
+            de mesure n’est chargé et aucun cookie n’est déposé. Cette mesure sert uniquement à comprendre quelles
+            pages sont utiles — elle n’est jamais utilisée pour de la publicité ciblée ou revendue à des tiers.
+          </p>
+          <p className="mt-2">
+            Choix actuel : {consent === 'accepted' ? 'accepté' : consent === 'refused' ? 'refusé' : 'pas encore fait'}.{' '}
+            <button type="button" onClick={resetConsent} className="underline hover:text-[var(--color-orange-text)]">
+              Modifier mes préférences
+            </button>
           </p>
         </section>
 
