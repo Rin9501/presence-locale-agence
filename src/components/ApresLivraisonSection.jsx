@@ -23,6 +23,16 @@ export default function ApresLivraisonSection() {
             </div>
           ))}
         </div>
+
+        <p className="mt-6 text-sm text-[var(--ink-muted)]">
+          <a href="/offres" className="underline transition hover:text-[var(--color-orange-text)]">
+            Voir le détail des offres
+          </a>
+          {' · '}
+          <a href="/methode" className="underline transition hover:text-[var(--color-orange-text)]">
+            Notre méthode et la FAQ
+          </a>
+        </p>
       </Reveal>
     </section>
   )

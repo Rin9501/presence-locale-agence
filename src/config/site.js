@@ -114,13 +114,20 @@ const site = {
   },
 
   // Voix éditoriale du site : "nous" partout (duo), jamais "je" — cohérence Header/Offres/Contact.
+  // Réécrit le 03/08/2026 sur le nouveau positionnement (chantier Refonte Business, 30/07) :
+  // message central "on ne livre pas un site, on fait venir des clients — et on reste après",
+  // porté par 3 piliers (preuve pas promesse / suivi dans la durée / local et humain). Titre
+  // renommé "Notre promesse" pour ne pas doublonner le h1 de la page /methode ("Pourquoi La
+  // Dalle, et comment ça se passe."). Vocabulaire volontairement raccordé au reste du site :
+  // "résultats, pas des captures d'écran" (Preuve sociale), "on ne disparaît pas une fois payés"
+  // (Et après la livraison), "carreleur de métier" (Fondateur).
   pitch: {
-    title: 'Pourquoi La Dalle',
+    title: 'Notre promesse',
     paragraphs: [
-      "Le bouche-à-oreille fait vivre un commerce ou un artisan — mais aujourd’hui, il commence sur Google. Avant d’appeler, vos futurs clients tapent votre métier et votre ville : ceux qu’ils trouvent décrochent le chantier ou le rendez-vous.",
-      "La Dalle, c’est un duo basé à Mirepoix, avec un pied dans le bâtiment — carreleur de métier côté technique. Nous savons comment vos clients choisissent un artisan ou un commerce, et ce qu’ils regardent avant de se décider.",
-      "Chaque site est construit depuis zéro pour votre activité : pas de thème de commerce, pas de maquette recyclée d’un client à l’autre. Nous optimisons votre fiche Google Business et écrivons vos textes pour votre métier et votre zone, avec vos vraies photos et vos vrais avis.",
-      "Le site vous appartient — aucun abonnement mensuel, aucun engagement sur plusieurs années. Le seul coût récurrent est un forfait annuel clair, inclus dans chaque site dès la livraison : hébergement, nom de domaine et petites modifications. Un seul interlocuteur, du premier échange à la maintenance.",
+      "Beaucoup d’agences livrent un site et disparaissent le jour du virement. Nous, on ne vend pas un site : on fait venir des clients à votre activité, et on reste pour que ça continue de marcher.",
+      "On ne vous demande pas de nous croire sur parole. Chape Liquide Occitanie est passé d’aucune présence en ligne à plus de 30 interactions sur sa fiche Google et 60 clics vers son site — des chiffres qu’on vous montre, pas des captures triées sur le volet. Décrocher le chantier ensuite, ça reste vous : on amène les clients jusqu’à votre porte, pas au-delà. La preuve avant la promesse, sur chaque site qu’on livre.",
+      "La Dalle, c’est un duo basé à Mirepoix, avec un pied dans le bâtiment — carreleur de métier côté technique. On sait comment vos clients choisissent un artisan ou un commerce, parce qu’on est du terrain : joignables, pas une boîte anonyme à l’autre bout du pays.",
+      "Le site vous appartient — aucune licence logicielle à payer chaque mois, aucun engagement sur plusieurs années. Un forfait annuel clair couvre l’hébergement, le nom de domaine et les petites modifications, et un bilan gratuit à 60 jours vous montre noir sur blanc ce que ça a changé. Un seul interlocuteur, du premier échange à la maintenance.",
     ],
     whyNotWordpress: {
       title: 'Pourquoi pas WordPress ou Wix',
@@ -169,35 +176,57 @@ const site = {
       'Un site WordPress non optimisé dépasse souvent 3 à 4 secondes de chargement (constat courant du secteur, plugins et thème compris). Un site codé sur-mesure comme celui-ci n’a que le strict nécessaire à charger.',
   },
 
-  offres: [
-    {
-      niveau: 1,
+  // Offre restructurée en 2 axes (au lieu de 3 catégories par secteur), décision actée le 30/07/2026
+  // dans le chantier Refonte Business, implémentée en code le 03/08/2026 (page dédiée /offres).
+  offresIntro: 'Chaque site est chiffré sur mesure, selon votre activité et l’ampleur du projet — premier échange et devis gratuits, sans engagement.',
+  offres: {
+    axeA: {
       titre: 'Fiche Google Business',
       cible: 'Professions de santé réglementées',
-      description: 'Optimisation de votre fiche Google My Business, ton factuel, sans pitch commercial.',
-      prix: 'Sur devis',
-      recurrent: 'Suivi mensuel optionnel : 15–20 €/mois',
+      // Contrainte déontologique : ton factuel, jamais commercial — voir aussi le bilan 60j
+      // formulé sobrement ("visibilité de la fiche", jamais "clients gagnés").
+      description:
+        'Optimisation de votre fiche Google Business, avec un ton factuel, sans pitch commercial — la profession impose de la sobriété, pas un argumentaire de vente.',
+      inclus: [
+        'Audit complet de votre fiche existante (horaires, photos, catégories, avis)',
+        'Optimisation et mise à jour de tous les champs pertinents',
+        'Bilan à 60 jours inclus, formulé sobrement : visibilité de la fiche, pas « clients gagnés »',
+      ],
+      // Tarif unique décidé le 03/08/2026 (plutôt que "Sur devis") : ~30 min de travail une fois
+      // les documents fournis, un forfait expert clair plutôt qu'un tarif horaire ou un devis à attendre.
+      prix: '150 €',
+      recurrent: 'Suivi mensuel optionnel : 15 €/mois',
     },
-    {
-      niveau: 2,
+    axeB: {
       titre: 'Site vitrine + Fiche Google',
-      cible: 'Commerces, beauté, restauration',
-      description: 'Site vitrine sur-mesure et optimisation de votre fiche Google Business.',
-      prix: 'Sur devis',
-      recurrent: 'Puis 240 €/an tout compris, inclus dès la livraison : hébergement, nom de domaine et 2 modifications par mois',
+      cible: 'Commerces, beauté, restauration et artisans du BTP',
+      description:
+        'Un seul package structuré, quel que soit votre secteur. Les artisans du BTP gardent leur spécificité — la galerie de chantiers avant/après — comme variante du même package, pas comme catégorie à part.',
+      inclus: [
+        'Site vitrine sur-mesure et optimisation de votre fiche Google Business',
+        'Maintenance 240 €/an incluse, non optionnelle : hébergement, nom de domaine, 2 modifications par mois',
+        'Bilan gratuit à 60 jours inclus dans le forfait — la preuve concrète de ce que ça a généré, pas juste une facture',
+        'Artisans du BTP : galerie de chantiers avant/après en plus du site',
+      ],
+      // Passage en accroche basse "à partir de" (03/08/2026) plutôt qu'une fourchette complète —
+      // reprend les mêmes planchers (500€/600€) que l'ancienne fourchette 500–700€/600–800€.
+      prixCommerces: 'À partir de 500 €',
+      prixBtp: 'À partir de 600 €',
+      recurrent: 'Puis 240 €/an tout compris, dès la livraison',
     },
-    {
-      niveau: 3,
-      titre: 'Site + Galerie chantiers + Fiche Google',
-      cible: 'Artisans du BTP',
-      description: 'Site vitrine, galerie de chantiers avant/après, et optimisation de votre fiche Google Business.',
-      prix: 'Sur devis',
-      recurrent: 'Puis 240 €/an tout compris, inclus dès la livraison : hébergement, nom de domaine et 2 modifications par mois',
+    // Monétisation du suivi tranchée le 30/07, prix fixé le 03/08 : le bilan à 60 jours reste
+    // gratuit et unique (pas de 180j/365j inclus) — c'est ici, au-delà, que le suivi se monétise,
+    // au même ordre de grandeur que le suivi optionnel de l'Axe A (15€/mois) pour un service
+    // plus complet (trimestriel + ajustements, pas juste un suivi passif).
+    suiviPremium: {
+      titre: 'Suivi Premium',
+      badge: 'Option',
+      description:
+        'Pour ceux qui veulent qu’on reste dessus au-delà du bilan gratuit à 60 jours : point trimestriel sur les résultats, ajustements réguliers de la fiche et du site. Le bilan à 60 jours, lui, reste gratuit et inclus dans tous les sites — le Suivi Premium ne le remplace pas, il continue après.',
+      prix: '+20 €/mois',
+      prixDetail: 'en plus de la maintenance incluse',
     },
-  ],
-
-  // Sous-titre de la section offres — jamais de formulation qui avoue un manque de références
-  offresIntro: 'Chaque site est chiffré sur mesure, selon votre activité et l’ampleur du projet — premier échange et devis gratuits, sans engagement.',
+  },
 
   // Parcours client en 4 étapes — répond aux objections pratiques (durée, engagement, après-vente)
   process: {
@@ -233,7 +262,17 @@ const site = {
     {
       question: 'Combien coûte un site vitrine avec La Dalle ?',
       reponse:
-        'Ça dépend de votre activité et de l’ampleur du projet (commerce, beauté, artisan du BTP avec galerie chantiers...) — nous vous donnons un chiffrage précis après un premier échange, pas un tarif générique en ligne. Ensuite, un forfait annuel unique de 240 € est inclus dans chaque site dès la livraison : hébergement, nom de domaine et 2 petites modifications par mois, sans abonnement mensuel caché.',
+        'À partir de 500 € pour un commerce ou un institut de beauté, à partir de 600 € pour un artisan du BTP avec galerie chantiers — le chiffrage précis se fait après un premier échange, pas en tarif générique en ligne. Pour une fiche Google seule (professions de santé), c’est un tarif unique de 150 €. Ensuite, un forfait annuel unique de 240 € est inclus dans chaque site dès la livraison : hébergement, nom de domaine et 2 petites modifications par mois, sans abonnement mensuel caché.',
+    },
+    {
+      question: 'Le bilan à 60 jours, qu’est-ce que c’est concrètement ?',
+      reponse:
+        'Un point gratuit et unique, 60 jours après la mise en ligne : ce que votre fiche Google et votre site ont réellement généré (vues, appels, demandes), présenté simplement avec les captures à l’appui. Ce n’est pas une prestation facturée à part — c’est inclus dans le forfait de maintenance, et c’est la preuve concrète que ça marche, pas juste une promesse de départ.',
+    },
+    {
+      question: 'Qu’est-ce que le Suivi Premium ?',
+      reponse:
+        'Une option payante pour ceux qui veulent qu’on reste dessus après le bilan gratuit à 60 jours : un point trimestriel sur les résultats et des ajustements réguliers de la fiche et du site. Le bilan à 60 jours reste gratuit et inclus dans tous les sites, que vous preniez cette option ou non.',
     },
     {
       question: 'Faut-il payer un abonnement mensuel ?',

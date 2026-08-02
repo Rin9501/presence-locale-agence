@@ -7,21 +7,30 @@ import Header from './components/Header'
 import Hero from './components/Hero'
 import LocalBusinessSchema from './components/LocalBusinessSchema'
 import MentionsLegales from './components/MentionsLegales'
+import MethodeFaqPage from './components/MethodeFaqPage'
+import OffreStackPage from './components/OffreStackPage'
 import RealisationsSection from './components/RealisationsSection'
 import ScrollProgressBar from './components/ScrollProgressBar'
 
-// Site à une seule vraie page (contenu marketing en ancres sur "/") + une page utilitaire
-// "/mentions-legales" — pas besoin de react-router, un simple test du pathname suffit.
-// Nécessite le fallback SPA dans netlify.toml (déjà en place) pour l'URL directe en prod.
-function App() {
-  const isMentionsLegales = window.location.pathname.replace(/\/$/, '') === '/mentions-legales'
+// Peu de pages (accueil + 3 pages de contenu) : un simple test du pathname suffit, pas besoin
+// de react-router. Nécessite le fallback SPA dans netlify.toml (déjà en place) pour l'URL
+// directe en prod. Chaque page utilitaire/contenu partage Header + Footer avec la homepage.
+const PAGES = {
+  '/mentions-legales': MentionsLegales,
+  '/offres': OffreStackPage,
+  '/methode': MethodeFaqPage,
+}
 
-  if (isMentionsLegales) {
+function App() {
+  const pathname = window.location.pathname.replace(/\/$/, '') || '/'
+  const Page = PAGES[pathname]
+
+  if (Page) {
     return (
       <div className="flex min-h-screen flex-col">
         <LocalBusinessSchema />
         <Header />
-        <MentionsLegales />
+        <Page />
         <Footer />
       </div>
     )

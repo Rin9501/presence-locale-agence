@@ -2,10 +2,13 @@ import { useState } from 'react'
 import MagneticButton from './MagneticButton'
 import ThemeToggle from './ThemeToggle'
 
-// Ancres préfixées par "/" pour fonctionner aussi depuis /mentions-legales
-// (sur la page d'accueil, "/#realisations" se comporte comme "#realisations", sans rechargement)
+// Ancres préfixées par "/" pour fonctionner depuis n'importe quelle page (sur l'accueil,
+// "/#realisations" se comporte comme "#realisations", sans rechargement). /offres et /methode
+// sont de vraies pages, pas des ancres.
 const links = [
   { href: '/#realisations', label: 'Réalisations' },
+  { href: '/offres', label: 'Offres' },
+  { href: '/methode', label: 'Méthode & FAQ' },
   { href: '/#fondateur', label: 'À propos' },
 ]
 

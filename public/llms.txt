@@ -19,10 +19,11 @@ Zone d'intervention : Mirepoix, Pamiers, Lavelanet et les alentours, en Ariège 
 
 ## Tarifs
 
-- Fiche Google Business seule (professions de santé réglementées) : sur devis, suivi mensuel optionnel 15–20 €/mois.
-- Site vitrine + fiche Google (commerces, beauté, restauration) : à partir de 500–700 €.
-- Site + galerie chantiers + fiche Google (artisans du BTP) : à partir de 600–800 €.
+- Fiche Google Business seule (professions de santé réglementées) : tarif unique 150 €, suivi mensuel optionnel 15 €/mois.
+- Site vitrine + fiche Google (commerces, beauté, restauration) : à partir de 500 €.
+- Site + galerie chantiers + fiche Google (artisans du BTP) : à partir de 600 €.
 - Aucun abonnement mensuel obligatoire de type CMS : un forfait annuel unique de 240 € (inclus, non optionnel dès qu'il y a un site) couvre l'hébergement, le nom de domaine et 2 petites modifications par mois.
+- Suivi Premium (option, site + fiche Google) : +20 €/mois en plus de la maintenance — bilan trimestriel et ajustements réguliers.
 
 ## Ce qui différencie La Dalle
 
@@ -34,6 +35,8 @@ Zone d'intervention : Mirepoix, Pamiers, Lavelanet et les alentours, en Ariège 
 ## Pages
 
 - [Accueil](https://ladalle-agence.fr/): Présentation, preuve sociale, suivi post-livraison, fondateur et formulaire d'audit gratuit.
+- [Offres](https://ladalle-agence.fr/offres): Détail des 2 axes d'offre (fiche Google seule / site + fiche Google), Suivi Premium en option, et la stack technique.
+- [Méthode & FAQ](https://ladalle-agence.fr/methode): Pourquoi La Dalle, déroulé d'un projet en 4 étapes, et questions fréquentes.
 - [Mentions légales](https://ladalle-agence.fr/mentions-legales): Éditeur du site, hébergement, données personnelles.
 - [Fiche Google Business](https://share.google/80OCTHfwtmZeeYobB): Avis clients et informations pratiques.
 
