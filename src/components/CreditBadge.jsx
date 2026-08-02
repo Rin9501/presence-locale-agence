@@ -1,6 +1,6 @@
 export default function CreditBadge({ variant = 'client' }) {
   const isAgency = variant === 'agency'
-  const href = isAgency ? '/' : 'https://presence-locale-agence.netlify.app'
+  const href = isAgency ? '/' : 'https://ladalle-agence.fr'
   const linkProps = isAgency ? {} : { target: '_blank', rel: 'noopener noreferrer' }
 
   return (

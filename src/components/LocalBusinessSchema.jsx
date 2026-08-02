@@ -11,7 +11,7 @@ export default function LocalBusinessSchema() {
     '@type': 'LocalBusiness',
     name: business.name,
     alternateName: 'Présence Locale', // ancien nom — conservé le temps de la transition de marque vers La Dalle
-    url: 'https://presence-locale-agence.netlify.app',
+    url: 'https://ladalle-agence.fr',
     telephone: `+33${business.phone.replace(/\s/g, '').slice(1)}`,
     email: business.email,
     address: {
