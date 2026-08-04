@@ -265,6 +265,11 @@ const site = {
         'À partir de 500 € pour un commerce ou un institut de beauté, à partir de 600 € pour un artisan du BTP avec galerie chantiers — le chiffrage précis se fait après un premier échange, pas en tarif générique en ligne. Pour une fiche Google seule (professions de santé), c’est un tarif unique de 150 €. Ensuite, un forfait annuel unique de 240 € est inclus dans chaque site dès la livraison : hébergement, nom de domaine et 2 petites modifications par mois, sans abonnement mensuel caché.',
     },
     {
+      question: 'Pourquoi un site internet en plus de la fiche Google ?',
+      reponse:
+        'La fiche Google fait apparaître votre activité dans les recherches et sur la carte — c’est souvent le premier contact avec un client. Elle ne montre pas tout : pas de galerie de chantiers, pas de place pour détailler vos services, pas de mentions légales. Le site prend le relais une fois le clic fait : il montre le travail réel, répond aux questions qui restent, et capte une demande même en dehors des horaires d’ouverture. Les deux se complètent, c’est pour ça qu’ils ne sont pas séparés dans l’offre — sauf pour les professions de santé, où la fiche seule suffit.',
+    },
+    {
       question: 'Le bilan à 60 jours, qu’est-ce que c’est concrètement ?',
       reponse:
         'Un point gratuit et unique, 60 jours après la mise en ligne : ce que votre fiche Google et votre site ont réellement généré (vues, appels, demandes), présenté simplement avec les captures à l’appui. Ce n’est pas une prestation facturée à part — c’est inclus dans le forfait de maintenance, et c’est la preuve concrète que ça marche, pas juste une promesse de départ.',
