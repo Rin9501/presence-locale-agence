@@ -1,3 +1,4 @@
+import pageMeta from '../config/pageMeta'
 import useDocumentMeta from '../hooks/useDocumentMeta'
 import FaqSection from './FaqSection'
 import PageCta from './PageCta'
@@ -6,11 +7,7 @@ import PitchSection from './PitchSection'
 import ProcessSection from './ProcessSection'
 
 export default function MethodeFaqPage() {
-  useDocumentMeta(
-    'Méthode et FAQ — La Dalle, artisans d\'Ariège',
-    'Pourquoi La Dalle, comment se déroule un projet en 4 étapes, et réponses aux questions les plus fréquentes sur les tarifs, délais et la zone d\'intervention.',
-    '/methode',
-  )
+  useDocumentMeta(pageMeta['/methode'].title, pageMeta['/methode'].description, '/methode')
 
   return (
     <main className="flex-1">

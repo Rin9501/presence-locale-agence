@@ -1,3 +1,4 @@
+import pageMeta from '../config/pageMeta'
 import useDocumentMeta from '../hooks/useDocumentMeta'
 import OffreAxes from './OffreAxes'
 import PageCta from './PageCta'
@@ -5,11 +6,7 @@ import PageIntro from './PageIntro'
 import StackSection from './StackSection'
 
 export default function OffreStackPage() {
-  useDocumentMeta(
-    'Offres et tarifs — La Dalle, artisans d\'Ariège',
-    'Fiche Google seule pour les professions de santé, ou site vitrine + fiche Google pour commerces, beauté et artisans du BTP — tarifs et maintenance incluse.',
-    '/offres',
-  )
+  useDocumentMeta(pageMeta['/offres'].title, pageMeta['/offres'].description, '/offres')
 
   return (
     <main className="flex-1">
