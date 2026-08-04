@@ -1,9 +1,16 @@
+import useDocumentMeta from '../hooks/useDocumentMeta'
 import site from '../config/site'
 import useCookieConsent from '../hooks/useCookieConsent'
 
 export default function MentionsLegales() {
   const legal = site.legal
   const { consent, resetConsent } = useCookieConsent()
+
+  useDocumentMeta(
+    'Mentions légales — La Dalle',
+    'Éditeur du site, hébergement, données personnelles et cookies — mentions légales de La Dalle, agence de création de sites pour artisans et commerces d\'Ariège.',
+    '/mentions-legales',
+  )
 
   return (
     <main className="mx-auto max-w-3xl flex-1 px-6 py-16 sm:py-20">

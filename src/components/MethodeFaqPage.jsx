@@ -7,7 +7,7 @@ import ProcessSection from './ProcessSection'
 
 export default function MethodeFaqPage() {
   useDocumentMeta(
-    'Méthode et FAQ — La Dalle, sites internet pour artisans d\'Ariège',
+    'Méthode et FAQ — La Dalle, artisans d\'Ariège',
     'Pourquoi La Dalle, comment se déroule un projet en 4 étapes, et réponses aux questions les plus fréquentes sur les tarifs, délais et la zone d\'intervention.',
     '/methode',
   )

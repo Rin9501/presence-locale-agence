@@ -6,8 +6,8 @@ import StackSection from './StackSection'
 
 export default function OffreStackPage() {
   useDocumentMeta(
-    'Offres et tarifs — La Dalle, sites internet pour artisans d\'Ariège',
-    'Fiche Google seule pour les professions de santé, ou site vitrine + fiche Google pour commerces, beauté et artisans du BTP — tarifs, maintenance incluse et Suivi Premium en option.',
+    'Offres et tarifs — La Dalle, artisans d\'Ariège',
+    'Fiche Google seule pour les professions de santé, ou site vitrine + fiche Google pour commerces, beauté et artisans du BTP — tarifs et maintenance incluse.',
     '/offres',
   )
 
