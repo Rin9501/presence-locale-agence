@@ -69,6 +69,17 @@ export default function ContactForm() {
           On regarde votre fiche Google et on vous dit franchement ce qui bloque — réponse sous 48h.{' '}
           {site.business.contactZone}.
         </p>
+        <p className="mt-3 text-center text-sm text-[var(--ink-muted)]">
+          Vous préférez réserver directement un créneau ?{' '}
+          <a
+            href={site.business.bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-[var(--color-orange-text)] underline underline-offset-2 hover:opacity-80"
+          >
+            Choisir un horaire
+          </a>
+        </p>
 
         <form onSubmit={handleSubmit} className="mt-8 space-y-4">
           <div>

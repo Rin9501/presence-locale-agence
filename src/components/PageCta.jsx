@@ -20,6 +20,14 @@ export default function PageCta() {
             {site.hero.ctaAudit}
           </MagneticButton>
           <MagneticButton
+            href={site.business.bookingUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cta-glow inline-block rounded-sm border border-[var(--border-soft)] px-6 py-3 font-medium text-[var(--ink)] transition hover:border-[var(--color-orange)]"
+          >
+            Réserver un créneau
+          </MagneticButton>
+          <MagneticButton
             href={`tel:${site.business.phone.replace(/\s/g, '')}`}
             className="cta-glow inline-block rounded-sm border border-[var(--border-soft)] px-6 py-3 font-medium text-[var(--ink)] transition hover:border-[var(--color-orange)]"
           >
