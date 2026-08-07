@@ -220,7 +220,12 @@ const site = {
       prixBtp: 'À partir de 600 €',
       // Maintenance optionnelle depuis le 06/08/2026 (remplace le forfait 240€/an obligatoire) —
       // corrigé le 07/08 après incohérence relevée entre la page Refonte Business et le journal.
-      recurrent: 'Maintenance en option : 25 €/mois ou 250 €/an, sans engagement',
+      // Reformulé le 07/08 soir (retour externe) : annoncer ce qui est couvert avant le prix, pas
+      // l'inverse — le prix seul sonne comme une charge, le détail avant sonne comme une continuité
+      // de service. Reste ancré sur ce qu'on livre vraiment (pas de sauvegarde/sécurité promises,
+      // non confirmées) plutôt qu'une formule "assurance" abstraite.
+      recurrent:
+        'Hébergement, nom de domaine et 2 modifications par mois : 25 €/mois ou 250 €/an, sans engagement — le site continue de tourner sans que vous ayez à y penser.',
     },
     // Monétisation du suivi tranchée le 30/07, prix fixé le 03/08 : le bilan à 60 jours reste
     // gratuit et unique (pas de 180j/365j inclus) — c'est ici, au-delà, que le suivi se monétise,
