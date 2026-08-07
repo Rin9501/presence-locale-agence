@@ -236,6 +236,38 @@ const site = {
     },
   },
 
+  // Supports physiques inclus dans chaque prestation, sans ligne facturée à part (décision actée
+  // le 06/08/2026, prix Axe A/B ajustés le 07/08). Deux chevalets distincts et volontairement pas
+  // interchangeables : neutre pour la santé (contrainte déontologique — jamais d'incitation à
+  // l'avis, confirmée notamment pour les ostéopathes) et avis Google pour le commerce.
+  supportsPhysiques: {
+    titre: 'Un objet dans la vraie vie, pas juste un lien',
+    intro:
+      'Chaque prestation inclut un support imprimé adapté à votre activité, sans ligne facturée à part — chevalet gravé pour un commerce ou une fiche Google seule, flyers et cartes de visite pour un artisan qui travaille sur les chantiers.',
+    items: [
+      {
+        id: 'chevaletNeutre',
+        alt: 'Chevalet en bois avec plaque gravée et QR code neutre, pour une fiche Google professions de santé',
+        legende: 'Professions de santé : le QR renvoie uniquement vers votre fiche, jamais vers une demande d’avis.',
+      },
+      {
+        id: 'chevaletAvisGoogle',
+        alt: 'Chevalet en bois avec plaque gravée QR code et NFC vers les avis Google',
+        legende: 'Commerces : QR et NFC vers vos avis Google, posé en caisse ou à l’accueil.',
+      },
+      {
+        id: 'flyerBtp',
+        alt: 'Flyers imprimés avec QR code pour recueillir un avis en fin de chantier',
+        legende: 'Artisans du BTP : remis en fin de chantier pour recueillir un retour à chaud.',
+      },
+      {
+        id: 'carteVisiteBtp',
+        alt: 'Cartes de visite avec QR code pour un artisan du BTP',
+        legende: 'Artisans du BTP : glissées à chaque échange, avec le même QR que sur le chantier.',
+      },
+    ],
+  },
+
   // Parcours client en 4 étapes — répond aux objections pratiques (durée, engagement, après-vente)
   process: {
     title: 'Comment ça se passe',

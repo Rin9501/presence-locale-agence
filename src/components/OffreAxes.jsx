@@ -1,6 +1,21 @@
 import site from '../config/site'
 import MagneticButton from './MagneticButton'
 import Reveal from './Reveal'
+import chevaletNeutreWebp from '../assets/supports-physiques/chevalet-neutre.webp'
+import chevaletNeutreJpg from '../assets/supports-physiques/chevalet-neutre.jpg'
+import chevaletAvisGoogleWebp from '../assets/supports-physiques/chevalet-avis-google.webp'
+import chevaletAvisGoogleJpg from '../assets/supports-physiques/chevalet-avis-google.jpg'
+import flyerBtpWebp from '../assets/supports-physiques/flyer-btp.webp'
+import flyerBtpJpg from '../assets/supports-physiques/flyer-btp.jpg'
+import carteVisiteBtpWebp from '../assets/supports-physiques/carte-visite-btp.webp'
+import carteVisiteBtpJpg from '../assets/supports-physiques/carte-visite-btp.jpg'
+
+const SUPPORTS_IMAGES = {
+  chevaletNeutre: { webp: chevaletNeutreWebp, jpg: chevaletNeutreJpg },
+  chevaletAvisGoogle: { webp: chevaletAvisGoogleWebp, jpg: chevaletAvisGoogleJpg },
+  flyerBtp: { webp: flyerBtpWebp, jpg: flyerBtpJpg },
+  carteVisiteBtp: { webp: carteVisiteBtpWebp, jpg: carteVisiteBtpJpg },
+}
 
 export default function OffreAxes() {
   const { axeA, axeB, suiviPremium } = site.offres
@@ -86,6 +101,34 @@ export default function OffreAxes() {
             </div>
           </Reveal>
         </div>
+
+        {/* Supports physiques inclus — image block, voir site.supportsPhysiques */}
+        <Reveal
+          delay={120}
+          className="chamfer mx-auto mt-6 max-w-5xl border border-[var(--border-soft)] bg-[var(--surface-card)] p-7"
+        >
+          <h3 className="text-lg text-[var(--ink)]">{site.supportsPhysiques.titre}</h3>
+          <p className="mt-2 max-w-2xl text-sm text-[var(--ink-muted)]">{site.supportsPhysiques.intro}</p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            {site.supportsPhysiques.items.map((item) => (
+              <figure
+                key={item.id}
+                className="chamfer overflow-hidden border border-[var(--border-soft)] bg-[var(--surface)]"
+              >
+                <picture>
+                  <source srcSet={SUPPORTS_IMAGES[item.id].webp} type="image/webp" />
+                  <img
+                    src={SUPPORTS_IMAGES[item.id].jpg}
+                    alt={item.alt}
+                    loading="lazy"
+                    className="aspect-square w-full object-cover"
+                  />
+                </picture>
+                <figcaption className="p-3 text-xs text-[var(--ink-muted)]">{item.legende}</figcaption>
+              </figure>
+            ))}
+          </div>
+        </Reveal>
 
         {/* Suivi Premium — upsell au-delà du bilan gratuit à 60 jours */}
         <Reveal
