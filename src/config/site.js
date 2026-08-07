@@ -192,11 +192,14 @@ const site = {
       inclus: [
         'Audit complet de votre fiche existante (horaires, photos, catégories, avis)',
         'Optimisation et mise à jour de tous les champs pertinents',
+        'Chevalet neutre inclus : un QR code renvoie vers votre fiche, sans inciter à laisser un avis',
         'Bilan à 60 jours inclus, formulé sobrement : visibilité de la fiche, pas « clients gagnés »',
       ],
-      // Tarif unique décidé le 03/08/2026 (plutôt que "Sur devis") : ~30 min de travail une fois
-      // les documents fournis, un forfait expert clair plutôt qu'un tarif horaire ou un devis à attendre.
-      prix: '150 €',
+      // Tarif unique décidé le 03/08/2026 (~30 min de travail une fois les documents fournis, un
+      // forfait expert clair plutôt qu'un tarif horaire). Passé de 150€ à 190€ le 07/08/2026 pour
+      // intégrer le chevalet neutre désormais inclus (voir décision Supports physiques QR code,
+      // journal Notion 06/08 puis 07/08).
+      prix: '190 €',
       recurrent: 'Suivi mensuel optionnel : 15 €/mois',
     },
     axeB: {
@@ -206,6 +209,7 @@ const site = {
         'Un seul package structuré, quel que soit votre secteur. Les artisans du BTP gardent leur spécificité — la galerie de chantiers avant/après — comme variante du même package, pas comme catégorie à part.',
       inclus: [
         'Site vitrine sur-mesure et optimisation de votre fiche Google Business',
+        'Supports imprimés inclus, adaptés à votre activité : chevalet pour un commerce ou un point fixe, flyers et cartes de visite pour un artisan sur les chantiers',
         'Bilan gratuit à 60 jours, automatique pour tous — la preuve concrète de ce que ça a généré, pas juste une facture',
         'Maintenance en option, sans engagement : 25 €/mois ou 250 €/an (hébergement, nom de domaine, 2 modifications par mois)',
         'Artisans du BTP : galerie de chantiers avant/après en plus du site',
@@ -266,7 +270,7 @@ const site = {
     {
       question: 'Combien coûte un site vitrine avec La Dalle ?',
       reponse:
-        'À partir de 500 € pour un commerce ou un institut de beauté, à partir de 600 € pour un artisan du BTP avec galerie chantiers — le chiffrage précis se fait après un premier échange, pas en tarif générique en ligne. Pour une fiche Google seule (professions de santé), c’est un tarif unique de 150 €. Ensuite, une maintenance optionnelle est proposée dès la livraison, sans engagement : 25 €/mois ou 250 €/an pour l’hébergement, le nom de domaine et 2 petites modifications par mois.',
+        'À partir de 500 € pour un commerce ou un institut de beauté, à partir de 600 € pour un artisan du BTP avec galerie chantiers — le chiffrage précis se fait après un premier échange, pas en tarif générique en ligne. Pour une fiche Google seule (professions de santé), c’est un tarif unique de 190 €, chevalet neutre inclus. Ensuite, une maintenance optionnelle est proposée dès la livraison, sans engagement : 25 €/mois ou 250 €/an pour l’hébergement, le nom de domaine et 2 petites modifications par mois.',
     },
     {
       question: 'Pourquoi un site internet en plus de la fiche Google ?',
