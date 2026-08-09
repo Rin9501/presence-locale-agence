@@ -27,6 +27,11 @@ const pageMeta = {
     description:
       "Éditeur du site, hébergement, données personnelles et cookies — mentions légales de La Dalle, agence de création de sites pour artisans et commerces d'Ariège.",
   },
+  '/cgu-cgv': {
+    title: 'CGU/CGV — La Dalle',
+    description:
+      "Conditions générales d'utilisation du site et conditions générales de vente des prestations de création de site vitrine et d'optimisation de fiche Google Business de La Dalle.",
+  },
 }
 
 export default pageMeta

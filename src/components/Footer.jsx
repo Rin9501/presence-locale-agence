@@ -18,6 +18,10 @@ export default function Footer() {
           <a href="/mentions-legales" className="transition hover:text-[var(--color-orange-text)]">
             Mentions légales
           </a>
+          {' · '}
+          <a href="/cgu-cgv" className="transition hover:text-[var(--color-orange-text)]">
+            CGU/CGV
+          </a>
         </p>
         {site.business.instagram && (
           <a

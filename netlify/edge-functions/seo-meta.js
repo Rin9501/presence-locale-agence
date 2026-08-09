@@ -7,10 +7,10 @@ import pageMeta from '../../src/config/pageMeta.js'
 // sociaux Facebook/LinkedIn, le 1er passage de Google avant son rendu JS différé) voit donc
 // toujours le contenu de la homepage sur /offres, /methode et /mentions-legales.
 //
-// Cette edge function réécrit le HTML avant qu'il ne parte, pour ces 4 routes précisément —
-// pas de wildcard, ce site a 4 pages fixes, pas de raison de matcher plus large. Elle laisse
+// Cette edge function réécrit le HTML avant qu'il ne parte, pour ces 5 routes précisément —
+// pas de wildcard, ce site a 5 pages fixes, pas de raison de matcher plus large. Elle laisse
 // tout le reste (assets, images) totalement intact : context.next() ne passe même pas par ici
-// pour ces chemins, seuls les 4 paths déclarés dans `config.path` ci-dessous sont interceptés.
+// pour ces chemins, seuls les 5 paths déclarés dans `config.path` ci-dessous sont interceptés.
 const SITE_URL = 'https://ladalle-agence.fr'
 
 function escapeHtml(value) {
@@ -48,5 +48,5 @@ export default async (request, context) => {
 }
 
 export const config = {
-  path: ['/', '/offres', '/methode', '/mentions-legales'],
+  path: ['/', '/offres', '/methode', '/mentions-legales', '/cgu-cgv'],
 }

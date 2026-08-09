@@ -1,4 +1,5 @@
 import ApresLivraisonSection from './components/ApresLivraisonSection'
+import CguCgv from './components/CguCgv'
 import ContactForm from './components/ContactForm'
 import CookieConsent from './components/CookieConsent'
 import CursorLight from './components/CursorLight'
@@ -13,13 +14,14 @@ import OffreStackPage from './components/OffreStackPage'
 import RealisationsSection from './components/RealisationsSection'
 import ScrollProgressBar from './components/ScrollProgressBar'
 
-// Peu de pages (accueil + 3 pages de contenu) : un simple test du pathname suffit, pas besoin
+// Peu de pages (accueil + pages de contenu) : un simple test du pathname suffit, pas besoin
 // de react-router. Nécessite le fallback SPA dans netlify.toml (déjà en place) pour l'URL
 // directe en prod. Chaque page utilitaire/contenu partage Header + Footer avec la homepage.
 const PAGES = {
   '/mentions-legales': MentionsLegales,
   '/offres': OffreStackPage,
   '/methode': MethodeFaqPage,
+  '/cgu-cgv': CguCgv,
 }
 
 function App() {
