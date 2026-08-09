@@ -1,4 +1,4 @@
-import { trackPhoneClick } from '../lib/analytics'
+import { trackBookingClick, trackPhoneClick } from '../lib/analytics'
 import site from '../config/site'
 import MagneticButton from './MagneticButton'
 import Reveal from './Reveal'
@@ -24,6 +24,7 @@ export default function PageCta() {
             href={site.business.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackBookingClick('page_cta')}
             className="cta-glow inline-block rounded-sm border border-[var(--border-soft)] px-6 py-3 font-medium text-[var(--ink)] transition hover:border-[var(--color-orange)]"
           >
             Réserver un créneau

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { trackBookingClick } from '../lib/analytics'
 import site from '../config/site'
 import Reveal from './Reveal'
 
@@ -75,6 +76,7 @@ export default function ContactForm() {
             href={site.business.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() => trackBookingClick('contact_form')}
             className="font-medium text-[var(--color-orange-text)] underline underline-offset-2 hover:opacity-80"
           >
             Choisir un horaire
