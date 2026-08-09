@@ -1,5 +1,6 @@
 import pageMeta from '../config/pageMeta'
 import useDocumentMeta from '../hooks/useDocumentMeta'
+import { trackPhoneClick } from '../lib/analytics'
 import site from '../config/site'
 import useCookieConsent from '../hooks/useCookieConsent'
 
@@ -29,7 +30,11 @@ export default function MentionsLegales() {
           <p className="mt-2">Adresse : {legal.registeredAddress}.</p>
           <p className="mt-2">
             Téléphone :{' '}
-            <a href={`tel:${site.business.phone.replace(/\s/g, '')}`} className="underline">
+            <a
+              href={`tel:${site.business.phone.replace(/\s/g, '')}`}
+              onClick={() => trackPhoneClick('mentions_legales')}
+              className="underline"
+            >
               {site.business.phone}
             </a>
             {' — '}Email :{' '}

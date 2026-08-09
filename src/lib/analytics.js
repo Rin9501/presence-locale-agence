@@ -22,3 +22,14 @@ export function loadGtag() {
   script.src = `https://www.googletagmanager.com/gtag/js?id=${MEASUREMENT_ID}`
   document.head.appendChild(script)
 }
+
+// Fils ouvert du 05/07/2026 (journal Notion) : décidé mais jamais implémenté. N'envoie rien tant
+// que le visiteur n'a pas accepté le bandeau cookies (window.gtag n'existe que dans ce cas, cf.
+// loadGtag ci-dessus) — même logique de consentement que le reste de la mesure d'audience.
+export function trackPhoneClick(source) {
+  if (typeof window.gtag !== 'function') return
+  window.gtag('event', 'click_to_call', {
+    click_source: source,
+    page_path: window.location.pathname,
+  })
+}

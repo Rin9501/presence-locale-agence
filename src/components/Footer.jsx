@@ -1,3 +1,4 @@
+import { trackPhoneClick } from '../lib/analytics'
 import site from '../config/site'
 import CreditBadge from './CreditBadge'
 
@@ -7,7 +8,11 @@ export default function Footer() {
       <div className="border-t border-[var(--border-soft)] px-6 py-6 text-center text-sm text-[var(--ink-muted)]">
         <p>© {new Date().getFullYear()} {site.business.name}</p>
         <p className="mt-1">
-          <a href={`tel:${site.business.phone.replace(/\s/g, '')}`} className="transition hover:text-[var(--color-orange-text)]">
+          <a
+            href={`tel:${site.business.phone.replace(/\s/g, '')}`}
+            onClick={() => trackPhoneClick('footer')}
+            className="transition hover:text-[var(--color-orange-text)]"
+          >
             {site.business.phone}
           </a>
           {' · '}

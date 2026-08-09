@@ -1,3 +1,4 @@
+import { trackPhoneClick } from '../lib/analytics'
 import site from '../config/site'
 import MagneticButton from './MagneticButton'
 import Reveal from './Reveal'
@@ -29,6 +30,7 @@ export default function PageCta() {
           </MagneticButton>
           <MagneticButton
             href={`tel:${site.business.phone.replace(/\s/g, '')}`}
+            onClick={() => trackPhoneClick('page_cta')}
             className="cta-glow inline-block rounded-sm border border-[var(--border-soft)] px-6 py-3 font-medium text-[var(--ink)] transition hover:border-[var(--color-orange)]"
           >
             {site.business.phone}
