@@ -5,9 +5,16 @@
 // que de dupliquer les chaînes dans chaque composant de page (voir audit SEO du 04/08/2026).
 const pageMeta = {
   '/': {
-    title: "La Dalle — Site internet & fiches Google, artisans d'Ariège",
+    // Title/description réécrits le 12/08/2026 suite à l'analyse GSC : "agence web ariège"
+    // était en position 11,84 (31 impressions, 0 clic) et "agence web limoux"/"agence web
+    // aude" en position 1,17/5,71 (0 clic malgré un bon classement) — le mot "agence"
+    // n'apparaissait nulle part dans le snippet. Limoux ajouté à titre de test (secteur à
+    // ~20min, comparable à Foix, mais jamais visé explicitement jusqu'ici) — FAQ, schema
+    // areaServed et CreditBadge clients volontairement laissés sur "Ariège" seule tant que
+    // ce test SEO n'est pas confirmé sur plusieurs semaines.
+    title: "La Dalle — Agence web pour artisans d'Ariège & Limoux",
     description:
-      "Sites internet et fiches Google pour artisans et commerçants d'Ariège. Un interlocuteur unique, carreleur de métier, toujours joignable.",
+      "Agence web locale pour artisans et commerçants d'Ariège et du secteur de Limoux. Carreleur de métier, interlocuteur unique, toujours joignable.",
     // og:title distinct du title SEO : accroche plus émotionnelle pour un partage social,
     // choix déjà présent avant ce refactor (index.html) — conservé tel quel.
     ogTitle: "La Dalle — un site qui tient, pour les artisans d'Ariège",
