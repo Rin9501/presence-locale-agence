@@ -1,5 +1,9 @@
 // Contenu du site — seul fichier à modifier pour ajuster les textes, prix ou réalisations
 const site = {
+  // Identifiant dans la table `site_content` mutualisée (projet Supabase presence-locale-agence) —
+  // sert de bac à sable pour tester le panneau admin (presence-locale-admin/) avec le compte
+  // Google de Mehdi avant de l'ouvrir à de vrais clients.
+  supabaseSiteId: 'ladalle-agence',
   business: {
     name: 'La Dalle',
     // H1 direction "1b" (validée 30/07) — "Trouvé" porté par le span orange dans Hero.jsx
@@ -390,6 +394,22 @@ const site = {
       image: 'vh-beauty-studio/screenshot.jpg',
       url: 'https://vh-beauty-studio.fr',
       stat: 'Vue 3× plus sur Maps en 8 semaines',
+    },
+    {
+      type: 'site',
+      title: 'Finn Elec',
+      badge: 'Site vitrine + fiche Google · Électricien',
+      description: 'Électricité générale, climatisation et éclairage sur mesure — diagnostic sur place avant devis.',
+      image: 'finn-elec/screenshot.jpg',
+      url: 'https://finn-elec.fr',
+    },
+    {
+      type: 'site',
+      title: 'EURL Cyrille Peinture',
+      badge: 'Site + galerie chantiers — Artisan peintre',
+      description: 'De la peinture classique à la fresque sculptée, chaque chantier suivi de près.',
+      image: 'cyrille-peinture/screenshot.jpg',
+      url: 'https://cyrille-peinture.fr',
     },
   ],
 }

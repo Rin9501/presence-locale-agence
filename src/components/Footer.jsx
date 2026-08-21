@@ -1,8 +1,15 @@
 import { trackPhoneClick } from '../lib/analytics'
 import site from '../config/site'
+import { useSiteContent } from '../hooks/useSiteContent'
 import CreditBadge from './CreditBadge'
 
 export default function Footer() {
+  // Lien Instagram : override possible via le panneau admin self-service (test en cours,
+  // voir supabaseSiteId dans site.js) — retombe sur la valeur statique tant que rien n'a
+  // été modifié côté Supabase.
+  const content = useSiteContent()
+  const instagram = content?.links?.instagram || site.business.instagram
+
   return (
     <footer>
       <div className="border-t border-[var(--border-soft)] px-6 py-6 text-center text-sm text-[var(--ink-muted)]">
@@ -28,9 +35,9 @@ export default function Footer() {
             CGU/CGV
           </a>
         </p>
-        {site.business.instagram && (
+        {instagram && (
           <a
-            href={site.business.instagram}
+            href={instagram}
             target="_blank"
             rel="noopener noreferrer"
             aria-label="La Dalle sur Instagram"
