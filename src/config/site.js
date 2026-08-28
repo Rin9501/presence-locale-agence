@@ -53,7 +53,7 @@ const site = {
 
   // Section "Et après la livraison" (nouveau composant ApresLivraisonSection.jsx, fond papier ciment) —
   // formalise le bilan à 60 jours (gratuit, unique, automatique — pas 180j/365j) + la maintenance
-  // en option (25€/mois ou 250€/an, modèle révisé le 06/08/2026, remplace le 240€/an obligatoire).
+  // en option, tarif différencié par niveau depuis le 27/08/2026 (250€/an commerces, 300€/an BTP).
   apresLivraison: {
     kicker: 'Et après la livraison',
     titre: 'On ne disparaît pas une fois payés.',
@@ -68,7 +68,7 @@ const site = {
         repere: 'En option',
         titre: 'Maintenance, si vous la voulez',
         description:
-          'Mises à jour, sécurité, fiche Google surveillée — 25 €/mois ou 250 €/an, sans engagement, un interlocuteur unique tant que vous restez client.',
+          'Mises à jour, sécurité, fiche Google surveillée — 250 €/an pour un commerce, 300 €/an pour un artisan du BTP, sans engagement, un interlocuteur unique tant que vous restez client.',
       },
     ],
   },
@@ -215,21 +215,23 @@ const site = {
         'Site vitrine sur-mesure et optimisation de votre fiche Google Business',
         'Supports imprimés inclus, adaptés à votre activité : chevalet pour un commerce ou un point fixe, flyers et cartes de visite pour un artisan sur les chantiers',
         'Bilan gratuit à 60 jours, automatique pour tous — la preuve concrète de ce que ça a généré, pas juste une facture',
-        'Maintenance en option, sans engagement : 25 €/mois ou 250 €/an (hébergement, nom de domaine, 2 modifications par mois)',
+        'Maintenance en option, sans engagement : détail et tarif juste en dessous, selon votre activité',
         'Artisans du BTP : galerie de chantiers avant/après en plus du site',
       ],
-      // Passage en accroche basse "à partir de" (03/08/2026) plutôt qu'une fourchette complète —
-      // reprend les mêmes planchers (500€/600€) que l'ancienne fourchette 500–700€/600–800€.
-      prixCommerces: 'À partir de 500 €',
-      prixBtp: 'À partir de 600 €',
-      // Maintenance optionnelle depuis le 06/08/2026 (remplace le forfait 240€/an obligatoire) —
-      // corrigé le 07/08 après incohérence relevée entre la page Refonte Business et le journal.
-      // Reformulé le 07/08 soir (retour externe) : annoncer ce qui est couvert avant le prix, pas
-      // l'inverse — le prix seul sonne comme une charge, le détail avant sonne comme une continuité
-      // de service. Reste ancré sur ce qu'on livre vraiment (pas de sauvegarde/sécurité promises,
-      // non confirmées) plutôt qu'une formule "assurance" abstraite.
+      // Grille figée en prix fixe le 27/08/2026 (session de cadrage pricing, voir doc Notion
+      // "Fiches-produits — La Dalle") : remplace la fourchette basse "à partir de 500€/600€" du
+      // 03/08 — le scope du forfait de base est maintenant borné au millimètre (pages, révisions,
+      // délai), la fourchette n'était plus justifiée.
+      prixCommerces: '790 €',
+      prixBtp: '990 €',
+      // Modèle de maintenance différencié par niveau depuis le 27/08/2026 (remplace le tarif unique
+      // "25€/mois ou 250€/an" du 06-07/08, jamais différencié BTP/commerce jusqu'ici). Deux
+      // temporalités : signée dès le devis (prix réduit, domaine inclus) ou à la carte plus tard
+      // (prix plein, domaine facturé à part) — incite à trancher à la signature, cohérent avec le
+      // constat terrain que le BTP sollicite plus de petites modifs post-livraison (Finn Elec,
+      // Mirepoix Matériaux).
       recurrent:
-        'Hébergement, nom de domaine et 2 modifications par mois : 25 €/mois ou 250 €/an, sans engagement — le site continue de tourner sans que vous ayez à y penser.',
+        'Signée dès le devis : +200 € (commerces) ou +250 € (BTP), nom de domaine inclus — sinon 250 €/an (commerces) ou 300 €/an (BTP) à la carte plus tard, sans engagement.',
     },
     // Monétisation du suivi tranchée le 30/07, prix fixé le 03/08 : le bilan à 60 jours reste
     // gratuit et unique (pas de 180j/365j inclus) — c'est ici, au-delà, que le suivi se monétise,
@@ -242,6 +244,63 @@ const site = {
         'Pour ceux qui veulent qu’on reste dessus au-delà du bilan gratuit à 60 jours : point trimestriel sur les résultats, ajustements réguliers de la fiche et du site. Le bilan à 60 jours, lui, reste gratuit et inclus dans tous les sites — le Suivi Premium ne le remplace pas, il continue après.',
       prix: '+20 €/mois',
       prixDetail: 'en plus de la maintenance incluse',
+    },
+  },
+
+  // Blocs add-ons/modalités, versés dans le code le 28/08/2026 à partir du doc Notion
+  // "Fiches-produits — La Dalle" (grille figée le 27/08) : ces éléments existaient déjà en pricing
+  // interne mais n'avaient jamais été rendus publics sur /offres. Rendus par OffreAddOns.jsx.
+  offresAddOns: {
+    titre: 'Ce qui s’ajoute au forfait de base, si besoin',
+    intro:
+      'Un site vitrine Ariège tient rarement en une seule page pour tout le monde : voici ce qui se chiffre en plus, avec le même principe qu’ailleurs sur le site — un prix fixe, pas une fourchette.',
+    extensionMultipage: {
+      titre: 'Plusieurs pages plutôt qu’une seule',
+      badge: 'Extension',
+      description:
+        'Le forfait de base tient sur une landing page à sections. Si vous voulez des pages séparées — une URL et un référencement propres à chacune, par exemple Accueil, Services et Contact distincts, ou une page dédiée par prestation — chaque page ajoutée reste chiffrée à l’unité : rédaction avec la même méthode de mots-clés locaux, mise en page cohérente avec le reste du site, un tour de révision dédié en plus des deux tours du forfait de base. Comptez environ deux jours ouvrés de délai supplémentaire par page. Au-delà de trois pages ajoutées, ou dès qu’il faut préserver un système tiers existant (prise de rendez-vous, paiement en ligne) ou repenser une architecture par catégorie et par ville, on sort de ce tarif linéaire pour un devis dédié, entre 1500 et 3000 € et plus selon l’ampleur.',
+      prix: '+150 €',
+      prixDetail: 'par page ajoutée, jusqu’à 3 pages',
+    },
+    identiteVisuelle: {
+      titre: 'Pas encore de logo ou de charte graphique ?',
+      badge: 'Add-on',
+      description:
+        'Les forfaits Niveau 2 et 3 partent du principe que vous avez déjà une identité exploitable — un logo, des couleurs qui tiennent debout. Si ce n’est pas le cas, cette étape se règle avant que le design du site puisse démarrer : le site en dépend directement.',
+      formules: [
+        {
+          nom: 'Palette et typographie seules',
+          description: 'Vous avez déjà un logo ou un nom posé, il manque juste des couleurs et une police cohérentes.',
+          prix: '150 €',
+          revisions: '2 tours de révision inclus',
+        },
+        {
+          nom: 'Identité complète',
+          description: 'Logo, palette et typographie créés de zéro, à partir de votre activité et de ce qui vous différencie.',
+          prix: '350 €',
+          revisions: '3 tours de révision inclus',
+        },
+      ],
+      note: 'Au-delà des tours inclus : +50 € par tour supplémentaire.',
+    },
+    autres: [
+      {
+        titre: 'Version bilingue du site',
+        description: 'Traduction complète en anglais, déjà livrée pour un artisan de la zone.',
+        prix: '200 €',
+      },
+      {
+        titre: 'Cohérence sur les annuaires locaux',
+        description: 'PagesJaunes, Waze, Apple Maps, Yelp : mêmes horaires et coordonnées partout, pas seulement sur Google.',
+        prix: 'Sur devis',
+      },
+    ],
+    modalites: {
+      titre: 'Bon à savoir avant de signer',
+      items: [
+        'Nom de domaine : 40 €/an (achat, renouvellement et configuration technique) — facturé à part, sauf si la maintenance est signée dès le devis initial, où il est inclus sans supplément.',
+        'Acompte de 50 % à la signature du devis, solde à la livraison — devis signé obligatoire avant tout début de travail.',
+      ],
     },
   },
 
@@ -311,7 +370,7 @@ const site = {
     {
       question: 'Combien coûte un site vitrine avec La Dalle ?',
       reponse:
-        'À partir de 500 € pour un commerce ou un institut de beauté, à partir de 600 € pour un artisan du BTP avec galerie chantiers — le chiffrage précis se fait après un premier échange, pas en tarif générique en ligne. Pour une fiche Google seule (professions de santé), c’est un tarif unique de 190 €, chevalet neutre inclus. Ensuite, une maintenance optionnelle est proposée dès la livraison, sans engagement : 25 €/mois ou 250 €/an pour l’hébergement, le nom de domaine et 2 petites modifications par mois.',
+        'Un prix fixe, pas une fourchette : 790 € pour un commerce ou un institut de beauté, 990 € pour un artisan du BTP avec galerie chantiers avant/après. Ce prix couvre le site, l’optimisation de votre fiche Google et deux tours de révision. Pour une fiche Google seule (professions de santé), c’est un tarif unique de 190 €, chevalet neutre inclus. Une maintenance optionnelle est ensuite proposée, sans engagement : 250 €/an pour un commerce, 300 €/an pour un artisan du BTP — moins cher si elle est signée dès le devis initial plutôt que prise à la carte plus tard.',
     },
     {
       question: 'Pourquoi un site internet en plus de la fiche Google ?',
@@ -331,7 +390,12 @@ const site = {
     {
       question: 'Faut-il payer un abonnement mensuel ?',
       reponse:
-        'Non, aucun abonnement obligatoire ni engagement sur plusieurs années : le site vous appartient. Une maintenance est proposée en option (25 €/mois ou 250 €/an, sans engagement) pour l’hébergement, le nom de domaine et les petites modifications — vous restez libre de ne pas la prendre.',
+        'Non, aucun abonnement obligatoire ni engagement sur plusieurs années : le site vous appartient. Une maintenance est proposée en option, sans engagement — 250 €/an pour un commerce, 300 €/an pour un artisan du BTP, hébergement et nom de domaine compris — vous restez libre de ne pas la prendre.',
+    },
+    {
+      question: 'Et si j’ai besoin de plusieurs pages, ou pas encore de logo ?',
+      reponse:
+        'Le forfait de base tient sur une landing page à sections. Si vous préférez des pages séparées (Accueil, Services, Contact en pages distinctes, par exemple), chaque page ajoutée coûte 150 € de plus, jusqu’à 3 pages. Si vous n’avez pas encore de logo ou de charte graphique exploitable, on peut la créer avant de démarrer le site : 150 € pour une palette et une typographie sur un logo déjà existant, 350 € pour une identité complète créée de zéro.',
     },
     {
       question: 'Combien de temps pour être livré ?',

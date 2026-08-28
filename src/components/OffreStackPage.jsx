@@ -1,5 +1,6 @@
 import pageMeta from '../config/pageMeta'
 import useDocumentMeta from '../hooks/useDocumentMeta'
+import OffreAddOns from './OffreAddOns'
 import OffreAxes from './OffreAxes'
 import PageCta from './PageCta'
 import PageIntro from './PageIntro'
@@ -16,6 +17,7 @@ export default function OffreStackPage() {
         intro="Deux axes, pas trois catégories par secteur : la fiche Google seule pour les professions de santé réglementées, un package unique pour tout le reste."
       />
       <OffreAxes />
+      <OffreAddOns />
       <StackSection />
       <PageCta />
     </main>
