@@ -290,9 +290,12 @@ const site = {
         prix: '200 €',
       },
       {
+        // Prix figé le 03/09/2026 (remplace "Sur devis") : tâche bornée/admin (recopier les infos
+        // sur 4 fiches), pas créative — cohérent avec le principe "prix fixe partout" de la grille.
+        // Passage en devis dédié réservé au cas rare d'une fiche existante à récupérer/fusionner.
         titre: 'Cohérence sur les annuaires locaux',
         description: 'PagesJaunes, Waze, Apple Maps, Yelp : mêmes horaires et coordonnées partout, pas seulement sur Google.',
-        prix: 'Sur devis',
+        prix: '80 €',
       },
     ],
     modalites: {
