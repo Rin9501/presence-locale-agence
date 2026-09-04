@@ -574,9 +574,14 @@ const site = {
         'Quelques jours après validation de la maquette. Vous voyez d’abord une version en ligne du site avant tout engagement, puis la livraison suit rapidement une fois vos retours pris en compte.',
     },
     {
+      // Réponse élargie le 04/09/2026 : ne contredisait pas la nouvelle section "Zone
+      // d'intervention" (zoneIntervention, page d'accueil), mais restait plus étroite qu'elle
+      // sans raison — toute l'Ariège reste la base, la zone 50km route couvre aussi l'Aude et
+      // la Haute-Garonne. Cette FAQ vit sur /methode, PAS sur la page d'accueil où se trouve la
+      // section détaillée — d'où le lien explicite plutôt qu'un "plus haut sur cette page".
       question: 'Intervenez-vous dans tout le département ?',
       reponse:
-        'Oui, dans toute l’Ariège (09). Le premier échange se fait par SMS, téléphone ou autour d’un café, où que vous soyez dans le département.',
+        'Oui, dans toute l’Ariège (09), et jusqu’à 50 km de Mirepoix par la route dans les départements limitrophes (Aude, Haute-Garonne) — le détail des communes est sur la page d’accueil, section « Zone d’intervention ». Le premier échange se fait par SMS, téléphone ou autour d’un café, où que vous soyez dans la zone.',
     },
     {
       question: 'Que se passe-t-il après la livraison du site ?',

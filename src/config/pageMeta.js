@@ -5,16 +5,22 @@
 // que de dupliquer les chaînes dans chaque composant de page (voir audit SEO du 04/08/2026).
 const pageMeta = {
   '/': {
-    // Title/description réécrits le 12/08/2026 suite à l'analyse GSC : "agence web ariège"
-    // était en position 11,84 (31 impressions, 0 clic) et "agence web limoux"/"agence web
-    // aude" en position 1,17/5,71 (0 clic malgré un bon classement) — le mot "agence"
-    // n'apparaissait nulle part dans le snippet. Limoux ajouté à titre de test (secteur à
-    // ~20min, comparable à Foix, mais jamais visé explicitement jusqu'ici) — FAQ, schema
-    // areaServed et CreditBadge clients volontairement laissés sur "Ariège" seule tant que
-    // ce test SEO n'est pas confirmé sur plusieurs semaines.
-    title: "La Dalle — Agence web pour artisans d'Ariège & Limoux",
+    // Title/description réécrits le 12/08/2026 suite à l'analyse GSC (voir historique), puis à
+    // nouveau le 04/09/2026 sur un export GSC juillet-sept 2026 (audit demandé par Mehdi) :
+    // le fix du 12/08 n'a pas suffi, CTR toujours à 0% trois semaines après sur les mêmes
+    // requêtes. Constat précis : "agence web limoux" position 1,4 (49 impr., 0 clic), "agence
+    // web aude" position 4,7 (49 impr., 0 clic), "agence web ariège" position 7,6 — la MEILLEURE
+    // requête en impressions (87) — toujours 0 clic. "Limoux" (une ville) remplacé par "l'Aude"
+    // (le département, qui a autant de demande que Limoux et couvre aussi Castelnaudary/Bram/
+    // Chalabre/Fanjeaux — désormais une zone réelle depuis l'extension du 04/09, pas juste un
+    // test). Hypothèse principale retenue avec Mehdi pour la suite : à ce niveau de position,
+    // la stagnation du CTR vient probablement plus du Local Pack Google (qui capte le clic
+    // avant l'organique) et de l'absence d'avis sur la fiche GMB de La Dalle elle-même (pas de
+    // rich snippet étoilé possible sans avis réels) que du seul texte du snippet — un nouveau
+    // point GSC est nécessaire dans 3-4 semaines pour vérifier si ce changement suffit.
+    title: "La Dalle — Agence web pour artisans d'Ariège & de l'Aude",
     description:
-      "Agence web locale pour artisans et commerçants d'Ariège et du secteur de Limoux. Carreleur de métier, interlocuteur unique, toujours joignable.",
+      "Agence web locale pour artisans et commerçants d'Ariège et de l'Aude, jusqu'à 50 km de Mirepoix. Carreleur de métier, interlocuteur unique, toujours joignable.",
     // og:title distinct du title SEO : accroche plus émotionnelle pour un partage social,
     // choix déjà présent avant ce refactor (index.html) — conservé tel quel.
     ogTitle: "La Dalle — un site qui tient, pour les artisans d'Ariège",
