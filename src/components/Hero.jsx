@@ -55,7 +55,7 @@ export default function Hero() {
                 alt="Fiche Google Chape Liquide Occitanie : 5,0 étoiles, services et coordonnées à jour"
                 width={665}
                 height={100}
-                loading="lazy"
+                fetchPriority="high"
                 className="w-full rounded-[2px]"
               />
             </picture>
