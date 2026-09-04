@@ -83,6 +83,99 @@ const site = {
       'Mehdi, carreleur de métier, développeur par passion — basé en Ariège. Il connaît le terrain, et il répond quand on l’appelle.',
   },
 
+  // Zone d'intervention détaillée (nouveau composant ZoneInterventionSection.jsx, 04/09/2026) —
+  // vient renforcer business.zone ("Toute l'Ariège"), ne le remplace pas. Liste construite comme
+  // pour mirepoix-materiaux (commit eb955ec, 03/09/2026) : communes des départements 09/11/31
+  // (geo.api.gouv.fr, population ≥ 800 habitants) dont la distance ROUTIÈRE réelle depuis Mirepoix
+  // (API de routage OSRM, pas à vol d'oiseau — la zone est vallonnée, l'écart dépasse souvent
+  // 10-15km) est ≤ 50km, triées par distance croissante. Si Mehdi veut aligner un jour les zones
+  // de service de sa fiche Google Business sur cette liste, se limiter aux ~20 premières
+  // (limite Google : 20 zones de service maximum) — cette liste-ci, plus complète, sert le site
+  // et le JSON-LD (LocalBusinessSchema.jsx), pas la fiche GMB directement.
+  zoneIntervention: {
+    radiusKm: 50,
+    eyebrow: 'Zone d’intervention',
+    titre: 'Toute l’Ariège, et au-delà si la route le permet.',
+    intro:
+      'Basés à Mirepoix, on se déplace dans tout le département — et dans les communes limitrophes de l’Aude et de la Haute-Garonne, tant que le trajet reste raisonnable. Le repère retenu : 50 km par la route depuis Mirepoix, pas à vol d’oiseau.',
+    featured: [
+      'Pamiers',
+      'Foix',
+      'Lavelanet',
+      'Saverdun',
+      'Mazères',
+      'Varilhes',
+      'Laroque-d’Olmes',
+      'La Tour-du-Crieu',
+      'Verniolle',
+      'Castelnaudary',
+      'Limoux',
+      'Bram',
+      'Chalabre',
+      'Fanjeaux',
+      'Montréal',
+      'Calmont',
+      'Avignonet-Lauragais',
+    ],
+    closingNote: 'Une commune plus loin sur la liste, ou pas dedans du tout ? Dites-nous où vous êtes, on vous confirme si ça reste jouable.',
+    // Liste complète triée par distance croissante — alimente le bloc dépliable de
+    // ZoneInterventionSection.jsx et le areaServed du JSON-LD (LocalBusinessSchema.jsx).
+    communes: [
+      { nom: 'Les Pujols', dept: '09', km: 18.6 },
+      { nom: 'Laroque-d’Olmes', dept: '09', km: 19.1 },
+      { nom: 'Fanjeaux', dept: '11', km: 22.2 },
+      { nom: 'Lavelanet', dept: '09', km: 23.0 },
+      { nom: 'Belpech', dept: '11', km: 24.3 },
+      { nom: 'Belvèze-du-Razès', dept: '11', km: 24.6 },
+      { nom: 'Verniolle', dept: '09', km: 24.9 },
+      { nom: 'La Tour-du-Crieu', dept: '09', km: 25.7 },
+      { nom: 'Chalabre', dept: '11', km: 25.7 },
+      { nom: 'Villeneuve-d’Olmes', dept: '09', km: 26.8 },
+      { nom: 'Villasavary', dept: '11', km: 27.5 },
+      { nom: 'Varilhes', dept: '09', km: 28.6 },
+      { nom: 'Saint-Jean-du-Falga', dept: '09', km: 29.3 },
+      { nom: 'Montréal', dept: '11', km: 30.5 },
+      { nom: 'Pamiers', dept: '09', km: 31.4 },
+      { nom: 'Bram', dept: '11', km: 31.5 },
+      { nom: 'Mazères', dept: '09', km: 31.6 },
+      { nom: 'Rieux-de-Pelleport', dept: '09', km: 32.5 },
+      { nom: 'Villeneuve-la-Comptal', dept: '11', km: 33.2 },
+      { nom: 'Pexiora', dept: '11', km: 33.3 },
+      { nom: 'Saint-Jean-de-Verges', dept: '09', km: 35.0 },
+      { nom: 'Crampagna', dept: '09', km: 35.3 },
+      { nom: 'Castelnaudary', dept: '11', km: 35.5 },
+      { nom: 'Bonnac', dept: '09', km: 35.6 },
+      { nom: 'Bélesta', dept: '09', km: 36.1 },
+      { nom: 'Mas-Saintes-Puelles', dept: '11', km: 36.8 },
+      { nom: 'Arzens', dept: '11', km: 37.0 },
+      { nom: 'Villepinte', dept: '11', km: 37.2 },
+      { nom: 'Saint-Martin-Lalande', dept: '11', km: 37.4 },
+      { nom: 'Calmont', dept: '31', km: 38.2 },
+      { nom: 'Lasbordes', dept: '11', km: 39.1 },
+      { nom: 'Alzonne', dept: '11', km: 39.1 },
+      { nom: 'Foix', dept: '09', km: 39.6 },
+      { nom: 'Limoux', dept: '11', km: 39.9 },
+      { nom: 'Alairac', dept: '11', km: 40.1 },
+      { nom: 'Villesèquelande', dept: '11', km: 40.2 },
+      { nom: 'Caux-et-Sauzens', dept: '11', km: 41.7 },
+      { nom: 'Labastide-d’Anjou', dept: '11', km: 42.1 },
+      { nom: 'Pieusse', dept: '11', km: 42.2 },
+      { nom: 'Saint-Paul-de-Jarrat', dept: '09', km: 43.1 },
+      { nom: 'Pezens', dept: '11', km: 43.7 },
+      { nom: 'Lavalette', dept: '11', km: 44.2 },
+      { nom: 'Saint-Papoul', dept: '11', km: 44.4 },
+      { nom: 'Montgailhard', dept: '09', km: 44.6 },
+      { nom: 'Avignonet-Lauragais', dept: '31', km: 45.1 },
+      { nom: 'Gardouch', dept: '31', km: 45.9 },
+      { nom: 'Montolieu', dept: '11', km: 46.2 },
+      { nom: 'Moussoulens', dept: '11', km: 46.7 },
+      { nom: 'Saverdun', dept: '09', km: 48.3 },
+      { nom: 'Ventenac-Cabardès', dept: '11', km: 48.3 },
+      { nom: 'Espéraza', dept: '11', km: 48.9 },
+      { nom: 'Saissac', dept: '11', km: 48.9 },
+    ],
+  },
+
   // Utilisé par LocalBusinessSchema.jsx (JSON-LD) — adresse ville seule (pas de rue,
   // activité à domicile), horaires larges cohérents avec une activité en soir/week-end
   seo: {

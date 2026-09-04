@@ -14,6 +14,7 @@ import MethodeFaqPage from './components/MethodeFaqPage'
 import OffreStackPage from './components/OffreStackPage'
 import RealisationsSection from './components/RealisationsSection'
 import ScrollProgressBar from './components/ScrollProgressBar'
+import ZoneInterventionSection from './components/ZoneInterventionSection'
 
 // Peu de pages (accueil + pages de contenu) : un simple test du pathname suffit, pas besoin
 // de react-router. Nécessite le fallback SPA dans netlify.toml (déjà en place) pour l'URL
@@ -53,6 +54,7 @@ function App() {
         <RealisationsSection />
         <ApresLivraisonSection />
         <FondateurSection />
+        <ZoneInterventionSection />
       </main>
       <ContactForm />
       <Footer />
