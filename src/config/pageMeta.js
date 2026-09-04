@@ -29,6 +29,16 @@ const pageMeta = {
     description:
       "Pourquoi La Dalle, comment se déroule un projet en 4 étapes, et réponses aux questions les plus fréquentes sur les tarifs, délais et la zone d'intervention.",
   },
+  '/fiches-produits': {
+    // Lien direct partagé par Mehdi en RDV/SMS, pas un point d'entrée public — noindex pour
+    // éviter tout chevauchement de contenu dupliqué avec /offres sur Google (voir plan du
+    // 04/09/2026). Pas d'ogTitle dédié : og/twitter reprennent title/description ci-dessous,
+    // utiles pour un aperçu de lien correct dans une conversation SMS/WhatsApp.
+    title: 'Détail des prestations par secteur — La Dalle',
+    description:
+      'Le détail exact de chaque prestation, secteur par secteur : inclus, non inclus, délais et conditions — sans argumentaire commercial.',
+    robots: 'noindex, nofollow',
+  },
   '/mentions-legales': {
     title: 'Mentions légales — La Dalle',
     description:

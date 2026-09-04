@@ -3,6 +3,7 @@ import CguCgv from './components/CguCgv'
 import ContactForm from './components/ContactForm'
 import CookieConsent from './components/CookieConsent'
 import CursorLight from './components/CursorLight'
+import FichesProduitsPage from './components/FichesProduitsPage'
 import FondateurSection from './components/FondateurSection'
 import Footer from './components/Footer'
 import Header from './components/Header'
@@ -22,6 +23,7 @@ const PAGES = {
   '/offres': OffreStackPage,
   '/methode': MethodeFaqPage,
   '/cgu-cgv': CguCgv,
+  '/fiches-produits': FichesProduitsPage,
 }
 
 function App() {

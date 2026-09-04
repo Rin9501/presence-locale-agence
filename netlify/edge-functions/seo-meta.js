@@ -7,10 +7,13 @@ import pageMeta from '../../src/config/pageMeta.js'
 // sociaux Facebook/LinkedIn, le 1er passage de Google avant son rendu JS différé) voit donc
 // toujours le contenu de la homepage sur /offres, /methode et /mentions-legales.
 //
-// Cette edge function réécrit le HTML avant qu'il ne parte, pour ces 5 routes précisément —
-// pas de wildcard, ce site a 5 pages fixes, pas de raison de matcher plus large. Elle laisse
+// Cette edge function réécrit le HTML avant qu'il ne parte, pour ces routes précisément —
+// pas de wildcard, ce site a des pages fixes, pas de raison de matcher plus large. Elle laisse
 // tout le reste (assets, images) totalement intact : context.next() ne passe même pas par ici
-// pour ces chemins, seuls les 5 paths déclarés dans `config.path` ci-dessous sont interceptés.
+// pour ces chemins, seuls les paths déclarés dans `config.path` ci-dessous sont interceptés.
+// /fiches-produits (04/09/2026) y est aussi : robots=noindex doit être posé dès le 1er octet
+// (pas seulement après hydratation), et og/twitter donnent un aperçu correct quand ce lien
+// direct est partagé par SMS, alors même que la page n'est pas destinée à être indexée.
 const SITE_URL = 'https://ladalle-agence.fr'
 
 function escapeHtml(value) {
@@ -27,12 +30,14 @@ export default async (request, context) => {
   const title = escapeHtml(meta.title)
   const ogTitle = escapeHtml(meta.ogTitle ?? meta.title)
   const description = escapeHtml(meta.description)
+  const robots = escapeHtml(meta.robots ?? 'index, follow')
   const canonicalUrl = `${SITE_URL}${path === '/' ? '/' : path}`
 
   let html = await response.text()
   html = html
     .replace(/<title>.*?<\/title>/s, `<title>${title}</title>`)
     .replace(/(<meta name="description" content=")[^"]*(")/, `$1${description}$2`)
+    .replace(/(<meta name="robots" content=")[^"]*(")/, `$1${robots}$2`)
     .replace(/(<link rel="canonical" href=")[^"]*(")/, `$1${canonicalUrl}$2`)
     .replace(/(<meta property="og:url" content=")[^"]*(")/, `$1${canonicalUrl}$2`)
     .replace(/(<meta property="og:title" content=")[^"]*(")/, `$1${ogTitle}$2`)
@@ -48,5 +53,5 @@ export default async (request, context) => {
 }
 
 export const config = {
-  path: ['/', '/offres', '/methode', '/mentions-legales', '/cgu-cgv'],
+  path: ['/', '/offres', '/methode', '/mentions-legales', '/cgu-cgv', '/fiches-produits'],
 }

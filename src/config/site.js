@@ -307,6 +307,81 @@ const site = {
     },
   },
 
+  // Fiches produits par secteur — page /fiches-produits (04/09/2026), lien direct envoyé par
+  // Mehdi en RDV/SMS : pas dans le menu, pas liée depuis /offres. Ton factuel type devis, pas
+  // commercial comme /offres. Contenu transcrit de l'Artifact "La Dalle — Offres & Tarifs"
+  // (03/09/2026), qui sert de brief. Les prix ne sont JAMAIS dupliqués ici : le composant
+  // SecteurTabs lit directement site.offres pour les montants — cette clé ne porte que les
+  // inclus/exclus et repères factuels propres à chaque secteur.
+  fichesProduits: {
+    kicker: 'Fiche produit',
+    titre: 'Ce qui est inclus, secteur par secteur.',
+    intro: 'Le détail exact de chaque prestation, sans argumentaire commercial — pour comparer avant de signer.',
+    secteurs: {
+      commerces: {
+        label: 'Commerces & beauté',
+        cible: 'Coiffure, esthétique, restauration, commerces de proximité',
+        inclus: [
+          'Site vitrine une page, 4 à 6 sections (accueil, présentation, services ou menu, galerie photo, avis, contact)',
+          'Adapté mobile et ordinateur',
+          'Fiche Google Business optimisée pour les recherches locales',
+          'Textes rédigés sur mesure à partir de ce que vous fournissez — pas de texte tout fait',
+          '2 séries de retouches incluses (textes + mise en page)',
+          'Formulaire de contact',
+          'QR code avis Google personnalisé, avec chevalet à poser en caisse ou à l’accueil',
+        ],
+        exclus: [
+          'Pages séparées supplémentaires',
+          'Retouches au-delà des 2 séries incluses',
+          'Photos professionnelles (vous les fournissez, sauf accord contraire)',
+          'Maintenance après la 1re année',
+        ],
+      },
+      btp: {
+        label: 'Artisans BTP',
+        cible: 'Carrelage, maçonnerie, plomberie, électricité, paysage',
+        inclus: [
+          'Site vitrine une page, 4 à 6 sections (accueil, services, galerie chantiers avant/après, avis, contact/devis)',
+          'Galerie chantiers : jusqu’à 10 photos avant/après incluses, optimisées pour Google',
+          'Adapté mobile et ordinateur',
+          'Fiche Google Business optimisée pour les recherches locales',
+          'Textes rédigés sur mesure',
+          '2 séries de retouches incluses',
+          'Formulaire de demande de devis',
+          'QR code avis Google + flyers et cartes de visite (chevalet en plus si dépôt ou bureau)',
+        ],
+        exclus: [
+          'Photos au-delà des 10 incluses — supplément par lot, à définir ensemble',
+          'Pages séparées supplémentaires',
+          'Retouches au-delà des 2 séries incluses',
+          'Prise de photo sur chantier (vous fournissez les photos)',
+          'Maintenance après la 1re année',
+        ],
+      },
+      sante: {
+        label: 'Professions de santé',
+        cible: 'Professions de santé réglementées — ton factuel, jamais commercial',
+        inclus: [
+          'Audit complet de votre fiche Google existante (horaires, photos, catégories, avis)',
+          'Optimisation et mise à jour de tous les champs pertinents',
+          'Chevalet neutre inclus : le QR code renvoie vers votre fiche, sans jamais inciter à laisser un avis',
+          'Bilan à 60 jours inclus, formulé sobrement — la visibilité de la fiche, jamais « des clients gagnés »',
+        ],
+        exclus: [
+          'Site vitrine — si vous en voulez un, voir Commerces & beauté',
+          'Suivi au-delà du bilan à 60 jours — 15 €/mois à la carte',
+          'Aucune sollicitation d’avis ni superlatif dans les textes : la déontologie de votre profession l’impose, pas une option',
+        ],
+      },
+    },
+    facts: [
+      { label: 'Délai', valeur: '5 à 10 jours ouvrés à réception de vos textes et photos' },
+      { label: 'Paiement', valeur: '50 % à la signature, solde à la livraison' },
+      { label: 'Engagement', valeur: 'Devis signé avant de commencer, pas d’abonnement forcé' },
+      { label: 'Propriété', valeur: 'Le site vous appartient — code et hébergement transférables si besoin' },
+    ],
+  },
+
   // Supports physiques inclus dans chaque prestation, sans ligne facturée à part (décision actée
   // le 06/08/2026, prix Axe A/B ajustés le 07/08). Deux chevalets distincts et volontairement pas
   // interchangeables : neutre pour la santé (contrainte déontologique — jamais d'incitation à

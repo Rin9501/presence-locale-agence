@@ -14,7 +14,7 @@ const OG_SELECTORS = {
   twitterDescription: 'meta[name="twitter:description"]',
 }
 
-export default function useDocumentMeta(title, description, path) {
+export default function useDocumentMeta(title, description, path, robots) {
   useEffect(() => {
     const previousTitle = document.title
     document.title = title
@@ -22,6 +22,10 @@ export default function useDocumentMeta(title, description, path) {
     const meta = document.querySelector('meta[name="description"]')
     const previousDescription = meta?.getAttribute('content')
     if (meta && description) meta.setAttribute('content', description)
+
+    const robotsMeta = document.querySelector('meta[name="robots"]')
+    const previousRobots = robotsMeta?.getAttribute('content')
+    if (robotsMeta) robotsMeta.setAttribute('content', robots || 'index, follow')
 
     const canonical = document.querySelector('link[rel="canonical"]')
     const previousCanonical = canonical?.getAttribute('href')
@@ -41,10 +45,11 @@ export default function useDocumentMeta(title, description, path) {
     return () => {
       document.title = previousTitle
       if (meta && previousDescription) meta.setAttribute('content', previousDescription)
+      if (robotsMeta && previousRobots) robotsMeta.setAttribute('content', previousRobots)
       if (canonical && previousCanonical) canonical.setAttribute('href', previousCanonical)
       for (const key of Object.keys(OG_SELECTORS)) {
         if (elements[key] && previousValues[key]) elements[key].setAttribute('content', previousValues[key])
       }
     }
-  }, [title, description, path])
+  }, [title, description, path, robots])
 }
