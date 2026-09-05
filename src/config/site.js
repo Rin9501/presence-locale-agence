@@ -651,6 +651,17 @@ const site = {
       image: 'cyrille-peinture/screenshot.jpg',
       url: 'https://cyrille-peinture.fr',
     },
+    {
+      // Pas de "stat" : aucun chiffre de performance confirmé pour ce client à ce jour,
+      // cohérent avec la règle "jamais de faux exemple" de ce tableau (même choix que
+      // Finn Elec et Cyrille Peinture ci-dessus).
+      type: 'site',
+      title: 'Mirepoix Matériaux',
+      badge: 'Site vitrine · Négoce de matériaux (réseau Tout Faire)',
+      description: 'Matériaux, outillage et conseils de pro pour particuliers et professionnels, avec zone de livraison affichée jusqu’à 50 km de Mirepoix.',
+      image: 'mirepoix-materiaux/screenshot.jpg',
+      url: 'https://mirepoixmateriaux.fr',
+    },
   ],
 }
 
