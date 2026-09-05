@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { trackBookingClick } from '../lib/analytics'
+import { trackBookingClick, trackPhoneClick } from '../lib/analytics'
 import site from '../config/site'
 import Reveal from './Reveal'
 
@@ -70,18 +70,25 @@ export default function ContactForm() {
           On regarde votre fiche Google et on vous dit franchement ce qui bloque — réponse sous 48h.{' '}
           {site.business.contactZone}.
         </p>
-        <p className="mt-3 text-center text-sm text-[var(--ink-muted)]">
-          Vous préférez réserver directement un créneau ?{' '}
+        <p className="mt-4 text-center text-sm text-[var(--ink-muted)]">Vous préférez éviter le formulaire ?</p>
+        <div className="mt-3 flex flex-wrap items-center justify-center gap-3">
           <a
             href={site.business.bookingUrl}
             target="_blank"
             rel="noopener noreferrer"
             onClick={() => trackBookingClick('contact_form')}
-            className="font-medium text-[var(--color-orange-text)] underline underline-offset-2 hover:opacity-80"
+            className="rounded-sm border border-[var(--border-soft)] px-4 py-2 text-sm font-medium text-[var(--ink)] transition hover:border-[var(--color-orange)]"
           >
-            Choisir un horaire
+            Réserver un créneau
           </a>
-        </p>
+          <a
+            href={`tel:${site.business.phone.replace(/\s/g, '')}`}
+            onClick={() => trackPhoneClick('contact_form')}
+            className="rounded-sm border border-[var(--border-soft)] px-4 py-2 text-sm font-medium text-[var(--ink)] transition hover:border-[var(--color-orange)]"
+          >
+            Appelez-nous : {site.business.phone}
+          </a>
+        </div>
 
         <form onSubmit={handleSubmit} className="mt-8 space-y-4">
           <div>

@@ -15,6 +15,7 @@ import OffreStackPage from './components/OffreStackPage'
 import RealisationsSection from './components/RealisationsSection'
 import ScrollProgressBar from './components/ScrollProgressBar'
 import ZoneInterventionSection from './components/ZoneInterventionSection'
+import useScrollToHash from './hooks/useScrollToHash'
 
 // Peu de pages (accueil + pages de contenu) : un simple test du pathname suffit, pas besoin
 // de react-router. Nécessite le fallback SPA dans netlify.toml (déjà en place) pour l'URL
@@ -30,6 +31,7 @@ const PAGES = {
 function App() {
   const pathname = window.location.pathname.replace(/\/$/, '') || '/'
   const Page = PAGES[pathname]
+  useScrollToHash()
 
   if (Page) {
     return (
