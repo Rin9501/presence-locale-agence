@@ -11,6 +11,7 @@ import Hero from './components/Hero'
 import LocalBusinessSchema from './components/LocalBusinessSchema'
 import MentionsLegales from './components/MentionsLegales'
 import MethodeFaqPage from './components/MethodeFaqPage'
+import MobileStickyCta from './components/MobileStickyCta'
 import OffreStackPage from './components/OffreStackPage'
 import RealisationsSection from './components/RealisationsSection'
 import ScrollProgressBar from './components/ScrollProgressBar'
@@ -35,18 +36,19 @@ function App() {
 
   if (Page) {
     return (
-      <div className="flex min-h-screen flex-col">
+      <div className="flex min-h-screen flex-col pb-16 sm:pb-0">
         <LocalBusinessSchema />
         <Header />
         <Page />
         <Footer />
+        <MobileStickyCta />
         <CookieConsent />
       </div>
     )
   }
 
   return (
-    <div className="flex min-h-screen flex-col">
+    <div className="flex min-h-screen flex-col pb-16 sm:pb-0">
       <LocalBusinessSchema />
       <CursorLight />
       <ScrollProgressBar />
@@ -60,6 +62,7 @@ function App() {
       </main>
       <ContactForm />
       <Footer />
+      <MobileStickyCta />
       <CookieConsent />
     </div>
   )
