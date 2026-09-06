@@ -34,6 +34,13 @@ export default function LocalBusinessSchema() {
       opens: seo.openingHours.opens,
       closes: seo.openingHours.closes,
     },
+    // Avis réels, visibles dans AvisSection sur la homepage (06/09/2026) — ne pas
+    // déclarer d'aggregateRating sans avis visible correspondant (cf. audit chape-liquide-occitanie).
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '5',
+      reviewCount: '3',
+    },
     sameAs: [business.gmbUrl],
   }
 

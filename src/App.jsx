@@ -1,4 +1,5 @@
 import ApresLivraisonSection from './components/ApresLivraisonSection'
+import AvisSection from './components/AvisSection'
 import CguCgv from './components/CguCgv'
 import ContactForm from './components/ContactForm'
 import CookieConsent from './components/CookieConsent'
@@ -56,6 +57,7 @@ function App() {
       <main className="flex-1">
         <Hero />
         <RealisationsSection />
+        <AvisSection />
         <ApresLivraisonSection />
         <FondateurSection />
         <ZoneInterventionSection />

@@ -7,6 +7,7 @@ import ThemeToggle from './ThemeToggle'
 // sont de vraies pages, pas des ancres.
 const links = [
   { href: '/#realisations', label: 'Réalisations' },
+  { href: '/#avis', label: 'Avis' },
   { href: '/offres', label: 'Offres' },
   { href: '/methode', label: 'Méthode & FAQ' },
   { href: '/#fondateur', label: 'À propos' },
