@@ -32,7 +32,11 @@ const site = {
     // sur les interactions Google Business datées de Chape Liquide Occitanie (7 en juin → 31 en
     // juillet 2026, cf. commentaire sur la carte Preuve sociale ci-dessous) plutôt qu'une conversion
     // ponctuelle non reconductible tel quel.
-    repere: 'Interactions fiche Google ×4 en 1 mois',
+    // Daté le 21/09/2026, même raison que la carte Réalisations : « ×4 en 1 mois » sans fenêtre de
+    // mesure se lit comme un régime permanent. Sur les deux autres clients mesurés ce jour-là
+    // (Idriss, Victoria), la courbe d'interactions redescend après le pic de mise en ligne — donc
+    // un multiplicateur non daté est trompeur par construction. Chiffre inchangé, fenêtre affichée.
+    repere: 'Fiche Google : 7 interactions en juin, 31 en juillet 2026',
     ctaAudit: 'Un audit gratuit de ma fiche',
     avantApres: {
       avantLabel: 'avant',
@@ -615,7 +619,9 @@ const site = {
       description: 'Position moyenne 8,5 sur « chape liquide », avec un CTR de 5 % — au-dessus de la moyenne du secteur à ce rang.',
       image: 'chape-liquide-occitanie/screenshot.jpg',
       url: 'https://chapeliquide-occitanie.fr',
-      stat: 'Interactions fiche Google ×4 en 1 mois',
+      // Daté explicitement le 21/09/2026 : « ×4 en 1 mois » sans fenêtre laissait croire à un régime
+      // permanent. Chiffre inchangé (7 juin → 31 juillet 2026), seule la formulation devient datable.
+      stat: 'Fiche Google : 7 interactions en juin, 31 en juillet 2026',
     },
     {
       type: 'site',
@@ -624,7 +630,11 @@ const site = {
       description: 'De la charpente à la couverture, une seule page pour tout montrer.',
       image: 'mirepoix-toiture/screenshot.jpg',
       url: 'https://mirepoix-toiture.fr',
-      stat: '+8 demandes de devis / mois',
+      // Corrigé le 21/09/2026. L'ancien « +8 demandes de devis / mois » n'avait aucune source et est
+      // contredit par ses GMB Insights (avr.→sept. 2026 : 1 appel, 15 clics vers le site, 276 vues de
+      // fiche). Remplacé par un chiffre de position lisible dans l'export Search Console du 21/09
+      // (24/07→19/09/2026) : « couvreur mirepoix », 96 impressions, position moyenne 6,78.
+      stat: '1re page sur « couvreur mirepoix » en 8 semaines',
     },
     {
       type: 'site',
@@ -633,7 +643,12 @@ const site = {
       description: 'Fiche Google reprise de zéro : horaires, photos, avis relancés.',
       image: 'vh-beauty-studio/screenshot.jpg',
       url: 'https://vh-beauty-studio.fr',
-      stat: 'Vue 3× plus sur Maps en 8 semaines',
+      // Corrigé le 21/09/2026. L'ancien « 3× plus de vues sur Maps » n'était soutenu par aucune donnée,
+      // et les demandes d'itinéraire (seul indicateur Maps suivi mois par mois) baissent sur la période :
+      // 68 en juin, 57 en juillet, 37 en août, 25 en septembre. Remplacé par le contraste mesuré dans ses
+      // GMB Insights : 0 appel d'avril à juillet, 8 en août, 8 en septembre, après mise en ligne du site
+      // le 25/07 et reprise de la fiche le 07/08.
+      stat: '16 appels depuis la fiche Google, contre 0 avant',
     },
     {
       type: 'site',
