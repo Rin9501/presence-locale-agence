@@ -4,7 +4,7 @@ import site from '../config/site'
 // document.querySelectorAll('script[type="application/ld+json"]') en navigateur réel,
 // pas via curl/fetch qui ne rend pas le JS.
 export default function LocalBusinessSchema() {
-  const { business, seo, zoneIntervention } = site
+  const { business, seo, zoneIntervention, offre } = site
 
   const schema = {
     '@context': 'https://schema.org',
@@ -42,6 +42,26 @@ export default function LocalBusinessSchema() {
       reviewCount: '3',
     },
     sameAs: [business.gmbUrl],
+    // Offre unique v1 (29/09/2026) — montants en dur ici parce que schema.org attend un nombre,
+    // pas le libellé "1 460 € HT" de site.offre : à garder aligné avec site.offre.prix / option.prix.
+    // Franchise en base de TVA (art. 293 B du CGI) : le prix HT est le prix payé.
+    makesOffer: [
+      {
+        '@type': 'Offer',
+        name: offre.titre,
+        description: `${offre.prixDetail}. ${offre.renouvellement}`,
+        price: '1460',
+        priceCurrency: 'EUR',
+        url: 'https://ladalle-agence.fr/offres',
+      },
+      {
+        '@type': 'Offer',
+        name: offre.option.titre,
+        price: '150',
+        priceCurrency: 'EUR',
+        url: 'https://ladalle-agence.fr/offres',
+      },
+    ],
   }
 
   return (

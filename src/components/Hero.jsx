@@ -10,12 +10,15 @@ export default function Hero() {
     <section id="accueil" className="bg-[var(--color-navy)] px-6 py-20 text-white sm:py-28">
       <div className="mx-auto grid max-w-5xl items-center gap-14 md:grid-cols-2">
         <div>
+          {/* H1 reformulé le 29/09/2026 (offre unique) : "Trouvé en 60 jours" se lisait comme une
+              promesse de résultat. Le nouveau titre décrit ce qui est réellement garanti : une
+              mesure au jour 0 et une comparaison au jour 60. */}
           <h1 className="text-4xl leading-[1.05] text-white sm:text-5xl">
-            Introuvable sur
+            Introuvable sur Google&nbsp;?
             <br />
-            Google. <span className="text-[var(--color-orange)]">Trouvé</span>
+            On mesure votre fiche au jour&nbsp;0,
             <br />
-            en 60 jours.
+            <span className="text-[var(--color-orange)]">on la compare au jour&nbsp;60.</span>
           </h1>
           <p className="mt-5 max-w-md text-base text-white/70">{site.business.subtitle}</p>
           <div className="mt-8 flex flex-wrap items-center gap-4">

@@ -1,42 +1,49 @@
 # La Dalle
 
-> Introuvable sur Google, trouvé en 60 jours — création de sites internet et optimisation de fiches Google Business pour les artisans et commerces d'Ariège.
+> Fiche Google et site vitrine pour les artisans du bâtiment d'Ariège et de l'Aude qui manquent de demandes et ne veulent rien gérer eux-mêmes. La fiche est mesurée le jour où le travail commence, puis comparée à 60 jours.
 
 ## Qui
 
-La Dalle est porté par Mehdi, basé à Mirepoix (Ariège, France), carreleur de métier et développeur par passion. L'idée de départ : les artisans et commerçants font du bon travail mais restent souvent invisibles sur Google, alors que c'est là que leurs futurs clients les cherchent en premier.
+La Dalle est porté par Mehdi, basé à Mirepoix (Ariège, France), carreleur de métier et développeur. Un seul interlocuteur, du premier appel au point trimestriel.
 
-## Quoi
+## Pour qui
 
-- Sites internet vitrines sur-mesure (React/Vite, sans CMS générique), rapides et pensés pour le mobile.
-- Optimisation de fiches Google Business Profile.
-- Pour artisans du BTP : galerie de chantiers avant/après en plus du site.
-- Bilan gratuit à 60 jours après livraison : ce que le site et la fiche Google ont réellement généré.
+Artisans du bâtiment (électricité, plomberie, chauffage, climatisation, couverture, peinture, maçonnerie…), seuls ou avec une ou deux personnes, à moins de 50 km de Mirepoix par la route, en Ariège et dans l'Aude.
 
-## Où
+## L'offre (une seule)
 
-Zone d'intervention : Mirepoix, Pamiers, Lavelanet et les alentours, en Ariège (France).
+- 1 460 € HT la première année : 990 € de mise en place + 470 € de suivi. Paiement possible en 3 fois, acompte à la signature.
+- Ensuite 470 €/an pour garder le suivi et l'exclusivité sur le secteur, jamais reconduit automatiquement : un dernier bilan est envoyé par email avant la fin de l'année, le client confirme ou non. En cas d'arrêt, le site et le nom de domaine sont transférés au client.
+- TVA non applicable, art. 293 B du CGI.
 
-## Tarifs
+Compris dans l'offre :
+- Fiche Google optimisée, puis tenue active : une mise à jour par mois (photos de chantier ou publication), une réponse à chaque avis.
+- Site vitrine avec galerie de chantiers, textes rédigés.
+- Chevalet QR pour les avis, flyers et cartes de visite.
+- Une méthode de collecte d'avis en fin de chantier.
+- Bilan à 60 jours comparé aux captures datées du jour 0.
+- Point chiffré tous les 3 mois (positions, vues, appels).
+- Deux petites modifications du site par mois ; nom de domaine et hébergement inclus.
 
-- Fiche Google Business seule (professions de santé réglementées) : tarif unique 150 €, suivi mensuel optionnel 15 €/mois.
-- Site vitrine + fiche Google (commerces, beauté, restauration) : à partir de 500 €.
-- Site + galerie chantiers + fiche Google (artisans du BTP) : à partir de 600 €.
-- Aucun abonnement mensuel obligatoire de type CMS : un forfait annuel unique de 240 € (inclus, non optionnel dès qu'il y a un site) couvre l'hébergement, le nom de domaine et 2 petites modifications par mois.
-- Suivi Premium (option, site + fiche Google) : +20 €/mois en plus de la maintenance — bilan trimestriel et ajustements réguliers.
+Seule option : une page consacrée à une commune où l'artisan travaille souvent, 150 € HT la page, construite avec ses chantiers réels sur place.
 
-## Ce qui différencie La Dalle
+## Engagements
 
-- Preuve, pas promesse : résultats chiffrés (ex. interactions fiche Google ×4 en un mois pour Chape Liquide Occitanie).
-- Suivi dans la durée — bilan gratuit à 60 jours puis maintenance incluse, un interlocuteur unique qui ne disparaît pas une fois payé.
-- Vécu artisan réel du fondateur, pas seulement un discours d'agence.
-- Zéro engagement, zéro abonnement forcé — contrairement aux plateformes comme Solocal/PagesJaunes ou aux CMS génériques (WordPress, Wix).
+- Garantie : « On mesure ta fiche le jour où je commence. Si à 60 jours elle n'a pas progressé, je continue à mes frais jusqu'à ce qu'elle progresse. »
+- Exclusivité : « Un seul artisan par métier et par secteur. Je ne travaille jamais pour ton concurrent tant que ton suivi est actif. »
+- Aucune promesse de place sur Google ni de nombre d'appels : Google classe selon l'endroit d'où l'on cherche.
+
+## Résultats mesurés (datés)
+
+- Chape Liquide Occitanie : fiche Google passée de 7 interactions en juin 2026 à 31 en juillet 2026 ; position moyenne 8,5 sur « chape liquide », CTR 5 % (Search Console, 29/05 → 28/07/2026).
+- Mirepoix Toiture : position moyenne 6,78 sur « couvreur mirepoix » (Search Console, 24/07 → 19/09/2026).
 
 ## Pages
 
-- [Accueil](https://ladalle-agence.fr/): Présentation, preuve sociale, suivi post-livraison, fondateur et formulaire d'audit gratuit.
-- [Offres](https://ladalle-agence.fr/offres): Détail des 2 axes d'offre (fiche Google seule / site + fiche Google), Suivi Premium en option, et la stack technique.
+- [Accueil](https://ladalle-agence.fr/): Présentation, réalisations, avis clients, suivi après la mise en ligne, zone d'intervention et formulaire d'audit gratuit.
+- [Offre](https://ladalle-agence.fr/offres): Contenu et prix de l'offre, garantie, exclusivité, supports imprimés, option page commune.
 - [Méthode & FAQ](https://ladalle-agence.fr/methode): Pourquoi La Dalle, déroulé d'un projet en 4 étapes, et questions fréquentes.
+- [CGU/CGV](https://ladalle-agence.fr/cgu-cgv): Conditions générales.
 - [Mentions légales](https://ladalle-agence.fr/mentions-legales): Éditeur du site, hébergement, données personnelles.
 - [Fiche Google Business](https://share.google/80OCTHfwtmZeeYobB): Avis clients et informations pratiques.
 

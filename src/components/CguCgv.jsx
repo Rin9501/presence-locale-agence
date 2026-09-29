@@ -65,7 +65,7 @@ export default function CguCgv() {
           <p className="mt-2">
             Les présentes CGV s’appliquent à toute prestation de création de site vitrine et/ou d’optimisation de
             fiche Google Business vendue par {legal.tradeName} ({legal.legalForm}, SIRET {legal.siret}) à un client
-            professionnel (artisan, commerce, profession libérale) agissant pour les besoins de son activité. Le
+            professionnel agissant pour les besoins de son activité. Le
             détail des offres et tarifs en vigueur est présenté sur la page{' '}
             <a href="/offres" className="underline">
               Offres
@@ -88,7 +88,7 @@ export default function CguCgv() {
               Méthode
             </a>{' '}
             : échange initial, réunion des contenus puis maquette soumise à validation du client, livraison du site
-            et/ou de la fiche Google optimisée, puis bilan gratuit à 60 jours. Les délais communiqués au devis sont
+            et/ou de la fiche Google optimisée, puis bilan à 60 jours comparé à l’état de la fiche au démarrage. Les délais communiqués au devis sont
             indicatifs et dépendent notamment de la rapidité avec laquelle le client fournit les contenus nécessaires
             (photos, logo, textes, accès) et valide chaque étape.
           </p>
@@ -100,18 +100,25 @@ export default function CguCgv() {
             <a href="/offres" className="underline">
               Offres
             </a>
-            ). Le paiement des prestations ponctuelles (création de site, fiche Google seule) s’effectue par
-            virement bancaire, à réception de facture après livraison, sauf modalité différente convenue au devis.
-            La maintenance optionnelle, lorsqu’elle est souscrite, est facturée mensuellement ou annuellement selon
-            le choix du client.
+            ). Un acompte est dû à la signature du devis ; le solde de la première année peut être réglé en une
+            ou plusieurs échéances, dans la limite de trois, selon le calendrier fixé au devis. Le paiement
+            s’effectue par virement bancaire, sauf modalité différente convenue au devis. TVA non applicable,
+            art. 293 B du CGI.
           </p>
 
-          <h3 className="mt-6 text-lg font-semibold text-[var(--ink)]">Absence d’engagement et résiliation de la maintenance</h3>
+          <h3 className="mt-6 text-lg font-semibold text-[var(--ink)]">Suivi annuel et fin du suivi</h3>
           <p className="mt-2">
-            La maintenance proposée après livraison est optionnelle et sans engagement de durée : le client peut y
-            souscrire ou y renoncer à tout moment, et la résilier quand il le souhaite. La résiliation prend effet
-            à l’issue de la période déjà réglée (mois ou année en cours), sans remboursement au prorata de cette
-            période.
+            Le suivi de la première année (tenue de la fiche Google, réponses aux avis, petites modifications du
+            site, bilan à 60 jours et points trimestriels, nom de domaine et hébergement) est compris dans le prix
+            de la première année. Il n’est pas reconduit tacitement : avant la fin de chaque année de suivi,{' '}
+            {legal.tradeName} adresse au client, par email, un dernier bilan de l’année et lui demande s’il souhaite
+            poursuivre. Le suivi n’est renouvelé, au tarif indiqué au devis, qu’après confirmation écrite du client.
+            À défaut de renouvellement, le site et le nom de domaine sont transférés au client, et l’exclusivité
+            sectorielle prend fin.
+          </p>
+          <p className="mt-2">
+            Les clients ayant souscrit une maintenance ou un suivi avant le 29 septembre 2026 conservent les
+            conditions de leur devis.
           </p>
 
           <h3 className="mt-6 text-lg font-semibold text-[var(--ink)]">Propriété du site livré</h3>
@@ -137,6 +144,11 @@ export default function CguCgv() {
             pas une garantie de résultat équivalent, les performances dépendant de facteurs propres à chaque
             activité et hors du contrôle de {legal.tradeName} (concurrence locale, algorithmes Google, saisonnalité
             de l’activité).
+          </p>
+          <p className="mt-2">
+            Par exception, {legal.tradeName} s’engage sur la garantie suivante : l’état de la fiche Google du client
+            est mesuré au démarrage de la prestation ; si, 60 jours plus tard, la fiche n’a pas progressé,{' '}
+            {legal.tradeName} poursuit le travail à ses frais jusqu’à ce qu’elle progresse.
           </p>
 
           <h3 className="mt-6 text-lg font-semibold text-[var(--ink)]">Droit applicable et litiges</h3>

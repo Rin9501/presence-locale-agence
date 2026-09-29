@@ -1,6 +1,5 @@
 import pageMeta from '../config/pageMeta'
 import useDocumentMeta from '../hooks/useDocumentMeta'
-import OffreAddOns from './OffreAddOns'
 import OffreAxes from './OffreAxes'
 import PageCta from './PageCta'
 import PageIntro from './PageIntro'
@@ -14,10 +13,9 @@ export default function OffreStackPage() {
       <PageIntro
         kicker="Offre"
         titre="Ce que vous obtenez, et ce que ça coûte."
-        intro="Deux axes, pas trois catégories par secteur : la fiche Google seule pour les professions de santé réglementées, un package unique pour tout le reste."
+        intro="Une seule offre pour les artisans du bâtiment : ce qu’elle comprend, ce qu’elle coûte, et ce qu’on fait si votre fiche ne progresse pas."
       />
       <OffreAxes />
-      <OffreAddOns />
       <StackSection />
       <PageCta />
     </main>
