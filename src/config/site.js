@@ -252,7 +252,7 @@ const site = {
   stack: {
     title: 'Comment c’est construit',
     intro:
-      'Pas de CMS générique ni de thème du commerce : chaque site est codé sur-mesure, avec les mêmes outils que ceux utilisés par les équipes tech des grandes plateformes web.',
+      'Pas de CMS générique ni de thème acheté tout fait : chaque site est codé sur-mesure, avec les mêmes outils que ceux utilisés par les équipes tech des grandes plateformes web.',
     items: [
       {
         name: 'React + Vite',
