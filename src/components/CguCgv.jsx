@@ -110,9 +110,11 @@ export default function CguCgv() {
           <p className="mt-2">
             Le suivi de la première année (tenue de la fiche Google, réponses aux avis, petites modifications du
             site, bilan à 60 jours et points trimestriels, nom de domaine et hébergement) est compris dans le prix
-            de la première année. Au-delà, il se renouvelle chaque année au tarif indiqué au devis, et le client
-            peut y renoncer à chaque échéance annuelle. En cas d’arrêt du suivi, le site et le nom de domaine sont
-            transférés au client, et l’exclusivité sectorielle prend fin.
+            de la première année. Il n’est pas reconduit tacitement : avant la fin de chaque année de suivi,{' '}
+            {legal.tradeName} adresse au client, par email, un dernier bilan de l’année et lui demande s’il souhaite
+            poursuivre. Le suivi n’est renouvelé, au tarif indiqué au devis, qu’après confirmation écrite du client.
+            À défaut de renouvellement, le site et le nom de domaine sont transférés au client, et l’exclusivité
+            sectorielle prend fin.
           </p>
           <p className="mt-2">
             Les clients ayant souscrit une maintenance ou un suivi avant le 29 septembre 2026 conservent les

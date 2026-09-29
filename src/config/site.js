@@ -357,7 +357,9 @@ const site = {
     facts: [
       { label: 'Délai', valeur: '5 à 10 jours ouvrés à réception de vos textes et photos' },
       { label: 'Paiement', valeur: 'Acompte à la signature, paiement possible en 3 fois' },
-      { label: 'Renouvellement', valeur: 'Suivi à 470 €/an à partir de la 2e année, à votre choix' },
+      // Renouvellement non tacite (décision Mehdi 29/09/2026) : bilan de fin d'année envoyé par email,
+      // le suivi ne continue qu'après confirmation du client.
+      { label: 'Renouvellement', valeur: 'Jamais automatique : bilan de fin d’année par email, vous confirmez ou non' },
       { label: 'Propriété', valeur: 'Si vous arrêtez le suivi, site et nom de domaine vous sont transférés' },
     ],
   },
@@ -442,7 +444,7 @@ const site = {
     {
       question: 'Faut-il payer un abonnement mensuel ?',
       reponse:
-        'Non, aucune mensualité. La première année se règle en une fois ou en 3 fois. Ensuite, le suivi se renouvelle à 470 € par an, et vous restez libre de l’arrêter : on vous transfère alors le site et le nom de domaine, qui restent à vous. Vous perdez simplement la tenue de la fiche et l’exclusivité sur votre secteur.',
+        'Non, aucune mensualité, et rien ne se renouvelle sans vous. La première année se règle en une fois ou en 3 fois. Avant la fin de l’année, on vous envoie par email un dernier bilan chiffré, et le suivi ne continue, à 470 € par an, que si vous le confirmez. Si vous arrêtez, on vous transfère le site et le nom de domaine, qui restent à vous. Vous perdez simplement la tenue de la fiche et l’exclusivité sur votre secteur.',
     },
     {
       question: 'À quoi sert une page consacrée à une commune ?',
