@@ -20,15 +20,16 @@ const pageMeta = {
     // point GSC est nécessaire dans 3-4 semaines pour vérifier si ce changement suffit.
     title: "La Dalle — Agence web pour artisans d'Ariège & de l'Aude",
     description:
-      "Agence web locale pour artisans et commerçants d'Ariège et de l'Aude, jusqu'à 50 km de Mirepoix. Carreleur de métier, interlocuteur unique, toujours joignable.",
+      "Artisans du bâtiment d'Ariège et de l'Aude : fiche Google et site vitrine tenus à jour toute l'année, bilan à 60 jours comparé au jour 0. Basé à Mirepoix.",
     // og:title distinct du title SEO : accroche plus émotionnelle pour un partage social,
     // choix déjà présent avant ce refactor (index.html) — conservé tel quel.
     ogTitle: "La Dalle — un site qui tient, pour les artisans d'Ariège",
   },
   '/offres': {
-    title: "Offres et tarifs — La Dalle, artisans d'Ariège",
+    // Réécrit le 29/09/2026 (offre unique v1).
+    title: "Offre et tarif — La Dalle, artisans du bâtiment",
     description:
-      'Fiche Google seule pour les professions de santé, ou site vitrine + fiche Google pour commerces, beauté et artisans du BTP — tarifs et maintenance incluse.',
+      "1 460 € HT la 1re année, puis 470 €/an : fiche Google tenue à jour, site vitrine avec galerie de chantiers. Un seul artisan par métier et par secteur.",
   },
   '/methode': {
     title: "Méthode et FAQ — La Dalle, artisans d'Ariège",
@@ -40,15 +41,15 @@ const pageMeta = {
     // éviter tout chevauchement de contenu dupliqué avec /offres sur Google (voir plan du
     // 04/09/2026). Pas d'ogTitle dédié : og/twitter reprennent title/description ci-dessous,
     // utiles pour un aperçu de lien correct dans une conversation SMS/WhatsApp.
-    title: 'Détail des prestations par secteur — La Dalle',
+    title: "Détail de l'offre — La Dalle",
     description:
-      'Le détail exact de chaque prestation, secteur par secteur : inclus, non inclus, délais et conditions — sans argumentaire commercial.',
+      "Le détail exact de l'offre La Dalle : ce qui est inclus, ce qui ne l'est pas, délais et conditions — sans argumentaire commercial.",
     robots: 'noindex, nofollow',
   },
   '/mentions-legales': {
     title: 'Mentions légales — La Dalle',
     description:
-      "Éditeur du site, hébergement, données personnelles et cookies — mentions légales de La Dalle, agence de création de sites pour artisans et commerces d'Ariège.",
+      "Éditeur du site, hébergement, données personnelles et cookies — mentions légales de La Dalle, agence web pour artisans du bâtiment d'Ariège et de l'Aude.",
   },
   '/cgu-cgv': {
     // Description raccourcie à 145 caractères le 04/09/2026 (audit technique) — la précédente

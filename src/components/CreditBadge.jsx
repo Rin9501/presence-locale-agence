@@ -20,7 +20,7 @@ export default function CreditBadge({ variant = 'client' }) {
         <a href={href} {...linkProps} className="underline transition hover:text-white">
           La Dalle
         </a>
-        {' '}— création de sites pour artisans et commerces d’Ariège
+        {' '}— fiche Google et site vitrine pour les artisans du bâtiment d’Ariège et de l’Aude
       </p>
     </div>
   )

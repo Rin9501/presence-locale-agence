@@ -25,11 +25,6 @@ export default function PitchSection() {
             </li>
           ))}
         </ul>
-
-        <div className="chamfer mt-10 border border-[var(--border-soft)] bg-[var(--surface)] p-6">
-          <h3 className="text-lg font-semibold text-[var(--ink)]">{pitch.beyondTheSite.title}</h3>
-          <p className="mt-2 text-[var(--ink-body)]">{pitch.beyondTheSite.description}</p>
-        </div>
       </Reveal>
     </section>
   )
