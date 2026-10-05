@@ -14,6 +14,11 @@ export default function LocalBusinessSchema() {
     // temps de la transition. Le nom officiel (NAP) est business.name, « La Dalle Agence » (05/10/2026).
     alternateName: ['La Dalle', 'Présence Locale'],
     url: 'https://ladalle-agence.fr',
+    // image + priceRange ajoutés le 05/10/2026 (avertissements non bloquants du Test des résultats
+    // enrichis). priceRange = prix réel de l'offre unique, pas une fourchette « 990–1 460 » : les 990 €
+    // de mise en place ne se vendent jamais seuls.
+    image: 'https://ladalle-agence.fr/og-image.png',
+    priceRange: '1 460 € HT la 1re année, puis 470 €/an',
     telephone: `+33${business.phone.replace(/\s/g, '').slice(1)}`,
     email: business.email,
     address: {
