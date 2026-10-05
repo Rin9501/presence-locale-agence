@@ -5,7 +5,9 @@ const site = {
   // Google de Mehdi avant de l'ouvrir à de vrais clients.
   supabaseSiteId: 'ladalle-agence',
   business: {
-    name: 'La Dalle',
+    // NAP aligné le 05/10/2026 sur les fiches Google et Solocal/PagesJaunes : même écriture au
+    // caractère près partout (nom, adresse, téléphone). La marque visuelle (logo, titles) reste « La Dalle ».
+    name: 'La Dalle Agence',
     // Reformulé le 29/09/2026 (offre unique) : "Trouvé en 60 jours" se lisait comme une promesse de
     // résultat. Le H1 affiché est écrit en dur dans Hero.jsx (mise en forme sur 3 lignes).
     tagline: 'Introuvable sur Google ? On mesure votre fiche au jour 0, on la compare au jour 60.',
@@ -19,6 +21,7 @@ const site = {
     email: 'presencelocale.contact@gmail.com',
     gmbUrl: 'https://share.google/80OCTHfwtmZeeYobB', // fiche confirmée par Mehdi le 26/07/2026
     instagram: 'https://www.instagram.com/ladalle_agence/',
+    facebook: 'https://www.facebook.com/profile.php?id=61595277921518',
     // Google Rendez-vous, retenu le 07/08/2026 (plutôt que Calendly — gratuit, déjà lié au Gmail
     // utilisé partout sur le site). Créneau de qualification "audit gratuit", 20 min, par téléphone.
     bookingUrl: 'https://calendar.app.google/zcyuxQ4rZrj56Ywr5',
@@ -183,6 +186,10 @@ const site = {
   // Utilisé par LocalBusinessSchema.jsx (JSON-LD) — adresse ville seule (pas de rue,
   // activité à domicile), horaires larges cohérents avec une activité en soir/week-end
   seo: {
+    // Adresse complète ajoutée le 05/10/2026 (confirmée par Mehdi). La fiche Google reste en zone
+    // desservie sans adresse affichée ; cette adresse sert au JSON-LD, au footer et aux mentions légales.
+    streetAddress: '18 Rue du Plantaurel',
+    postalCode: '09500',
     addressLocality: 'Mirepoix',
     addressRegion: 'Ariège',
     addressCountry: 'FR',
@@ -196,10 +203,10 @@ const site = {
   // du 10/07/2026 puis attestation INPI du 06/08/2026.
   legal: {
     legalName: 'Mehdi Courtinat',
-    tradeName: 'La Dalle',
+    tradeName: 'La Dalle Agence',
     legalForm: 'Entreprise individuelle',
     siret: '880 603 865 00036',
-    registeredAddress: 'Mirepoix (09500)',
+    registeredAddress: '18 Rue du Plantaurel, 09500 Mirepoix',
     host: {
       name: 'Netlify, Inc.',
       address: '101 2nd Street, San Francisco, CA 94105, États-Unis',

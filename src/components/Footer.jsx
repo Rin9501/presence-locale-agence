@@ -14,7 +14,11 @@ export default function Footer() {
     <footer>
       <div className="border-t border-[var(--border-soft)] px-6 py-6 text-center text-sm text-[var(--ink-muted)]">
         <p>© {new Date().getFullYear()} {site.business.name}</p>
+        {/* Ligne NAP (05/10/2026) : adresse + téléphone écrits exactement comme sur les fiches Google et
+            Solocal, lus depuis site.js. Le téléphone n'apparaît plus qu'ici, pas en double plus bas. */}
         <p className="mt-1">
+          {site.seo.streetAddress}, {site.seo.postalCode} {site.seo.addressLocality}
+          {' · '}
           <a
             href={`tel:${site.business.phone.replace(/\s/g, '')}`}
             onClick={() => trackPhoneClick('footer')}
@@ -22,7 +26,8 @@ export default function Footer() {
           >
             {site.business.phone}
           </a>
-          {' · '}
+        </p>
+        <p className="mt-1">
           <a href={`mailto:${site.business.email}`} className="transition hover:text-[var(--color-orange-text)]">
             {site.business.email}
           </a>

@@ -10,12 +10,21 @@ export default function LocalBusinessSchema() {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: business.name,
-    alternateName: 'Présence Locale', // ancien nom — conservé le temps de la transition de marque vers La Dalle
+    // « La Dalle » = marque visuelle (logo, titles) ; « Présence Locale » = ancien nom, conservé le
+    // temps de la transition. Le nom officiel (NAP) est business.name, « La Dalle Agence » (05/10/2026).
+    alternateName: ['La Dalle', 'Présence Locale'],
     url: 'https://ladalle-agence.fr',
+    // image + priceRange ajoutés le 05/10/2026 (avertissements non bloquants du Test des résultats
+    // enrichis). priceRange = prix réel de l'offre unique, pas une fourchette « 990–1 460 » : les 990 €
+    // de mise en place ne se vendent jamais seuls.
+    image: 'https://ladalle-agence.fr/og-image.png',
+    priceRange: '1 460 € HT la 1re année, puis 470 €/an',
     telephone: `+33${business.phone.replace(/\s/g, '').slice(1)}`,
     email: business.email,
     address: {
       '@type': 'PostalAddress',
+      streetAddress: seo.streetAddress,
+      postalCode: seo.postalCode,
       addressLocality: seo.addressLocality,
       addressRegion: seo.addressRegion,
       addressCountry: seo.addressCountry,
@@ -41,7 +50,8 @@ export default function LocalBusinessSchema() {
       ratingValue: '5',
       reviewCount: '3',
     },
-    sameAs: [business.gmbUrl],
+    // Profils officiels : fiche Google, Instagram, Facebook (URL www, pas m. — 05/10/2026).
+    sameAs: [business.gmbUrl, business.instagram, business.facebook],
     // Offre unique v1 (29/09/2026) — montants en dur ici parce que schema.org attend un nombre,
     // pas le libellé "1 460 € HT" de site.offre : à garder aligné avec site.offre.prix / option.prix.
     // Franchise en base de TVA (art. 293 B du CGI) : le prix HT est le prix payé.
