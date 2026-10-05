@@ -1,10 +1,10 @@
-# La Dalle
+# La Dalle Agence
 
 > Fiche Google et site vitrine pour les artisans du bâtiment d'Ariège et de l'Aude qui manquent de demandes et ne veulent rien gérer eux-mêmes. La fiche est mesurée le jour où le travail commence, puis comparée à 60 jours.
 
 ## Qui
 
-La Dalle est porté par Mehdi, basé à Mirepoix (Ariège, France), carreleur de métier et développeur. Un seul interlocuteur, du premier appel au point trimestriel.
+La Dalle Agence est portée par Mehdi, carreleur de métier et développeur, basé au 18 Rue du Plantaurel, 09500 Mirepoix (Ariège, France). Un seul interlocuteur, du premier appel au point trimestriel.
 
 ## Pour qui
 
